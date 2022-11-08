@@ -1,0 +1,14 @@
+
+<div class="container">
+<div class="">
+  <h1>Create a new Project:</h1>
+  <%= simple_form_for @project do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description, :label => "Describe the aim of this Project and some of the needed skills" %>
+  <%= f.input :location %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit, class: "btn-buddy" %>
+  <% end %>
+  </div>
+</div>
