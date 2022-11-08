@@ -33,20 +33,20 @@ puts "#{Category.count} categories created"
 puts "Creating users"
 
 cevin = User.create(
-    first_name: "Cevin",
-    last_name: "Jones",
-    username: "Cevin_with_a_C",
-    email: "cevin@people.com",
-    password: "password",
-    bio: "After completing my studies and professional registration, I joined a
-    small architecture firm in Cape Town. I spent 4 years with the firm, working
-    on a broad spectrum of work, from small scale private residences, to large
-    scale commercial buildings. As of January 2019, i assumed the role of Chief
-    Architect within the Infrastructure Delivery Directorate of the Western Cape
-    Education Department, with a focus on school maintenance. I would love to
-    offer some of my experience in this field to under resourced projects in SA.",
-    location: "Cape Town",
-    linkedin_url: "linkedin.com/in/cevinjones"
+  first_name: "Cevin",
+  last_name: "Jones",
+  username: "Cevin_with_a_C",
+  email: "cevin@people.com",
+  password: "password",
+  bio: "After completing my studies and professional registration, I joined a
+  small architecture firm in Cape Town. I spent 4 years with the firm, working
+  on a broad spectrum of work, from small scale private residences, to large
+  scale commercial buildings. As of January 2019, i assumed the role of Chief
+  Architect within the Infrastructure Delivery Directorate of the Western Cape
+  Education Department, with a focus on school maintenance. I would love to
+  offer some of my experience in this field to under resourced projects in SA.",
+  location: "Cape Town",
+  linkedin_url: "linkedin.com/in/cevinjones"
   )
 
 martha = User.create(
