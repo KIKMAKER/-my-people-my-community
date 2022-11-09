@@ -79,7 +79,7 @@ david = User.create(
 )
 
 shehnaaz = User.create(
-  first_name: "Shenaaz",
+  first_name: "Shehnaaz",
   last_name: "Moosa",
   username: "ShehM",
   email: "shehnaaz@community.com",
