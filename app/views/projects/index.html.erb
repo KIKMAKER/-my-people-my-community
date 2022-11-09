@@ -1,3 +1,22 @@
-<h1>Projects index page</h1>
+<div>
+  <h1>Projects index page</h1>
+</div>
 
-amount of projects: <%= @projects.count %>
+<div>
+  <h5>amount of projects: <%= @projects.count %></h5>
+</div>
+
+<div>
+  <% @projects.each do |project| %>
+    <h3><%= link_to project.title, project_path(project) %></h3>
+    <h5><%= project.location %></h5>
+    <p><%= project.description %></p>
+    <p>Categories:</p>
+    <ul>
+      <% project.categories.each do |category| %>
+        <li><%= category.name %></li>
+      <% end %>
+    </ul>
+    <p>Start date: <strong><%= project.start_date.strftime("%e %B %Y") %></strong> - End date: <strong><%= project.end_date.strftime("%e %B %Y") %></strong> </p>
+  <% end %>
+</div>
