@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: { message: 'User name already taken!' }
   # validates :username, format: { without: /^\d/, message: "Username cannot begin with a digit" }
-  validates :bio, length: { in: 1..100 }
+  validates :bio, length: { in: 1..10000 }
   validates :location, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
