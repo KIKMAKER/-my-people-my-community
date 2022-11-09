@@ -7,10 +7,9 @@ class Project < ApplicationRecord
   has_many :skills, through: :project_skills
   has_many :project_skills
 
-  validations :title, presence: true
-  validations :description, length: { in: 1..1000 }
-  validations :location, presence: true
-  validations :start_date, presence: true
-  validations :end_date, presence: true
+  validates :title, presence: true
+  validates :description, length: { in: 1..1000 }
+  validates :location, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
 end
-
