@@ -13,3 +13,4 @@ class Project < ApplicationRecord
   validations :start_date, presence: true
   validations :end_date, presence: true
 end
+
