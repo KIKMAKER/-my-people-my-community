@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div>
+  <h1><%= @user.first_name %></h1>
+  <h5><%= @user.location %></h5>
+  <p><%= @user.bio %></p>
+  <p>Skills:</p>
+  <ul>
+    <% @user.skills.each do |skill| %>
+      <li><%= skill.name %></li>
+    <% end %>
+  </ul>
+  <a href=<%=  @user.linkedin_url %>>LinkedIn</a>
+
+</div>
