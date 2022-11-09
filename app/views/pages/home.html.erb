@@ -3,3 +3,7 @@
 <h3>Where skills meet action for real social change</h3>
 
 <%= link_to 'see all projects', projects_path %>
+
+<% if current_user %>
+  <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
