@@ -3,7 +3,11 @@ class ProjectsController < ApplicationController
   def index
     ## list of all projects
     @projects = Project.all
-  
+
+  end
+
+  def new
+    @user = current_user
   end
 
   def show
