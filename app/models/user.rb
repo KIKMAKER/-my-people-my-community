@@ -24,6 +24,6 @@ class User < ApplicationRecord
   end
 
   def self.find_by_param(input)
-    find_by_name(input)
+    find_by_username(input)
   end
 end
