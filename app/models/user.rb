@@ -6,18 +6,19 @@ class User < ApplicationRecord
   has_many :posts
   has_many :user_skills
   has_many :skills, through: :user_skills
+  has_one_attached :photo
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :username, uniqueness: { message: 'User name already taken!' }
-  # validates :username, format: { without: /^\d/, message: "Username cannot begin with a digit" }
-  validates :bio, length: { in: 1..100 }
-  validates :location, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+
+  # validates :username, uniqueness: { message: "User name already taken!" }
+  # validates :bio, length: { in: 1..100 }
+  # validates :location, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
 
   def to_param
     username
@@ -26,4 +27,5 @@ class User < ApplicationRecord
   def self.find_by_param(input)
     find_by_name(input)
   end
+
 end
