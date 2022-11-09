@@ -1,12 +1,18 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-sm-4">
+    <div class="col-12 col-sm-4 form-account">
       <h2>Create an account</h2>
 
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
               <%= f.error_notification %>
 
               <div class="form-inputs">
+              <%= f.input :username %>
+               <%= f.input :first_name %>
+                <%= f.input :last_name %>
+                <%= f.input :bio %>
+               <%= f.input :location, :label => "Location: (Specific Suburb and City)"%>
+              <%= f.input :linkedin_url %>
                 <%= f.input :email,
                             required: true,
                             autofocus: true,
@@ -18,14 +24,16 @@
                 <%= f.input :password_confirmation,
                             required: true,
                             input_html: { autocomplete: "new-password" } %>
+                <%= f.input :photo, as: :file %>
               </div>
 
               <div class="form-actions">
                 <%= f.button :submit, "Sign up" %>
+                <%= render "devise/shared/links" %>
               </div>
             <% end %>
 
-            <%= render "devise/shared/links" %>
+
     </div>
   </div>
 </div>
