@@ -3,4 +3,6 @@ class Skill < ApplicationRecord
   has_many :projects, through: :project_skills
 
   validates :name, presence: true, uniqueness: true
+
+
 end

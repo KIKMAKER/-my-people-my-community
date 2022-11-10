@@ -166,5 +166,4 @@ soccer.project_members.create(
     { user: david }
   ]
 )
-
 puts "baddass seed file executed, congratulations!"
