@@ -14,7 +14,6 @@
       </strong> - End date: <strong><%= @project.end_date.strftime("%e %B %Y") %></strong> </p>
 </div>
 
-
 <div>
   <h5>Project stats:</h5>
   <ul>
@@ -28,7 +27,7 @@
 
 
  <%= simple_form_for [@project, @project_member] do |f| %>
-        <%= f.button :submit, class: "btn"%>
+        <%= f.submit 'Apply', class: "btn"%>
         <% end %>
 </div>
 

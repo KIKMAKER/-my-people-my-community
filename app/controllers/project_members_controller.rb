@@ -13,7 +13,15 @@ class ProjectMembersController < ApplicationController
   end
 
   def update
-    
+    @project_member = ProjectMember.find(params[:id])
+    @project_member.update(project_member_params)
+    redirect_to dashboard_path, notice: "Application accepted"
+  end
+
+  private
+
+  def project_member_params
+    params.require(:project_member).permit(:status)
   end
 
 end
