@@ -13,4 +13,6 @@ class Project < ApplicationRecord
   validates :location, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
+
+  enum status: [:pending, :accepted, :declined]
 end
