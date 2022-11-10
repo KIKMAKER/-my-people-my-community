@@ -1,15 +1,31 @@
-<h1>Browse all Volunteers</h1>
 
-<div>
-  <% @users.each do |user| %>
-    <h4><%= link_to user.first_name, user_path(user) %></h4>
-    <h5><%= user.location %></h5>
-    <%# <p><%= user.description %></p>
-    <p>Skills:</p>
-    <ul>
-      <% user.skills.each do |skill| %>
-        <li><%= skill.name %></li>
-      <% end %>
-    </ul>
-  <% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+          <h1>Browse all Volunteers</h1>
+             <div class = "p-4">
+                <%= form_with url: users_path, method: :get, class: "d-flex" do %>
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "Find a volunteer by their name, location or skill"
+                  %>
+                  <%= submit_tag "Search", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+        <div>
+          <% @users.each do |user| %>
+            <h4><%= link_to user.first_name, user_path(user) %></h4>
+            <h5><%= user.location %></h5>
+            <%# <p><%= user.description %></p>
+            <p>Skills:</p>
+            <ul>
+              <% user.skills.each do |skill| %>
+                <li><%= skill.name %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+    </div>
+  </div>
 </div>

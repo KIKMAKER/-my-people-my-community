@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_action :find_user, only: %i[show edit update]
 
   def index
-    @users = User.all
+    if params[:query].present?
+      @users = User.global_search(params[:query])
+    else
+      @users = User.all
+    end
   end
 
   def show; end
