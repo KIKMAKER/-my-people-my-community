@@ -1,10 +1,13 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    ## list of all projects
-    @projects = Project.all
+    if params[:query].present?
+      @projects = Project.global_search(params[:query])
+    else
+      @projects = Project.all
+    end
   end
-  
+
   def show
     ## one project's page
     @project = Project.find(params[:id])
