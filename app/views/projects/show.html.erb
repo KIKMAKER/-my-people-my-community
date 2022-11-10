@@ -14,11 +14,21 @@
       </strong> - End date: <strong><%= @project.end_date.strftime("%e %B %Y") %></strong> </p>
 </div>
 
+<div>
+  <h5>Project stats:</h5>
+  <ul>
+    <li>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</li>
+    <li>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</li>
+  </ul>
+</div>
 
 <div>
-  <h5>Project stats</h5>
-  <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
-  <p> it has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
+ <%# <%= link_to "Apply to join this project",  %>
+
+
+ <%= simple_form_for [@project, @project_member] do |f| %>
+        <%= f.submit 'Apply', class: "btn"%>
+        <% end %>
 </div>
 
 <p><%= link_to "Back to all projects", projects_path %></p>

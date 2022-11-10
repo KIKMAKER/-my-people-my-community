@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   def show
     ## one project's page
     @project = Project.find(params[:id])
+    @project_member = ProjectMember.new
   end
 
   def new

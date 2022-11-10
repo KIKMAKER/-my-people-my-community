@@ -10,5 +10,11 @@
   </ul>
   <a href=<%=  @user.linkedin_url %>>LinkedIn</a>
 
+  <h4><%= @user.first_name %>'s projects:</h4>
+  <ul>
+    <% @user.initiated_projects.each do |project| %>
+      <li><%= link_to project.title, project_path(project) %></li>
+    <% end %>
+  </ul>
 
 </div>
