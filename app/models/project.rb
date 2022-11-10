@@ -13,4 +13,14 @@ class Project < ApplicationRecord
   validates :location, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
+
+  include PgSearch::Model
+    pg_search_scope :global_search,
+      against: [ :title, :description, :location ],
+      associated_against: {
+        categories: [:name]
+      },
+    using: {
+      tsearch: { prefix: true }
+    }
 end
