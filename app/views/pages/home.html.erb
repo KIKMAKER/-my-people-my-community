@@ -5,11 +5,25 @@
     <p> Skill share for social change </p>
   </div>
 </div>
-
 <div class="container">
-  <h2> Our Current Projects <h2>
 
-</div> 
+</div>
+<div class="container">
+  <div class="cards-home">
+    <h2> Our Current Projects <h2>
+      <% @projects.each do |project| %>
+            <h3><%= link_to project.title, project_path(project) %></h3>
+            <h5><%= project.location %></h5>
+            <p>Categories:</p>
+            <ul>
+              <% project.categories.each do |category| %>
+                <li><%= category.name %></li>
+              <% end %>
+            </ul>
+            <p>Start date: <strong><%= project.start_date.strftime("%e %B %Y") %></strong> - End date: <strong><%= project.end_date.strftime("%e %B %Y") %></strong> </p>
+          <% end %>
+  </div>
+</div>
 
 
 
