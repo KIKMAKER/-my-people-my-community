@@ -32,7 +32,7 @@ puts "#{Category.count} categories created"
 
 puts "Creating users"
 
-cevin = User.create(
+cevin = User.create!(
   first_name: "Cevin",
   last_name: "Jones",
   username: "Cevin_with_a_C",
@@ -154,4 +154,16 @@ soccer.project_categories.create(
 
 puts "#{ProjectCategory.count} user_skills assigned to users"
 
+puts "Assigning users as project_members"
+sunshine.project_members.create(
+  [
+    { user: cevin }
+  ]
+)
+
+soccer.project_members.create(
+  [
+    { user: david }
+  ]
+)
 puts "baddass seed file executed, congratulations!"
