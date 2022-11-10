@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
     ## list of all projects
     @projects = Project.all
   end
-
+  
   def show
     ## one project's page
     @project = Project.find(params[:id])

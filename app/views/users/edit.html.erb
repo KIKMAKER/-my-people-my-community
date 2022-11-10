@@ -1,11 +1,18 @@
-<h1>Edit your profile</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4 form-account">
+      <h1>Edit your profile</h1>
 
-<%= simple_form_for(@user) do |f| %>
-  <%= f.input :username %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :bio %>
-  <%= f.input :location %>
-  <%= f.input :linkedin_url %>
-  <%= f.submit %>
-<% end %>
+      <%= simple_form_for(@user) do |f| %>
+        <%= f.input :username %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :bio %>
+        <%= f.input :location %>
+        <%= f.input :linkedin_url %>
+        <%= f.submit %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
