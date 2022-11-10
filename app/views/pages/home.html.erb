@@ -1,12 +1,20 @@
-<h1>Welcome to My People My Community</h1>
+<div class="banner">
+  <div class="text">
+    <h1>My People My Community</h1>
+    <h3> Skill share for social change</h3>
+  </div>
+</div>
 
-<h3>Where skills meet action for real social change</h3>
+<div>
+Our Current Projects
+</div>
 
-<ul>
-  <li><%= link_to 'see all projects', projects_path %></li>
-  <li><%= link_to 'see all volunteers', users_path %></li>
-</ul>
-
+<div>
+  <ul>
+    <li><%= link_to 'see all projects', projects_path %></li>
+    <li><%= link_to 'see all volunteers', users_path %></li>
+  </ul>
+</div>
 
 <% if current_user %>
   <%= cl_image_tag ("https://res.cloudinary.com/divqv7xyh/image/upload/v1668004240/development/akqm0uwl03mwkzav7clbp2r3e25f.jpg"), height: 300, width: 250, crop: :fill %>
