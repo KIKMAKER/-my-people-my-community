@@ -18,13 +18,18 @@
 <div>
   <h5>Project stats:</h5>
   <ul>
-    <li>This liroject was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</li>
+    <li>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</li>
     <li>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</li>
   </ul>
 </div>
 
 <div>
- <%=  %> 
+ <%# <%= link_to "Apply to join this project",  %>
+
+
+ <%= simple_form_for [@project, @project_member] do |f| %>
+        <%= f.button :submit, class: "btn"%>
+        <% end %>
 </div>
 
 <p><%= link_to "Back to all projects", projects_path %></p>

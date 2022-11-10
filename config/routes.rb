@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: %i[index show edit update]
+
+  get "dashboard", to: "pages#dashboard"
 end

@@ -1,0 +1,16 @@
+<h1>Welcome to your Dashboard <%= current_user.first_name %></h1>
+
+<h3>Your initiated projects</h3>
+<ul>
+ <% current_user.initiated_projects.each do |project| %>
+  <li><%= project.title %></li>
+ <% end %>
+</ul>
+
+<h3>Your volunteer projects</h3>
+
+<% current_user.projects.each do |project|  %>
+  <li><%= project.title %></li>
+ <% end %>
+
+ <li> <%= current_user.project_members.title %></li>

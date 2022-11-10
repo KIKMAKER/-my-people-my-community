@@ -17,12 +17,11 @@ class Project < ApplicationRecord
   enum status: %i[pending accepted declined]
 
   include PgSearch::Model
-  pg_search_scope(
-    :global_search,
-    against: %i[
-      title
-      description
-      location
+  pg_search_scope :global_search,
+    against:[
+      :title,
+      :description,
+      :location
     ],
     associated_against: {
       categories: [:name]
@@ -30,5 +29,4 @@ class Project < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-  )
 end
