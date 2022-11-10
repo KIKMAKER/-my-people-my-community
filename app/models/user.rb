@@ -27,4 +27,13 @@ class User < ApplicationRecord
     find_by_username(input)
   end
 
+  include PgSearch::Model
+    pg_search_scope :global_search,
+      against: [ :first_name, :location ],
+      associated_against: {
+        skills: [:name]
+      },
+    using: {
+      tsearch: { prefix: true }
+    }
 end

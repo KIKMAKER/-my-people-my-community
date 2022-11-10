@@ -1,0 +1,36 @@
+.banner {
+  background-image: url("banner.png");
+  background-size: cover;
+  height: 45vw;
+  width: 90%;
+  border-radius: 25px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 20px 20px 5px rgba(0, 0, 0, .1);
+}
+
+.banner h1 {
+  font-size: 85px;
+  color: #FA6139;
+}
+
+.banner p {
+  font-size: 50px;
+  color: #FA6139;
+}
+
+// .slice1 {
+//   background-image: url("Slice 1.png");
+//   background-size: cover;
+//   margin-left: 21px;
+//   height: 50vw;
+// }
+
+// .slice2 {
+//   background-image: url("Slice 2.png");
+//   background-size: cover;
+//   height: 50vw;
+// }
