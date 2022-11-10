@@ -1,25 +1,28 @@
 .banner {
-  background-image: url("banner.png");
+  // background-image: url("banner.png");
+  // opacity: 0.1;
   background-size: cover;
-  height: 45vw;
-  width: 90%;
-  border-radius: 25px;
+  background-color: rgb(241, 240, 234);
+  width: 60vw;
+  height: 80vh;
   margin: auto;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 20px 20px 5px rgba(0, 0, 0, .1);
-}
+  margin-top: -35px;
+ }
 
 .banner h1 {
-  font-size: 85px;
-  color: #FA6139;
+  font-size: 120px;
+  color: #E54B03;
+  text-shadow: #000 0px 0px 1px;
 }
 
+
 .banner p {
-  font-size: 50px;
-  color: #FA6139;
+  font-size: 30px;
+  color: #2A1508;
 }
 
 // .slice1 {
