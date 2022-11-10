@@ -2,8 +2,12 @@
 
 <h3>Where skills meet action for real social change</h3>
 
-<%= link_to 'see all projects', projects_path %>
+<ul>
+  <li><%= link_to 'see all projects', projects_path %></li>
+  <li><%= link_to 'see all volunteers', users_path %></li>
+</ul>
+
 
 <% if current_user %>
-  <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag ("https://res.cloudinary.com/divqv7xyh/image/upload/v1668004240/development/akqm0uwl03mwkzav7clbp2r3e25f.jpg"), height: 300, width: 250, crop: :fill %>
 <% end %>
