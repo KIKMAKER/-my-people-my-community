@@ -9,6 +9,7 @@
       <h5>Volunteers:</h5>
         <% project.project_members.each do |project_member| %>
           <li> <%= project_member.user.first_name %> (<%= project_member.status %>)</li>
+          <%= link_to "Start chat", user_conversations_path(project_member.user), data: {turbo_method: :post}  %>
           <%= status_link(project_member) %>
         <% end %>
       </ol>
