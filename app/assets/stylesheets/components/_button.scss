@@ -1,14 +1,21 @@
 .button {
-background-color: #FE962E;
-border: none;
+background-color: #CAD2E8;
 border-radius: 20px;
-color: white;
+color: black;
+border: 1px solid #CAD2E8;
 padding: 15px 30px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
+margin: 10px;
+opacity: 0.6;
 }
 
+#status {
+  a {
+    padding: 10px;
+  }
+}
 
 // $blue: #E0F8F4;
 // $yellow: #FFFDED;
@@ -19,3 +26,8 @@ display: inline-block;
 // //
 // $green: green;
 // $red: red;
+
+.button:hover {
+  opacity: 1;
+  background-color:  #f1f0ea;
+}
