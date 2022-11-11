@@ -1,21 +1,28 @@
 .banner {
-  background-image: url("community.png");
+  background-color: #f1f0ea;
+  // width: 60vw;
+  // height: 80vh;
+  margin: auto;
+  text-align: left;
+  align-items: left;
+  margin: 40px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.img-together {
+  background-image: url("together.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: #f1f0ea;
-  width: 60vw;
-  height: 80vh;
-  margin: auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -35px;
+  height: 40vh;
+  width: 40vw;
+  margin-left: 10%;
  }
 
-
 .banner h1 {
-  font-size: 110px;
+  font-size: 100px;
   color: #E54B03;
   text-shadow: #000 0px 0px 1px;
 }
