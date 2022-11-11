@@ -1,7 +1,14 @@
-<div>
+<div class="pagesbanner">
+  <div class="text">
+    <h1><%= @user.first_name %>'s Volunteer Profile</h1>
+  </div>
+</div>
+
+<div class ="container">
   <h1><%= @user.first_name %></h1>
   <h5><%= @user.location %></h5>
   <p><%= @user.bio %></p>
+  <%= image_tag  "#{@user.first_name}.jpg" %>
   <p>Skills:</p>
   <ul>
     <% @user.skills.each do |skill| %>
