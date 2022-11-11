@@ -1,14 +1,14 @@
-<div class="pagesbanner">
-  <div class="text">
-    <h1><h1><%= @project.title %></h1></h1>
-  </div>
+
+<div>
+  <%= image_tag  "#{@project.photo}.jpg", class:"project-banner" %>
 </div>
 
+  <%# <div class="text">
+    <h1><h1><%= @project.title %></h1></h1>
+  <%# </div> %> %>
+
 <div class="container">
-
-<%= image_tag  "#{@project.photo}.jpg" %>
   <h1>Project: <%= @project.title %></h1>
-
   <div>
       <h5><%= @project.location %></h5>
         <p><%= @project.description %></p>
@@ -39,6 +39,5 @@
   </div>
 
   <p><%= link_to "Back to all projects", projects_path %></p>
-
 
 </div>
