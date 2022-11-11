@@ -68,7 +68,7 @@ david = User.create(
   first_name: "David",
   last_name: "van Niekerk",
   username: "Dave100",
-  email: "daniel@people.com",
+  email: "david@people.com",
   password: "password",
   bio: "Cape Town based winemaker and family man. Since having children I am
   more invested in ensuring a better life for all children of our country.

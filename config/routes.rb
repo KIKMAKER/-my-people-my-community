@@ -13,12 +13,14 @@ Rails.application.routes.draw do
   end
 
   resources :pages, only: %i[show]
-  resources :conversations, only: %i[create show] do
+  resources :conversations, only: :show do
     resources :messages, only: :create
   end
 
   resources :project_members, only: :update
-  resources :users, only: %i[index show edit update]
+  resources :users, only: %i[index show edit update] do
+    resources :conversations, only: :create
+  end
 
   get "dashboard", to: "pages#dashboard"
 end
