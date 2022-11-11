@@ -21,15 +21,20 @@
 
         <div>
           <% @users.each do |user| %>
-            <h4><%= link_to user.first_name, user_path(user) %></h4>
-            <h5><%= user.location %></h5>
+           <div class="card-trip">
+            <%= image_tag  "#{user.first_name}.jpg" %>
+            <h3><%= link_to user.first_name, user_path(user) %></h3>
+            <h3><%= user.location %></h3>
+            <h5>Skills:</h5>
             <%# <p><%= user.description %></p>
-            <p>Skills:</p>
-            <ul>
+               <div>
               <% user.skills.each do |skill| %>
-                <li><%= skill.name %></li>
+              <div>
+                <p><%= skill.name %></p>
+              </div>
               <% end %>
-            </ul>
+            </div>
+          </div>
           <% end %>
         </div>
 
