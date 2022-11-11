@@ -3,7 +3,8 @@
   background: #EDEAD8;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 30px;
-  // border-radius: 25px;
+  width: 500px;
+  height: 375px;
 }
 
 .card-trip a {
@@ -23,10 +24,22 @@
   margin: 0;
 }
 
+.card-trip h4 {
+  text-align: left;
+  padding-left: 20px;
+  font-size: small;
+}
+
+.fa-location-dot h5 {
+  text-decoration: dashed;
+}
+
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  text-align: left;
+  padding-left: 20px;
 }
 
 
