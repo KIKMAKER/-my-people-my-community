@@ -20,8 +20,7 @@
             </ul>
             <p>Start date: <strong><%= project.start_date.strftime("%e %B %Y") %></strong> - End date: <strong><%= project.end_date.strftime("%e %B %Y") %></strong> </p>
           <% end %>
-  </div>
-</div>
+    </div>
 
   <h2> <%= link_to "Our Current Projects", projects_path %>  <h2>
 </div>
@@ -36,4 +35,3 @@
       <%= cl_image_tag ("https://res.cloudinary.com/divqv7xyh/image/upload/v1668004240/development/akqm0uwl03mwkzav7clbp2r3e25f.jpg"), height: 300, width: 250, crop: :fill %>
     <% end %>
   <% end %>
-
