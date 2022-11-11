@@ -5,11 +5,9 @@
     <p> Skill share for social change </p>
   </div>
 </div>
-<div class="container">
 
-</div>
 <div class="container">
-  <div class="cards-home">
+  <div>
     <h2> Our Current Projects <h2>
       <% @projects.each do |project| %>
             <h3><%= link_to project.title, project_path(project) %></h3>
@@ -25,16 +23,17 @@
   </div>
 </div>
 
-
-
-
-<div>
-  <ul>
-    <li><%= link_to 'see all projects', projects_path %></li>
-    <li><%= link_to 'see all volunteers', users_path %></li>
-  </ul>
+  <h2> <%= link_to "Our Current Projects", projects_path %>  <h2>
 </div>
 
-<% if current_user %>
-  <%# <%= cl_image_tag ("https://res.cloudinary.com/divqv7xyh/image/upload/v1668004240/development/akqm0uwl03mwkzav7clbp2r3e25f.jpg"), height: 300, width: 250, crop: :fill %> %>
-<% end %>
+<div class="container justify-content-center">
+  <button class ="button"><%= link_to 'FIND A VOLUNTEER', users_path %></button>
+</div>
+
+
+  <% if false %>
+    <% if current_user %>
+      <%= cl_image_tag ("https://res.cloudinary.com/divqv7xyh/image/upload/v1668004240/development/akqm0uwl03mwkzav7clbp2r3e25f.jpg"), height: 300, width: 250, crop: :fill %>
+    <% end %>
+  <% end %>
+

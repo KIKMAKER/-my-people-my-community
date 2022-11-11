@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-sm-8">
+    <div class="">
       <div class = "mt-4">
         <h1>Projects index page</h1>
       </div>
@@ -8,10 +8,10 @@
         <%= form_with url: projects_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
-            placeholder: "Find a project by it's name, location or social category"
+            class: "button-input",
+            placeholder: "    Find a project by it's name, location or social category"
           %>
-          <%= submit_tag "Search", class: "button" %>
+          <%= submit_tag "Search", class: "search-button" %>
         <% end %>
       </div>
       <div>

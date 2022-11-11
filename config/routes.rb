@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :projects, except: :destroy do
-    resources :project_members, only: %i[create update]
+    resources :project_members, only: :create
     resources :posts, only: :create
   end
 
@@ -17,5 +17,8 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
+  resources :project_members, only: :update
   resources :users, only: %i[index show edit update]
+
+  get "dashboard", to: "pages#dashboard"
 end

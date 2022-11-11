@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Welcome to your Dashboard <%= current_user.first_name %></h1>
+
+  <h3>Your initiated projects</h3>
+
+    <% current_user.initiated_projects.each do |project| %>
+      <h4><%= link_to project.title, project_path(project) %></h4>
+      <ol>
+      <h5>Volunteers:</h5>
+        <% project.project_members.each do |project_member| %>
+          <li> <%= project_member.user.first_name %> (<%= project_member.status %>)</li>
+          <%= status_link(project_member) %>
+        <% end %>
+      </ol>
+    <% end %>
+
+  <h3>Your volunteer projects</h3>
+
+  <% current_user.projects.each do |project|  %>
+    <li><%= project.title %></li>
+  <% end %>
+</div>
