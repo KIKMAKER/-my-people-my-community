@@ -168,3 +168,12 @@ soccer.project_members.create(
   ]
 )
 puts "baddass seed file executed, congratulations!"
+
+# image_data = File.read('path/to/image.jpg')
+# Model.create!([
+#   {
+#     ...
+#     image: image_data
+#   },
+#   ...
+# ])
