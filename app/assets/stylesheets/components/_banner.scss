@@ -1,8 +1,8 @@
 .banner {
-  // background-image: url("banner.png");
-  // opacity: 0.1;
-  background-size: cover;
-  background-color: rgb(241, 240, 234);
+  background-image: url("community.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f1f0ea;
   width: 60vw;
   height: 80vh;
   margin: auto;
@@ -12,6 +12,7 @@
   align-items: center;
   margin-top: -35px;
  }
+
 
 .banner h1 {
   font-size: 110px;

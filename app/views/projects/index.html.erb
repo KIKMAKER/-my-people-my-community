@@ -1,9 +1,12 @@
+<div class="pagesbanner">
+  <div class="text">
+      <h1>Browse Active Community Projects</h1>
+  </div>
+</div>
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="">
-      <div class = "mt-4">
-        <h1>Projects index page</h1>
-      </div>
       <div class = "p-4">
         <%= form_with url: projects_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
