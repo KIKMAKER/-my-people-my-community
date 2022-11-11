@@ -117,7 +117,7 @@ sunshine = Project.create(
   location: "Nyanga",
   start_date: DateTime.now,
   end_date: DateTime.now + 1.months,
-  status: 0
+  photo: "sunshine"
 )
 
 soccer = Project.create(
@@ -130,7 +130,8 @@ soccer = Project.create(
   of land behind the property into a working soccer field.",
   location: "Khayelitsha",
   start_date: DateTime.now - 1.weeks,
-  end_date: DateTime.now + 1.months
+  end_date: DateTime.now + 1.months,
+  photo: "soccer"
 )
 
 puts "#{Project.count} users created"

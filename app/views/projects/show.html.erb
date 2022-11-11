@@ -6,6 +6,8 @@
 
 <div class="container">
 
+<%= image_tag  "#{@project.photo}.jpg" %>
+  <h1>Project: <%= @project.title %></h1>
 
   <div>
       <h5><%= @project.location %></h5>
@@ -29,14 +31,14 @@
   </div>
 
   <div>
-  <%# <%= link_to "Apply to join this project",  %>
-
-
-  <%= simple_form_for [@project, @project_member] do |f| %>
+    <% if @project.user != current_user %>
+      <%= simple_form_for [@project, @project_member] do |f| %>
           <%= f.submit 'Apply', class: "button"%>
           <% end %>
+   <% end %>
   </div>
 
   <p><%= link_to "Back to all projects", projects_path %></p>
+
 
 </div>
