@@ -33,5 +33,10 @@
   </div>
 
   <a href=<%=  @user.linkedin_url %>>LinkedIn</a>
+  <div>
+    <% if current_user == @user %>
+    <%= link_to "Edit profile", edit_user_path(@user), class: "button" %>
+    <% end %>
+  </div>
 
 </div>
