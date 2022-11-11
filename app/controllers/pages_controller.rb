@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     else
       @projects = Project.all
     end
+  end
 
   def dashboard
     @projects = Project.where(user: current_user)
