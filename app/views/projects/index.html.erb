@@ -18,17 +18,22 @@
         <% end %>
       </div>
       <div>
-        <% @projects.each do |project| %>
-          <h3><%= link_to project.title, project_path(project) %></h3>
-          <h5><%= project.location %></h5>
-          <p>Categories:</p>
-          <ul>
-            <% project.categories.each do |category| %>
-              <li><%= category.name %></li>
+          <% @projects.each do |project| %>
+          <div class="card-trip">
+              <%= image_tag  "#{@project.photo}.jpg" %>
+              <h3><%= link_to project.title, project_path(project) %></h3>
+              <h5><%= project.location %></h5>
+              <p>Categories:</p>
+              <div>
+                <% project.categories.each do |category| %>
+                  <div>
+                    <p><%= category.name %></p>
+                  </div>
+                <% end %>
+              </div>
+              <p>Start date: <strong><%= project.start_date.strftime("%e %B %Y") %></strong>  </p>
+          </div>
             <% end %>
-          </ul>
-          <p>Start date: <strong><%= project.start_date.strftime("%e %B %Y") %></strong> - End date: <strong><%= project.end_date.strftime("%e %B %Y") %></strong> </p>
-        <% end %>
       </div>
     </div>
   </div>
