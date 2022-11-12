@@ -1,6 +1,4 @@
 .banner {
-  // background-image: url("banner.png");
-  // opacity: 0.1;
   background-size: cover;
   background-color: rgb(241, 240, 234);
   width: 60vw;
@@ -13,9 +11,15 @@
   margin-top: -35px;
  }
 
+.banner .image {
+  background-image: url('hands.png');
+}
+
+
 .banner h1 {
   font-size: 120px;
-  color: #E54B03;
+  // color: #E54B03;
+  color: black;
   text-shadow: #000 0px 0px 1px;
 }
 
