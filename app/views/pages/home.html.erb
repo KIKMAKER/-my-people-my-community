@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 <div class="banner">   
+=======
+<div class="banner flex-container d-flex align-items-center">
+ <div class="img-together">
+  </div>
+>>>>>>> master
   <div class="text">
     <h1>My People </h1>
     <h1>My Community</h1>
@@ -7,20 +13,37 @@
   </div>
 </div>
 
+
 <div class="container">
-  <h2> Our Current Projects <h2>
+  <div>
+    <h2> Our Current Projects <h2>
+      <div>
+          <% @projects.each do |project| %>
+          <div class="card-trip">
+              <%= image_tag  "#{project.photo}.jpg" %>
+              <h3><%= link_to project.title, project_path(project) %></h3>
+              <h5><i class="fa-solid fa-location-pin"></i> <%= project.location %></h5>
+              <h4>Categories:</h4>
+              <div>
+                <% project.categories.each do |category| %>
+                  <div>
+                    <p><%= category.name %></p>
+                  </div>
+                <% end %>
+              </div>
+              <p>Start date: <strong><%= project.start_date.strftime("%e %B %Y") %></strong>  </p>
+          </div>
+            <% end %>
 
-</div> 
+      </div>
 
-
-
-
-<div>
-<button class = "button"><%= link_to 'see all projects', projects_path %></button>
-
-    <button class ="button"><%= link_to 'see all volunteers', users_path %></button>
-
+  <h2> <%= link_to "Our Current Projects", projects_path %>  <h2>
 </div>
+
+<div class="container justify-content-center">
+  <button class ="button" class="btn btn-outline-dark"><%= link_to 'Find a volunteer', users_path %></button>
+</div>
+
 
   <% if false %>
     <% if current_user %>

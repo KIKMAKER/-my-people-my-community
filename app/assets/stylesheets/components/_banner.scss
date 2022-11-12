@@ -1,14 +1,31 @@
 .banner {
+<<<<<<< HEAD
   background-size: cover;
   background-color: rgb(241, 240, 234);
   width: 60vw;
   height: 80vh;
+=======
+  background-color: #f1f0ea;
+  // width: 60vw;
+  // height: 80vh;
+>>>>>>> master
   margin: auto;
-  text-align: center;
+  text-align: left;
+  align-items: left;
+  margin: 40px;
+}
+
+.flex-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -35px;
+}
+
+.img-together {
+  background-image: url("together.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 40vh;
+  width: 40vw;
+  margin-left: 10%;
  }
 
 .banner .image {
@@ -17,9 +34,14 @@
 
 
 .banner h1 {
+<<<<<<< HEAD
   font-size: 120px;
   // color: #E54B03;
   color: black;
+=======
+  font-size: 100px;
+  color: #E54B03;
+>>>>>>> master
   text-shadow: #000 0px 0px 1px;
 }
 
@@ -27,6 +49,12 @@
 .banner p {
   font-size: 30px;
   color: #2A1508;
+}
+
+.project-banner {
+  height: 60vh;
+  width: 100vw;
+  background-size: cover;
 }
 
 // .slice1 {

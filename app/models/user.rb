@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :project_members
   has_many :projects, through: :project_members
   has_many :initiated_projects, class_name: 'Project'
+  
   has_many :posts
   has_many :user_skills
   has_many :skills, through: :user_skills

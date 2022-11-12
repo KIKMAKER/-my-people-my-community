@@ -68,7 +68,7 @@ david = User.create(
   first_name: "David",
   last_name: "van Niekerk",
   username: "Dave100",
-  email: "daniel@people.com",
+  email: "david@people.com",
   password: "password",
   bio: "Cape Town based winemaker and family man. Since having children I am
   more invested in ensuring a better life for all children of our country.
@@ -117,7 +117,7 @@ sunshine = Project.create(
   location: "Nyanga",
   start_date: DateTime.now,
   end_date: DateTime.now + 1.months,
-  status: 0
+  photo: "sunshine"
 )
 
 soccer = Project.create(
@@ -130,7 +130,8 @@ soccer = Project.create(
   of land behind the property into a working soccer field.",
   location: "Khayelitsha",
   start_date: DateTime.now - 1.weeks,
-  end_date: DateTime.now + 1.months
+  end_date: DateTime.now + 1.months,
+  photo: "soccer"
 )
 
 puts "#{Project.count} users created"
@@ -167,3 +168,12 @@ soccer.project_members.create(
   ]
 )
 puts "baddass seed file executed, congratulations!"
+
+# image_data = File.read('path/to/image.jpg')
+# Model.create!([
+#   {
+#     ...
+#     image: image_data
+#   },
+#   ...
+# ])
