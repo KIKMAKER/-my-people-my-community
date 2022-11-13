@@ -136,6 +136,11 @@ soccer = Project.create(
 
 puts "#{Project.count} users created"
 
+puts "Assigning skills to projects"
+
+## Speak to Roel
+
+
 puts "Assigning project_categories to projects"
 
 sunshine.project_categories.create(

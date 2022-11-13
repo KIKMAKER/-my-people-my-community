@@ -2,27 +2,52 @@
 <div class="banner-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "#{@project.photo}.jpg" %>);">
   <div class="container">
     <h1><%= @project.title %></h1>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <div class="banner-btn">
+      <% if @project.user != current_user %>
+        <%= simple_form_for [@project, @project_member] do |f| %>
+          <%= f.submit 'Apply', class: "button"%>
+          <% end %>
+    <% end %>
+    </div>
   </div>
 </div>
 
-  <%# <div class="text">
-    <h1><h1><%= @project.title %></h1></h1>
-  <%# </div> %>
-
 <div class="container">
+  <div class="d-flex background">
+    <div class="backround small">
+      <p>Categories:</p>
+      <% @project.categories.each do |category| %>
+        <p><%= category.name %></p>
+      <% end %>
+      <p>Skills needed:</p>
+      <% @project.skills.each do |skill| %>
+        <p><%= skill.name %></p>
+      <% end %>
+        <p>Project Management</p>
+        <p>Architecture</p>
+    </div>
+    <div class="background big">
+    <h5>Learn more about <%= @project.title %></h5>
+      <p><%= @project.description %></p>
+      <h5>Project stats:</h5>
+      <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
+      <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
+    </div>
+</div>
 
+
+<% if false %>
   <div>
-      <h5><%= @project.location %></h5>
-        <p><%= @project.description %></p>
-        <p>Categories:</p>
-        <ul>
-          <% @project.categories.each do |category| %>
-            <li><%= category.name %></li>
-          <% end %>
-        </ul>
-      <p>Start date: <strong><%= @project.start_date.strftime("%e %B %Y") %>
-        </strong> - End date: <strong><%= @project.end_date.strftime("%e %B %Y") %></strong> </p>
+    <h5><%= @project.location %></h5>
+      <p><%= @project.description %></p>
+      <p>Categories:</p>
+      <ul>
+        <% @project.categories.each do |category| %>
+          <li><%= category.name %></li>
+        <% end %>
+      </ul>
+    <p>Start date: <strong><%= @project.start_date.strftime("%e %B %Y") %>
+      </strong> - End date: <strong><%= @project.end_date.strftime("%e %B %Y") %></strong> </p>
   </div>
 
   <div>
@@ -42,5 +67,4 @@
   </div>
 
   <p><%= link_to "Back to all projects", projects_path %></p>
-
-</div>
+  <% end %>

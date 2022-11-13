@@ -38,12 +38,6 @@
   margin-left: 10%;
  }
 
-.banner h1 {
-  font-size: 65px;
-  color: #E54B03;
-  text-shadow: #000 0px 0px 1px;
-}
-
 
 .banner p {
   font-size: 30px;
@@ -54,6 +48,10 @@
   height: 60vh;
   width: 100vw;
   background-size: cover;
+}
+
+.banner-btn {
+  margin-top: 12px;
 }
 
 // .slice1 {
