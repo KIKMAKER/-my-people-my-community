@@ -1,5 +1,5 @@
 <div class="banner flex-container d-flex align-items-center">
- <div
+  <div
     class="banner-img-together">
   </div>
   <div class="text">
@@ -7,15 +7,12 @@
     <h1>My Community</h1>
     <p> Skill share for social change </p>
   </div>
- </div>
-
-  <div class="container justify-content-center">
-    <h2> <%= link_to "Browse Projects", projects_path, class: "button" %> <%= link_to 'Find a Volunteer', users_path, class: "button" %></h2>
 </div>
-
-
-  <% if false %>
-    <% if current_user %>
-      <%= cl_image_tag ("https://res.cloudinary.com/divqv7xyh/image/upload/v1668004240/development/akqm0uwl03mwkzav7clbp2r3e25f.jpg"), height: 300, width: 250, crop: :fill %>
-    <% end %>
+<div class="container justify-content-center">
+  <h2> <%= link_to "Browse Projects", projects_path, class: "button" %> <%= link_to 'Find a Volunteer', users_path, class: "button" %></h2>
+</div>
+<% if false %>
+  <% if current_user %>
+    <%= cl_image_tag ("https://res.cloudinary.com/divqv7xyh/image/upload/v1668004240/development/akqm0uwl03mwkzav7clbp2r3e25f.jpg"), height: 300, width: 250, crop: :fill %>
   <% end %>
+<% end %>

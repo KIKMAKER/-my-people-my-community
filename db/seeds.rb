@@ -138,8 +138,22 @@ puts "#{Project.count} users created"
 
 puts "Assigning skills to projects"
 
-## Speak to Roel
+sunshine.project_skills.create(
+  [
+    { skill: youth },
+    { skill: community_development },
+    { skill: education }
+  ]
+)
 
+soccer.project_skills.create(
+  [
+    { skill: sport },
+    { skill: youth }
+  ]
+)
+
+puts "#{ProjectSkills.count} project_skills assigned to projects"
 
 puts "Assigning project_categories to projects"
 
