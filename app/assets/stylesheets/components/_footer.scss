@@ -1,19 +1,13 @@
 .footer {
   position: fixed;
   bottom: 0;
+  right: 0;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 0px 50px;
-  .inner-footer {
-    width: 98%;
-    border-top: 0.3px solid;
-    background-color: #F1F0EA;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 50px;
-    color: rgba(0,0,0,0.3);
-  }
+  background-color: white;
+
 
   .footer-links {
     display: flex;
