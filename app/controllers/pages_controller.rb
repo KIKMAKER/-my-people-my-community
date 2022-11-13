@@ -13,6 +13,8 @@ class PagesController < ApplicationController
   def dashboard
     @projects = Project.where(user: current_user)
     @project_member = ProjectMember.where(user: current_user)
-
+    # @conversations_invitor = Conversation.where(invitor: current_user)
+    # @conversations_invitee = Conversation.where(invitee: current_user)
+    @conversations = Conversation.where(invitor: current_user).or(Conversation.where(invitee: current_user))
   end
 end
