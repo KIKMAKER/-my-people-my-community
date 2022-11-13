@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       ConversationChannel.broadcast_to(
         @conversation,
         render_to_string(
-          partial: "messages/messages", locals: {message: @message}
+          partial: "messages/messages", locals: { message: @message }
         )
       )
       head :ok

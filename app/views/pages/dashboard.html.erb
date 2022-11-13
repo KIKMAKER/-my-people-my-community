@@ -18,6 +18,7 @@
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <div class = "m-4 p-4">
+<%# #Projects initiated by the user %>
               <% current_user.initiated_projects.each do |project| %>
                 <h4><%= link_to project.title, project_path(project) %></h4>
                 <div>
@@ -26,6 +27,7 @@
                     <div class = "p-4"><%= project_member.user.first_name %> (<%= project_member.status %>)
                     </div>
                     <%= status_link(project_member)%>
+                    <%= link_to "Start chat", user_conversations_path(project_member.user), data: {turbo_method: :post}  %>
                     <% end %>
                 </div>
               <% end %>
@@ -48,6 +50,13 @@
 
 
         <div class="tab-pane fade show active" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
+          <div class="m-4 p-4">
+          <% current_user.initiated_projects.each do |project| %>
+            <% project.project_members.each do |project_member| %>
+              <%= link_to "Chat with #{project_member.user.first_name}", user_conversations_path(project_member.user), data: {turbo_method: :post}  %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
     </div>
   </div>

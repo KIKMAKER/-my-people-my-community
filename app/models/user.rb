@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :project_members
   has_many :projects, through: :project_members
   has_many :initiated_projects, class_name: 'Project'
-  
+
   has_many :posts
   has_many :user_skills
   has_many :skills, through: :user_skills
@@ -28,6 +28,10 @@ class User < ApplicationRecord
 
   def self.find_by_param(input)
     find_by_username(input)
+  end
+
+  def full_name(user)
+    "#{user.first_name} #{user.last_name}"
   end
 
   include PgSearch::Model
