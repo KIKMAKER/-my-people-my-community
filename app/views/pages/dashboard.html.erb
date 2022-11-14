@@ -42,7 +42,7 @@
             <%= link_to "Browse Projects Here", projects_path %>
           <% else %>
             <% current_user.projects.each do |project|  %>
-            <%= project.title %>
+            <p><%= project.title %></p>
             <% end %>
           <% end %>
         </div>
