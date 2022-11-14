@@ -29,4 +29,9 @@ class Project < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+
+  def is_owner?(user)
+    self.user == user
+  end
+
 end

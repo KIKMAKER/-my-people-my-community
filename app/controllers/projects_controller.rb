@@ -7,8 +7,11 @@ class ProjectsController < ApplicationController
       @projects = Project.all
     end
   end
-  
+
   def show
+    if !current_user
+      redirect_to new_user_session_path, notice: "Please create an account"
+    end
     ## one project's page
     @project = Project.find(params[:id])
     @project_member = ProjectMember.new

@@ -19,9 +19,6 @@
     <div>
       <div class="tab-content container-header" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-
-
           <% current_user.initiated_projects.each do |project| %>
             <div class="dashboard-card">
               <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "#{project.photo}.jpg" %>);">
@@ -36,45 +33,45 @@
                 <% project.project_members.each do |project_member| %>
                   <div class="card-content-items">
                     <p><%= project_member.user.first_name %> (<%= project_member.status %>):</p>
-
                     <%= status_link(project_member)%>
-
                     <%= link_to "Start chat", user_conversations_path(project_member.user), data: {turbo_method: :post}, class:"btn-chat"  %>
                   </div>
                 <% end %>
               </div>
             <% end %>
           </div>
-
-
         </div>
       </div>
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-      <div class = "m-4 p-4">
-        <% if current_user.projects.empty? %>
-          <p><%= "You currently don't have any projects" %></p>
-          <p><%= link_to "Browse Projects Here", projects_path %></p>
-        <% else %>
-          <% current_user.projects.each do |project|  %>
-            <p><%= project.title %></p>
-          <% end %>
-        <% end %>
+      <% if current_user.projects.empty? %>
+        <p><%= "You currently don't have any projects" %></p>
+        <p><%= link_to "Browse Projects Here", projects_path %></p>
+      <% else %>
+        <% current_user.projects.each do |project|  %>
+          <div class="dashboard-card">
+            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "#{project.photo}.jpg" %>);">
+              <h4><%= link_to project.title, project_path(project) %></h4>
+              <div class="card-content">
+                <div class="card-content-items">
+                  <p>Status - <%= project.status %></p>
+                  <p><%= project.description %></p>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-
-        <div class="notification">
-          <% @conversations.each do |conversation| %>
-            <%= image_tag "#{conversation.other_user(current_user).first_name}.jpg", class: "avatar-large" %>
-            <div class="notification-content">
-              <p><%= link_to "Chat with #{conversation.other_user(current_user).first_name}", conversation_path(conversation) %></p>
-            </div>
-          <% end %>
-        </div>
-
+      <div class="notification">
+        <% @conversations.each do |conversation| %>
+          <%= image_tag "#{conversation.other_user(current_user).first_name}.jpg", class: "avatar-large" %>
+          <div class="notification-content">
+            <p><%= link_to "Chat with #{conversation.other_user(current_user).first_name}", conversation_path(conversation) %></p>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-</div>
 </div>

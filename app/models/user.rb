@@ -31,8 +31,24 @@ class User < ApplicationRecord
     find_by_username(input)
   end
 
-  def full_name(user)
+  def full_name
     "#{user.first_name} #{user.last_name}"
+  end
+
+  def accepted_member_of_project?(project)
+    project_members.find_by(project: project).accepted?
+  end
+
+  def member_of_project?(project)
+    projects.include?(project)
+  end
+
+  def can_apply_to_project?(project)
+    !member_or_owner_of_project?(project)
+  end
+
+  def member_or_owner_of_project?(project)
+    member_of_project?(project) || project.is_owner?(self)
   end
 
   include PgSearch::Model
