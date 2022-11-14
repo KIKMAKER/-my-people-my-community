@@ -56,6 +56,7 @@
       <li>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</li>
       <li>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</li>
     </ul>
+
   </div>
 
   <div>
@@ -65,6 +66,25 @@
           <% end %>
    <% end %>
   </div>
-
+<div>
   <p><%= link_to "Back to all projects", projects_path %></p>
   <% end %>
+</div>
+<div class="container">
+  <div class="form">
+    <h2>Create a new Post:</h2>
+      <%= simple_form_for [@project, @post] do |f| %>
+        <%= f.input :content, :label => "Describe any new updates for this Project" %>
+        <%= f.button :submit, class: "btn" %>
+      <% end %>
+    </div>
+      <div>
+       <h5>Project Posts:</h5>
+        <% @posts.each do |post| %>
+        <p><%= post.user.first_name %></p>
+        <p><%= post.content %></p>
+
+        <% end %>
+
+      </div>
+</div>

@@ -12,6 +12,8 @@ class ProjectsController < ApplicationController
     ## one project's page
     @project = Project.find(params[:id])
     @project_member = ProjectMember.new
+    @posts = Post.where(params[:project_id])
+    @post = Post.new
   end
 
   def new
