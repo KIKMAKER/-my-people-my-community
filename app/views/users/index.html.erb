@@ -1,39 +1,42 @@
 <div class="container">
-<h1>Community Volunteers</h1>
-  <div class="row justify-content-center">
+  <div class="justify-content-center">
+    <div class = "mt-4">
+      <h1>Community Volunteers</h1>
+    </div>
     <div class = "p-4">
-      <%= form_with url: users_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: users_path, method: :get, class: "d-flex justify-content-center" do %>
         <%= text_field_tag :query,
-          params[:query],
-          class: "button-input",
-          placeholder: "Find a volunteer by their name, location or skill"
-        %>
+              params[:query],
+              class: "button-input",
+              placeholder: "Find a volunteer by their name, location or skill"
+            %>
         <%= submit_tag "Search", class: "search-button" %>
       <% end %>
     </div>
-
-    <div>
+    <div class="cards-container">
       <% @users.each do |user| %>
-      <div class="card-user">
-        <div class="d-flex">
-          <div class="mr-auto p-2 user-details">
-          <%= image_tag  "#{user.first_name}.jpg", class:"avatar-bordered" %>
-            <h3><%= link_to user.first_name, user_path(user) %></h3>
-          </div>
-          <div class="p-2">
-            <p><strong>Skills:</strong></p>
-            <div>
-              <% user.skills.each do |skill| %>
-                <p><%= skill.name %></p>
-              <% end %>
-              <div>
-                <h5><i class="mt-5 fa-solid fa-location-pin"></i> <%= user.location %></h5>
+        <%= link_to user_path(user) do %>
+          <div class="card-user">
+            <div class="d-flex">
+              <div class="mr-auto p-2 user-details">
+                <%= image_tag  "#{user.first_name}.jpg", class:"avatar-bordered" %>
+                <h3><%= user.first_name %></h3>
+              </div>
+              <div class="p-2">
+                <p><strong>Skills:</strong></p>
+                <div>
+                  <% user.skills.each do |skill| %>
+                    <p><%= skill.name %></p>
+                  <% end %>
+                  <div>
+                    <h5><i class="mt-5 fa-solid fa-location-pin"></i> <%= user.location %></h5>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>
