@@ -1,6 +1,7 @@
 <div class="container">
-  <div class="form">
-    <h2>Create a new Project:</h2>
+  <div class="d-flex justify-content-center pt-3 pb-5">
+    <div class="form">
+      <h2>Create a new Project:</h2>
       <%= simple_form_for @project do |f| %>
         <%= f.input :title %>
         <%= f.input :description, :label => "Describe the aim of this Project and some of the needed skills" %>
@@ -12,5 +13,5 @@
         <%= f.button :submit, class: "btn" %>
       <% end %>
     </div>
-
+  </div>
 </div>
