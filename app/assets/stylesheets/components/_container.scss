@@ -1,10 +1,29 @@
-.container {
-  width: 800px;
-  // color: #FA6139;
-  margin: 20px;
-}
+// .container {
+//   width: 800px;
+//   // color: #FA6139;
+//   margin: 20px;
+//   background-color: #FDF6F9;
+// }
 
 // body {
 //   background-image: url("Slice 1.png"), url("Slice 2.png");
 //   width: 100%;
 // }
+.container {
+  text-align: center;
+  margin: auto;
+  margin-top: 65px;
+  }
+
+  a {
+    text-decoration: none;
+
+    color:#934683;
+  }
+
+
+  .body {
+    margin-bottom: 50px;
+    margin-top: 65px;
+    background-color: #F6C9E9;
+  }
