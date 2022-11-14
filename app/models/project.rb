@@ -28,4 +28,5 @@ class Project < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
 end
