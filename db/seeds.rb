@@ -140,20 +140,20 @@ puts "Assigning skills to projects"
 
 sunshine.project_skills.create(
   [
-    { skill: youth },
-    { skill: community_development },
-    { skill: education }
+    { skill: architecture },
+    { skill: architecture },
+    { skill: finance }
   ]
 )
 
 soccer.project_skills.create(
   [
-    { skill: sport },
-    { skill: youth }
+    { skill: finance },
+    { skill: project_management }
   ]
 )
 
-puts "#{ProjectSkills.count} project_skills assigned to projects"
+puts "#{ProjectSkill.count} project_skills assigned to projects"
 
 puts "Assigning project_categories to projects"
 
@@ -167,8 +167,8 @@ sunshine.project_categories.create(
 
 soccer.project_categories.create(
   [
-    { category: sport },
-    { category: youth }
+    { category: youth },
+    { category: sport }
   ]
 )
 
