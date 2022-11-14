@@ -32,3 +32,41 @@ font-weight: bold;
   opacity: 1;
   background-color:  #f1f0ea;
 }
+
+.btn-accept {
+  background-color: #9EBC9E;
+  margin: auto 10px;
+  border-radius: 12px;
+  color: white;
+  border: 1px solid #CAD2E8;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
+.btn-decline {
+  background-color: #9C2438;
+  margin: auto 10px;
+  border-radius: 12px;
+  color: white;
+  border: 1px solid #CAD2E8;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-chat {
+  background-color: #CAD2E8;
+  border-radius: 12px;
+  color: black;
+  border: 1px solid #CAD2E8;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  opacity: 0.6;
+  font-weight: bold;
+  }
