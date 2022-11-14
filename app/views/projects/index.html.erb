@@ -1,37 +1,33 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="">
-      <div class = "mt-4">
-        <h1>Browse All Projects</h1>
-      </div>
-      <div class = "p-4">
-        <%= form_with url: projects_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
+    <div class = "mt-4">
+      <h1>Browse All Projects</h1>
+    </div>
+    <div class = "p-4">
+      <%= form_with url: projects_path, method: :get, class: "d-flex justify-content-center" do %>
+        <%= text_field_tag :query,
             params[:query],
             class: "button-input",
-            placeholder: "    Find a project by it's name, location or social category"
+            placeholder: "Find a project by it's name, location or social category"
           %>
-          <%= submit_tag "Search", class: "search-button" %>
-        <% end %>
-      </div>
-      <div>
-          <% @projects.each do |project| %>
-          <div class="card-trip">
-              <%= image_tag "#{project.photo}.jpg" %>
-              <h3><%= link_to project.title, project_path(project) %></h3>
-              <h5><i class="fa-solid fa-location-pin"></i> <%= project.location %></h5>
-              <h4>Categories:</h4>
-              <div>
-                <% project.categories.each do |category| %>
-                  <div>
-                    <p><%= category.name %></p>
-                  </div>
-                <% end %>
-              </div>
-              <p>Start date: <strong><%= project.start_date.strftime("%e %B %Y") %></strong>  </p>
-          </div>
-            <% end %>
-      </div>
+        <%= submit_tag "Search", class: "search-button" %>
+      <% end %>
     </div>
+    <% @projects.each do |project| %>
+      <div class="card-trip">
+        <%= image_tag "#{project.photo}.jpg" %>
+        <h3><%= link_to project.title, project_path(project) %></h3>
+        <h5><i class="fa-solid fa-location-pin"></i> <%= project.location %></h5>
+        <h4>Categories:</h4>
+        <div>
+          <% project.categories.each do |category| %>
+            <div>
+              <p><%= category.name %></p>
+            </div>
+          <% end %>
+        </div>
+        <p>Start date: <strong><%= project.start_date.strftime("%e %B %Y") %></strong>  </p>
+      </div>
+    <% end %>
   </div>
 </div>
