@@ -10,3 +10,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// the wallpaper margin on every page
+.main-content {
+  padding: 0 15%;
+  // background: yellow;
+  background-image: url("background_3.png");
+}

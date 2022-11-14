@@ -1,15 +1,17 @@
-<div class="banner flex-container d-flex align-items-center">
-  <div
-    class="banner-img-together">
+<div class="banner">
+  <div class="banner-img-dreamtime">
+    <%= image_tag "dreamtime.png" %>
   </div>
-  <div class="text">
-    <h1>My People </h1>
-    <h1>My Community</h1>
+  <div class="text-center">
+    <h1>My People, My Community </h1>
     <p> Skill share for social change </p>
   </div>
 </div>
-<div class="container justify-content-center">
-  <h2> <%= link_to "Browse Projects", projects_path, class: "button" %> <%= link_to 'Find a Volunteer', users_path, class: "button" %></h2>
+<div class="d-flex justify-content-center home-buttons">
+  <h2>
+    <%= link_to "Browse Projects", projects_path, class: "button" %>
+    <%= link_to 'Find a Volunteer', users_path, class: "button" %>
+  </h2>
 </div>
 <% if false %>
   <% if current_user %>

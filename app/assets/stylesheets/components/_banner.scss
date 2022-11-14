@@ -1,24 +1,28 @@
 .banner {
-  background-color: #f1f0ea;
+  background-color: #ffffff;
   // width: 60vw;
   // height: 80vh;
   margin: auto;
-  text-align: left;
-  align-items: left;
-  margin: 40px;
+  text-align: center;
+  align-items: center;
+  // margin: 40px;
+
+  p {
+    margin-bottom: 0;
+    background-color: #ffffff;
+  }
 }
 
 .flex-container {
   display: flex;
 }
 
-.banner-img-together {
-  background-image: url("together.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 40vh;
-  width: 40vw;
-  margin-left: 10%;
+.banner-img-dreamtime {
+  width: 100%;
+  text-align: center;
+  img {
+    width: 100%;
+  }
  }
 
 .banner-img-slice1 {
@@ -41,7 +45,11 @@
 
 .banner p {
   font-size: 30px;
-  color: #2A1508;
+  color: #3576e9;
+}
+
+.banner h1 {
+  color: #3576e9
 }
 
 .project-banner {
