@@ -1,0 +1,45 @@
+.card-user {
+  overflow: hidden;
+  background: #EDEAD8;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 20px 50px;
+  width: 55vw;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.card-user a {
+  text-decoration: none;
+}
+
+.card-user h5 {
+  text-align: left;
+  padding-left: 20px;
+  font-size: medium;
+}
+
+.card-user h3 {
+  text-align: left;
+  // padding-left: 20px;
+  font-size: medium;
+  margin-top: 8px;
+}
+
+.fa-location-dot h5 {
+  text-decoration: dashed;
+}
+
+.card-user p {
+  font-size: 20px;
+  opacity: .5;
+  margin: 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.user-details {
+  min-width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

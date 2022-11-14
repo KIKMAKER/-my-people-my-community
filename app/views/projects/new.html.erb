@@ -1,13 +1,16 @@
-<div class="form">
-  <h2>Create a new Project:</h2>
-    <%= simple_form_for @project do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description, :label => "Describe the aim of this Project and some of the needed skills" %>
-      <%= f.association :skills, :label => "Which skills will your project need?", as: :check_boxes, wrapper: :vertical_collection_inline %>
-      <%= f.input :location %>
-      <%= f.association :categories, :label => "Which categories best describes your project", as: :check_boxes, wrapper: :vertical_collection_inline %>
-      <%= f.input :start_date, as: :date, html5: true %>
-      <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.button :submit, class: "btn" %>
-    <% end %>
-  </div>
+<div class="container">
+  <div class="form">
+    <h2>Create a new Project:</h2>
+      <%= simple_form_for @project do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description, :label => "Describe the aim of this Project and some of the needed skills" %>
+        <%= f.association :skills, :label => "Which skills will your project need?", as: :check_boxes, wrapper: :vertical_collection_inline %>
+        <%= f.input :location %>
+        <%= f.association :categories, :label => "Which categories best describes your project", as: :check_boxes, wrapper: :vertical_collection_inline %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.button :submit, class: "btn" %>
+      <% end %>
+    </div>
+
+</div>

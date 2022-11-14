@@ -1,42 +1,39 @@
-<div class="pagesbanner">
-  <div class="text">
-    <h1>Browse Active Community Volunteers</h1>
-  </div>
-</div>
-
 <div class="container">
+<h1>Community Volunteers</h1>
   <div class="row justify-content-center">
+    <div class = "p-4">
+      <%= form_with url: users_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "button-input",
+          placeholder: "Find a volunteer by their name, location or skill"
+        %>
+        <%= submit_tag "Search", class: "search-button" %>
+      <% end %>
+    </div>
 
-
-        <div class = "p-4">
-                <%= form_with url: users_path, method: :get, class: "d-flex" do %>
-                  <%= text_field_tag :query,
-                    params[:query],
-                    class: "button-input",
-                    placeholder: "   Find a volunteer by their name, location or skill"
-                  %>
-                  <%= submit_tag "Search", class: "search-button" %>
-                <% end %>
-        </div>
-
-        <div>
-          <% @users.each do |user| %>
-           <div class="card-trip">
-            <%= image_tag  "#{user.first_name}.jpg" %>
+    <div>
+      <% @users.each do |user| %>
+      <div class="card-user">
+        <div class="d-flex">
+          <div class="mr-auto p-2 user-details">
+          <%= image_tag  "#{user.first_name}.jpg", class:"avatar-bordered" %>
             <h3><%= link_to user.first_name, user_path(user) %></h3>
-            <h3><%= user.location %></h3>
-            <h5>Skills:</h5>
-            <%# <p><%= user.description %></p>
-               <div>
+          </div>
+          <div class="p-2">
+            <p><strong>Skills:</strong></p>
+            <div>
               <% user.skills.each do |skill| %>
-              <div>
                 <p><%= skill.name %></p>
-              </div>
               <% end %>
+              <div>
+                <h5><i class="mt-5 fa-solid fa-location-pin"></i> <%= user.location %></h5>
+              </div>
             </div>
           </div>
-          <% end %>
         </div>
-
+      </div>
+        <% end %>
+    </div>
   </div>
 </div>

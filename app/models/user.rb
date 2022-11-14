@@ -1,11 +1,12 @@
 class User < ApplicationRecord
+  has_many :conversations
   has_many :invitor_conversations, class_name: 'Conversation', foreign_key: 'invitor_id'
   has_many :invitee_conversations, class_name: 'Conversation', foreign_key: 'invitee_id'
   has_many :messages
   has_many :project_members
   has_many :projects, through: :project_members
   has_many :initiated_projects, class_name: 'Project'
-  
+
   has_many :posts
   has_many :user_skills
   has_many :skills, through: :user_skills
@@ -28,6 +29,10 @@ class User < ApplicationRecord
 
   def self.find_by_param(input)
     find_by_username(input)
+  end
+
+  def full_name(user)
+    "#{user.first_name} #{user.last_name}"
   end
 
   include PgSearch::Model

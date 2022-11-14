@@ -12,7 +12,7 @@
   display: flex;
 }
 
-.img-together {
+.banner-img-together {
   background-image: url("together.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -21,11 +21,22 @@
   margin-left: 10%;
  }
 
-.banner h1 {
-  font-size: 100px;
-  color: #E54B03;
-  text-shadow: #000 0px 0px 1px;
-}
+.banner-img-slice1 {
+  background-image: url("Slice 1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 40vh;
+  width: 40vw;
+  margin-left: 10%;
+ }
+ .banner-img-slice2 {
+  background-image: url("Slice 2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 40vh;
+  width: 40vw;
+  margin-left: 10%;
+ }
 
 
 .banner p {
@@ -37,6 +48,10 @@
   height: 60vh;
   width: 100vw;
   background-size: cover;
+}
+
+.banner-btn {
+  margin-top: 12px;
 }
 
 // .slice1 {
