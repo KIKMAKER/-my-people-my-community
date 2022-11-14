@@ -1,90 +1,113 @@
-
 <div class="banner-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "#{@project.photo}.jpg" %>);">
   <div class="container">
-    <h1><%= @project.title %></h1>
-    <div class="banner-btn">
-      <% if @project.user != current_user %>
-        <%= simple_form_for [@project, @project_member] do |f| %>
-          <%= f.submit 'Apply', class: "button"%>
-          <% end %>
-    <% end %>
-    </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="d-flex background">
-    <div class="backround small">
-      <p>Categories:</p>
-      <% @project.categories.each do |category| %>
-        <p><%= category.name %></p>
-      <% end %>
-      <p>Skills needed:</p>
-      <% @project.skills.each do |skill| %>
-        <p><%= skill.name %></p>
-      <% end %>
-        <p>Project Management</p>
-        <p>Architecture</p>
-    </div>
-    <div class="background big">
-    <h5>Learn more about <%= @project.title %></h5>
-      <p><%= @project.description %></p>
-      <h5>Project stats:</h5>
-      <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
-      <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
-    </div>
-</div>
-
-
-<% if false %>
-  <div>
-    <h5><%= @project.location %></h5>
-      <p><%= @project.description %></p>
-      <p>Categories:</p>
-      <ul>
-        <% @project.categories.each do |category| %>
-          <li><%= category.name %></li>
+        <h1><%= @project.title %></h1>
+        <div class="banner-btn">
+          <% if @project.user != current_user %>
+            <%= simple_form_for [@project, @project_member] do |f| %>
+              <%= f.submit 'Apply', class: "button"%>
+              <% end %>
         <% end %>
-      </ul>
-    <p>Start date: <strong><%= @project.start_date.strftime("%e %B %Y") %>
-      </strong> - End date: <strong><%= @project.end_date.strftime("%e %B %Y") %></strong> </p>
+        </div>
   </div>
-
-  <div>
-    <h5>Project stats:</h5>
-    <ul>
-      <li>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</li>
-      <li>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</li>
-    </ul>
-
-  </div>
-
-  <div>
-    <% if @project.user != current_user %>
-      <%= simple_form_for [@project, @project_member] do |f| %>
-          <%= f.submit 'Apply', class: "button"%>
-          <% end %>
-   <% end %>
-  </div>
-<div>
-  <p><%= link_to "Back to all projects", projects_path %></p>
-  <% end %>
 </div>
-<div class="container">
-  <div class="form">
-    <h2>Create a new Post:</h2>
-      <%= simple_form_for [@project, @post] do |f| %>
-        <%= f.input :content, :label => "Describe any new updates for this Project" %>
-        <%= f.button :submit, class: "btn" %>
-      <% end %>
-    </div>
-      <div>
-       <h5>Project Posts:</h5>
-        <% @posts.each do |post| %>
-        <p><%= post.user.first_name %></p>
-        <p><%= post.content %></p>
+<%# begin tab %>
+<% if current_user == @project.user || current_user.projects.include?(@project) %>
 
-        <% end %>
+<ul class="nav nav-pills mb-3 mt-4 justify-content-around" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active nav-red" id="pills-details-tab" data-bs-toggle="pill" data-bs-target="#pills-details" type="button" role="tab" aria-controls="pills-details" aria-selected="true">Project Details:</button>
+  </li>
+  <li class="nav-item" role="presentation">
+      <button class="nav-link nav-red" id="pills-posts-tab" data-bs-toggle="pill" data-bs-target="#pills-posts" type="button" role="tab" aria-controls="pills-posts" aria-selected="false">Project Posts:</button>
+  </li>
+</ul>
 
+<div class="tab-content" id="pills-tabContent">
+        <%# project details %>
+  <div class="tab-pane fade show active" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab">
+    <div class="container">
+      <div class="d-flex background">
+        <div class="backround small">
+          <p>Categories:</p>
+          <% @project.categories.each do |category| %>
+          <p><%= category.name %></p>
+          <% end %>
+          <p>Skills needed:</p>
+          <% @project.skills.each do |skill| %>
+          <p><%= skill.name %></p>
+          <% end %>
+          <p>Project Management</p>
+          <p>Architecture</p>
       </div>
+      <div class="background big">
+        <h5>Learn more about <%= @project.title %></h5>
+          <p><%= @project.description %></p>
+          <h5>Project stats:</h5>
+          <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
+          <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
+      </div>
+    </div>
+  </div>
+      <%# project details %>
 </div>
+
+    <%# posts %>
+<div class="tab-pane fade" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
+
+    <div class="container">
+      <div class="form">
+        <h2>Create a new Post:</h2>
+          <%= simple_form_for [@project, @post] do |f| %>
+          <%= f.input :content, :label => "Describe any new updates for this Project" %>
+          <%= f.button :submit, class: "btn" %>
+          <% end %>
+        </div>
+        <div class="notification">
+            <% @posts.each do |post| %>
+            <%= image_tag "#{post.user.first_name}.jpg", class: "avatar-large" %>
+            <div class="notification-content">
+            <p><%= post.content %></p>
+            </div>
+            <%end %>
+        </div>
+
+    </div>
+    <%# posts %>
+  </div>
+  <%# end tab %>
+</div>
+<% else %>
+   <div class="container">
+      <div class="d-flex background">
+        <div class="backround small">
+          <p>Categories:</p>
+          <% @project.categories.each do |category| %>
+          <p><%= category.name %></p>
+          <% end %>
+          <p>Skills needed:</p>
+          <% @project.skills.each do |skill| %>
+          <p><%= skill.name %></p>
+          <% end %>
+          <p>Project Management</p>
+          <p>Architecture</p>
+      </div>
+      <div class="background big">
+        <h5>Learn more about <%= @project.title %></h5>
+          <p><%= @project.description %></p>
+          <h5>Project stats:</h5>
+          <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
+          <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%# For Refactoring later:
+def project_owner?(user)
+    user == @project.user
+  end
+
+  def project_member?(user)
+    user.projects.include?(@project)
+  end %>
