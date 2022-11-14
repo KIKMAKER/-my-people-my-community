@@ -7,11 +7,13 @@ class ProjectsController < ApplicationController
       @projects = Project.all
     end
   end
-
+  
   def show
     ## one project's page
     @project = Project.find(params[:id])
     @project_member = ProjectMember.new
+    @posts = Post.where(project_id: params[:id])
+    @post = Post.new
   end
 
   def new
