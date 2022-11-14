@@ -31,30 +31,31 @@
             <% end %>
           </div>
         </div>
-      </div>
-      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <div class = "m-4 p-4">
-          <% if current_user.projects.empty? %>
-            <%= "You currently don't have any projects" %>
-            <%= link_to "Browse Projects Here", projects_path %>
-          <% else %>
-            <% current_user.projects.each do |project|  %>
-              <p><%= project.title %></p>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <div class = "m-4 p-4">
+            <% if current_user.projects.empty? %>
+              <%= "You currently don't have any projects" %>
+              <%= link_to "Browse Projects Here", projects_path %>
+            <% else %>
+              <% current_user.projects.each do |project|  %>
+                <p><%= project.title %></p>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
-      </div>
-      <div class="tab-pane fade show active" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-        <div class="m-4 p-4">
-          <div class="notification">
-            <% @conversations.each do |conversation| %>
-            <%= image_tag "#{conversation.other_user(current_user).first_name}.jpg", class: "avatar-large" %>
-            <div class="notification-content">
-              <p><%= link_to "Chat with #{conversation.other_user(current_user).first_name}", conversation_path(conversation) %></p>
+        <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
+          <div class="m-4 p-4">
+            <div class="notification">
+              <% @conversations.each do |conversation| %>
+                <%= image_tag "#{conversation.other_user(current_user).first_name}.jpg", class: "avatar-large" %>
+                <div class="notification-content">
+                  <p><%= link_to "Chat with #{conversation.other_user(current_user).first_name}", conversation_path(conversation) %></p>
+                </div>
+              <% end %>
             </div>
-            <%end %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
