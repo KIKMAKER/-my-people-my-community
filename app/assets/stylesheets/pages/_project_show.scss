@@ -1,3 +1,15 @@
+#pills-posts {
+  .container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 400px 1fr;
+
+    .form {
+      position: sticky;
+      top: 50px;
+    }
+  }
+
 .banner-heading {
   display:flex;
   justify-content: center;
@@ -11,4 +23,9 @@
 .d-flex  {
   display:flex;
   justify-content: left;
+
+.project-body {
+  display:flex;
+  justify-content: left;
+  margin: 50px;
 }
