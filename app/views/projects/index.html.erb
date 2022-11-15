@@ -15,6 +15,9 @@
                 
   <div class="project-index-cards container mt-4">
     <% @projects.each do |project| %>
+
+    <%= link_to project_path(project) do %>
+
       <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-trip-infos">
@@ -25,6 +28,8 @@
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
+      <% end %>
+    <% end %>
     <% end %>
   </div>
 </div>
