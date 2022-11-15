@@ -94,6 +94,10 @@
         <h5>Project stats:</h5>
         <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
         <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
+        <% @project.project_members.each do |member| %>
+        <p><%= member.user.first_name %></p>
+        <% end %>
+        <%=  %>
       </div>
     </div>
   </div>
