@@ -42,3 +42,23 @@
 .banner-btn {
   margin-top: 12px;
 }
+
+.user-show-banner {
+  background-color: #E0F8F4;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: flex-end;
+
+  .user-show-avatar {
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    .avatar-large {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
