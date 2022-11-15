@@ -1,0 +1,12 @@
+#pills-posts {
+  .container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 400px 1fr;
+
+    .form {
+      position: sticky;
+      top: 50px;
+    }
+  }
+}

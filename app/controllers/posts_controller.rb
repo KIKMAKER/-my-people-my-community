@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.project = @project
     if @post.save
-      redirect_to project_path(@project)
+      redirect_to project_path(@project, show_posts: 1)
     else
       render "../views/projects/show.html.erb", status: :unprocessable_entity
     end
