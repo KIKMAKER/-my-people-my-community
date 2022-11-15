@@ -2,10 +2,12 @@
   background-color: #EED8CB;
   // width: 60vw;
   // height: 80vh;
-  margin: auto;
+
   text-align: left;
-  align-items: left;
-  margin: 40px;
+  align-items: center;
+  justify-content: center;
+  gap:40px;
+  margin-top: 40px;
 }
 
 .flex-container {
@@ -16,28 +18,30 @@
   background-image: url("building.jpeg");
   background-size: contain;
   background-repeat: no-repeat;
-  height: 40vh;
+  height: 400px;
   width: 40vw;
-  margin-left: 10%;
- }
+}
 
-.banner-img-slice1 {
-  background-image: url("Slice 1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 40vh;
-  width: 40vw;
-  margin-left: 10%;
- }
- .banner-img-slice2 {
-  background-image: url("Slice 2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 40vh;
-  width: 40vw;
-  margin-left: 10%;
- }
+// .banner-img-slice1 {
+//   background-image: url("Slice 1.png");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   height: 400px;
+//   width: 40vw;
+//  }
+//  .banner-img-slice2 {
+//   background-image: url("Slice 2.png");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   height: 40vh;
+//   width: 40vw;
+//   margin-left: 10%;
+//  }
 
+.banner h1 {
+  color: black;
+  font-size: 120px;
+}
 
 .banner p {
   font-size: 30px;
