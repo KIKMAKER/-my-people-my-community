@@ -6,15 +6,17 @@
     </div>
   </div>
   <div class="message-area">
-    <div class="message-btn">
-    </div>
+   <%= link_to "Message", root_path, class: "message-btn" %>
   </div>
   <div class="user-show-content">
     <div class="user-skills">
       <h4>Skills</h4>
+          <% @user.skills.each do |skill| %>
       <div class="user-skill">
+            <%= skill.name %>
       </div>
-    </div>
+          <% end %>
+      </div>
     <div class="user-info">
       <div class="user-about">
         <h3>About</h3>
