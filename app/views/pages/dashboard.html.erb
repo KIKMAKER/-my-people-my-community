@@ -23,7 +23,7 @@
             <div class="dashboard-card">
               <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
                 <%# #Projects initiated by the user %>
-              
+
                 <h4><%= link_to project.title, project_path(project) %></h4>
               </div>
               <div class="card-content">
@@ -50,7 +50,7 @@
       <% else %>
         <% current_user.projects.each do |project|  %>
           <div class="dashboard-card">
-            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "#{project.photo}.jpg" %>);">
+            <%# <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "#{project.photo}.jpg" %>);"> %>
               <h4><%= link_to project.title, project_path(project) %></h4>
               <div class="card-content">
                 <div class="card-content-items">
