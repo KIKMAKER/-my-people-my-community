@@ -1,8 +1,8 @@
-<div>
+<div class="borders">
   <div class="user-show-banner">
-    <h1><%= @user.first_name %>'s Volunteer Profile</h1>
+    <h1><%= @user.first_name %>'s Profile</h1>
     <div class="user-show-avatar">
-      <%= image_tag  "David.jpg", class: "avatar-large"%>
+      <%= image_tag "profile_placeholder.png", class: "avatar-large"%>
     </div>
   </div>
   <div class="message-area">
@@ -21,65 +21,31 @@
       <div class="user-about">
         <h3>About</h3>
         <div class="user-about-content">
+          <div>
+            <a href=<%=  @user.linkedin_url %>>LinkedIn</a>
+          </div>
+            <h5><%= @user.location %></h5>
+            <p><%= @user.bio %></p>
         </div>
       </div>
       <div class="user-projects">
         <h3>User Projects</h3>
         <div class="user-project-card">
+            <% if @user.initiated_projects.empty? %>
+            <h5> No projects innitiated </h5>
+            <% else %>
+              <h4><%= @user.first_name %>'s projects:</h4>
+              <ul>
+               <% @user.initiated_projects.each do |project| %>
+              <li><%= link_to project.title, project_path(project) %></li>
+              <% end %>
+              </ul>
+              <% end %>
         </div>
+          <% if current_user == @user %>
+          <%= link_to "Edit profile", edit_user_path(@user), class: "button" %>
+          <% end %>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-<div class="pagesbanner">
-
-  <div class="text">
-    <h1><%= @user.first_name %>'s Volunteer Profile</h1>
-  </div>
-</div>
-<div class ="container">
-  <h1><%= @user.first_name %></h1>
-  <h5><%= @user.location %></h5>
-  <p><%= @user.bio %></p>
-  <%# <%= image_tag  "#{@user.first_name}.jpg" %>
-  <p>Skills:</p>
-  <ul>
-    <% @user.skills.each do |skill| %>
-      <li><%= skill.name %></li>
-    <% end %>
-  </ul>
-  <div>
-    <% if @user.initiated_projects.empty? %>
-    <% else %>
-      <h4><%= @user.first_name %>'s projects:</h4>
-      <ul>
-        <% @user.initiated_projects.each do |project| %>
-          <li><%= link_to project.title, project_path(project) %></li>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
-  <div>
-    <% if current_user.projects.empty? %>
-    <% else%>
-      <h4><%= @user.first_name %> volunteers on:</h4>
-      <ul>
-        <% current_user.projects.each do |project| %>
-          <li><%= link_to project.title, project_path(project) %></li>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
-  <a href=<%=  @user.linkedin_url %>>LinkedIn</a>
-<div>
-  <% if current_user == @user %>
-  <%= link_to "Edit profile", edit_user_path(@user), class: "button" %>
-  <% end %>
 </div>
