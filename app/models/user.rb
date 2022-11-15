@@ -51,6 +51,25 @@ class User < ApplicationRecord
     member_of_project?(project) || project.is_owner?(self)
   end
 
+  def supporter?
+    projects.count > 1
+  end
+
+  def all_rounder?
+    skills_on_projects = projects.map { |project| project.skills }.flatten
+    skills_on_projects.count { |skill| skills.include?(skill) }
+  end
+
+  def expert?
+    project_skill_names = projects.map { |project| project.skills.map(&:name) }.flatten
+    skills.map(&:name).any? { |skill| project_skill_names.count(skill) > 1 }
+  end
+
+  def expert_in
+    project_skill_names = projects.map { |project| project.skills.map(&:name) }.flatten
+    skills.map(&:name).find { |skill| project_skill_names.count(skill) > 1 }
+  end
+
   include PgSearch::Model
     pg_search_scope :global_search,
       against: [ :first_name, :location ],

@@ -1,5 +1,5 @@
 .button {
-border-radius: 12px;
+border-radius: 8px;
 color: black;
 border: 1px solid #CAD2E8;
 padding: 12px 24px;
@@ -28,7 +28,7 @@ font-weight: bold;
 // $red: red;
 
 .button:hover {
-  opacity: 1;
+  opacity: 0.6;
   background-color:  #f1f0ea;
 }
 
