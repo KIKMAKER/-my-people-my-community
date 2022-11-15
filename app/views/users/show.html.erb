@@ -7,7 +7,7 @@
   <h1><%= @user.first_name %></h1>
   <h5><%= @user.location %></h5>
   <p><%= @user.bio %></p>
-  <%# <%= image_tag  "#{@user.first_name}.jpg" %> 
+  <%# <%= image_tag  "#{@user.first_name}.jpg" %>
   <p>Skills:</p>
   <ul>
     <% @user.skills.each do |skill| %>
@@ -41,5 +41,4 @@
   <% if current_user == @user %>
   <%= link_to "Edit profile", edit_user_path(@user), class: "button" %>
   <% end %>
-  </div>
-  </div>
+</div>

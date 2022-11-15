@@ -90,7 +90,7 @@ kiki = User.create(
 )
 
 gabriella = User.create(
-  first_name: "“Gabriella",
+  first_name: "Gabriella",
   last_name: "Abdol Aziz",
   username: "gabi rein",
   email: "gabi@people.com",
@@ -310,12 +310,3 @@ bikini.project_members.create(
 puts "#{ProjectMember.count} project_members assigned to projects"
 
 puts "baddass seed file executed, congratulations!"
-
-# image_data = File.read('path/to/image.jpg')
-# Model.create!([
-#   {
-#     ...
-#     image: image_data
-#   },
-#   ...
-# ])
