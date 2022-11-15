@@ -15,7 +15,9 @@
     </div>
     <% @projects.each do |project| %>
       <div class="card-trip">
-        <%= image_tag "#{project.photo}.jpg" %>
+        <%# Replace image %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+
         <h3><%= link_to project.title, project_path(project) %></h3>
         <h5><i class="fa-solid fa-location-pin"></i> <%= project.location %></h5>
         <h4>Categories:</h4>

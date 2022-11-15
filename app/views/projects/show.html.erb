@@ -1,4 +1,4 @@
-<div class="banner-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "#{@project.photo}.jpg" %>);">
+<div class="banner-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
   <div class="container">
     <h1><%= @project.title %></h1>
     <% if current_user.can_apply_to_project?(@project) %>
@@ -12,7 +12,7 @@
 </div>
 <%# begin tab %>
 <% if current_user.member_or_owner_of_project?(@project) %>
-  <% if current_user.accepted_member_of_project?(@project) %>
+  <% if @project.is_owner?(current_user) || current_user.accepted_member_of_project?(@project) %>
     <ul class="nav nav-pills mb-3 mt-4 justify-content-around" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link active nav-red" id="pills-details-tab" data-bs-toggle="pill" data-bs-target="#pills-details" type="button" role="tab" aria-controls="pills-details" aria-selected="true">Project Details:</button>
@@ -62,7 +62,8 @@
         </div>
         <div class="notification">
           <% @posts.each do |post| %>
-            <%= image_tag "#{post.user.first_name}.jpg", class: "avatar-large" %>
+          <%# replace image %>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
             <div class="notification-content">
               <p><%= post.content %></p>
             </div>

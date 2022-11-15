@@ -10,7 +10,8 @@
         <%= f.association :categories, :label => "Which categories best describes your project", as: :check_boxes, wrapper: :vertical_collection_inline %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.button :submit, class: "btn" %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, class: "button" %>
       <% end %>
     </div>
   </div>

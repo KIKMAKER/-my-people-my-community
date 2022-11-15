@@ -21,9 +21,9 @@
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
           <% current_user.initiated_projects.each do |project| %>
             <div class="dashboard-card">
-              <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "#{project.photo}.jpg" %>);">
+              <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
                 <%# #Projects initiated by the user %>
-                <%# <%= image_tag "#{project.photo}.jpg" %>
+              
                 <h4><%= link_to project.title, project_path(project) %></h4>
               </div>
               <div class="card-content">
