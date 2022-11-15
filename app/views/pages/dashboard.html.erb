@@ -68,11 +68,10 @@
       </div>
     </div>
     <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-
       <div class="container">
         <div class="notification">
           <% @conversations.each do |conversation| %>
-            <%= image_tag "#{conversation.other_user(current_user).first_name}.jpg", class: "avatar-large" %>
+            <%# <%= image_tag "#{conversation.other_user(current_user).first_name}.jpg", class: "avatar-large" %>
             <div class="notification-content">
               <p><%= link_to "Chat with #{conversation.other_user(current_user).first_name}", conversation_path(conversation) %></p>
             </div>
