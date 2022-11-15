@@ -1,19 +1,23 @@
 .search-button {
   margin-left: 10px;
-  background-color: #E59040;
-  border: none;
-  border-radius: 20px;
+  border: 1px solid #CAD2E8;
+  border-radius: 8px;
   color: #4F6272;
-  padding: 15px 30px;
+  padding: 12px 24px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
   width: 15vw;
   font-size: large;
 }
 
 .button-input {
-  border-radius: 20px;
-  width: 35vw;
+  border-radius: 8px;
+  width: 50vw;
   padding: 0 20px;
+  background-color: #F4F1DE;
+}
+
+.button:hover {
+  opacity: 0.6;
+  background-color:  #f1f0ea;
 }

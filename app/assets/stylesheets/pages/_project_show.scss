@@ -10,12 +10,12 @@
     }
   }
 
-.banner-heading {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+  .banner-heading {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
 .banner-heading h1 {
   color: black;
@@ -28,4 +28,5 @@
   display:flex;
   justify-content: left;
   margin: 50px;
+
 }

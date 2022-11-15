@@ -9,7 +9,7 @@
 //   background-image: url("Slice 1.png"), url("Slice 2.png");
 //   width: 100%;
 // }
-// .container {
+.container {
 //   // text-align: center;
 //   // margin-top: 35px;
 //   // width: 90%;
@@ -19,7 +19,8 @@
 //   // margin-top: 65px;
 //   // background-color: #c2b5b7;
 //   // border: 2px solid;
-// }
+  border-radius: 8px;
+}
 
 .container-header {
   text-align: center;

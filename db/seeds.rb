@@ -186,6 +186,22 @@ gloria_photo = URI.open("")
 gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "image/png")
 gloria.save
 
+cheri = User.create(
+  first_name: "Cheri",
+  last_name: "Black",
+  username: "Blacki",
+  email: "cheri@people.com",
+  password: "password",
+  bio: "Life is better with a bit of flair. Find me changing the world from the
+  comfort of my couch.",
+  location: "Muizenberg",
+  linkedin_url: "linkedin.com/in/cheriblack"
+)
+
+cheri_photo = URI.open("")
+cheri.photo.attach(io: cheri_photo, filename: "gloria.png", content_type: "image/png")
+cheri.save
+
 puts "#{User.count} users created"
 
 puts "Assigning user_skills to users"
@@ -199,10 +215,10 @@ menno.user_skills.create(skill: business)
 menno.user_skills.create(skill: web_development)
 
 kiki.user_skills.create(skill: compost)
+kiki.user_skills.create(skill: web_development)
 
 gabriella.user_skills.create(skill: photography)
 gabriella.user_skills.create(skill: web_development)
-
 gabriella.user_skills.create(skill: compost)
 
 liam.user_skills.create(skill: graphic_design)
@@ -268,6 +284,23 @@ bikini_photo = URI.open("")
 bikini.photo.attach(io: bikini_photo, filename: "bikini.png", content_type: "image/png")
 bikini.save
 
+tutorly = Project.create(
+  user: cheri,
+  title: "TutorlyABC",
+  description: "Teaching young people how to read is one of the most important
+  jobs in society. It also happens to be Cheri's passion. What isn't her passion
+  is web and graphic design. TutorlyABC teaches shy children to read from the
+  comfort of their own home. All it needs is a wonderful web app and some
+  graphic design to get this small business off it's feet.",
+  location: "Muizenberg",
+  start_date: DateTime.now + 3.weeks,
+  end_date: DateTime.now + 1.year
+)
+
+tutorly_photo = URI.open("")
+tutorly.photo.attach(io: tutorly_photo, filename: "bikini.png", content_type: "image/png")
+tutorly.save
+
 puts "#{Project.count} projects created"
 
 puts "Assigning skills to projects"
@@ -300,6 +333,14 @@ bikini.project_skills.create(
   ]
 )
 
+tutorly.project_skills.create(
+  [
+    { skill: accounting },
+    { skill: graphic_design },
+    { skill: web_development },
+  ]
+)
+
 puts "#{ProjectSkill.count} project_skills assigned to projects"
 
 puts "Assigning project_categories to projects"
@@ -326,6 +367,12 @@ bikini.project_categories.create(
   ]
 )
 
+bikini.project_categories.create(
+  [
+    { category: education },
+  ]
+)
+
 puts "#{ProjectCategory.count} user_skills assigned to users"
 
 puts "Assigning users as project_members"
@@ -348,7 +395,15 @@ foodtruck.project_members.create(
 bikini.project_members.create(
   [
     { user: gabriella },
-    { user: josh }
+    { user: josh },
+    { user: menno }
+  ]
+)
+
+tutorly.project_members.create(
+  [
+    { user: liam },
+    { user: kiki }
   ]
 )
 
