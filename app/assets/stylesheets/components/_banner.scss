@@ -1,13 +1,13 @@
 .banner {
-  background-color: #EED8CB;
-  // width: 60vw;
-  // height: 80vh;
-
   text-align: left;
   align-items: center;
   justify-content: center;
   gap:40px;
   margin-top: 40px;
+}
+
+.bg-color {
+  background-color: #f53b0b;
 }
 
 .flex-container {
@@ -22,25 +22,10 @@
   width: 40vw;
 }
 
-// .banner-img-slice1 {
-//   background-image: url("Slice 1.png");
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   height: 400px;
-//   width: 40vw;
-//  }
-//  .banner-img-slice2 {
-//   background-image: url("Slice 2.png");
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   height: 40vh;
-//   width: 40vw;
-//   margin-left: 10%;
-//  }
 
 .banner h1 {
   color: black;
-  font-size: 120px;
+  font-size: 180px;
 }
 
 .banner p {
@@ -57,16 +42,3 @@
 .banner-btn {
   margin-top: 12px;
 }
-
-// .slice1 {
-//   background-image: url("Slice 1.png");
-//   background-size: cover;
-//   margin-left: 21px;
-//   height: 50vw;
-// }
-
-// .slice2 {
-//   background-image: url("Slice 2.png");
-//   background-size: cover;
-//   height: 50vw;
-// }

@@ -8,9 +8,9 @@ class MessagesController < ApplicationController
     if @message.save
       ConversationChannel.broadcast_to(
         @conversation,
-        render_to_string(
-          partial: "messages/messages", locals: { message: @message }
-        )
+        message: render_to_string( partial: "messages/messages", locals: { message: @message }
+        ),
+        sender_id: @message.user.id
       )
       head :ok
     end
