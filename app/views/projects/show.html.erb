@@ -1,3 +1,4 @@
+<div class="container mt-4">
 <div class="banner-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
   <div class="banner-heading">
     <h1><%= @project.title %></h1>
@@ -22,9 +23,10 @@
     </ul>
   <% end %>
   <div class="tab-content" id="pills-tabContent">
+  <div class= "project-body">
     <%# project details %>
     <div class="tab-pane fade show active" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab">
-      <div class="project-body">
+      <div class="container">
         <div class="d-flex background">
           <div class="backround small">
             <p>Categories:</p>
@@ -72,10 +74,10 @@
     <%# end tab %>
   </div>
 <% else %>
-  <div class="container">
+   <div class="container">
     <div class="d-flex background">
       <div class="backround small">
-        <p>Categories:</p>
+        <h5>Categories:</h5>
         <% @project.categories.each do |category| %>
           <p><%= category.name %></p>
         <% end %>
@@ -96,6 +98,7 @@
     </div>
   </div>
 <% end %>
+</div>
 
 <%# For Refactoring later:
 def project_owner?(user)
