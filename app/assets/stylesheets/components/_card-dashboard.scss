@@ -22,7 +22,6 @@
 }
 
 .card-content {
-  height: 25vh;
   border: 2px solid;
   display: flex;
   flex-direction: column;
@@ -44,10 +43,20 @@
   p {
     padding-top: 12px;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
   }
 
+}
 
+.card-content-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 
-
+  p {
+    padding-top: 12px;
+    font-weight: bold;
+    font-size: 12px;
+  }
 }
