@@ -6,7 +6,7 @@
     <div>
       <ul class="nav nav-pills mb-3 mt-4 justify-content-around" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active nav-red" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Your Project</button>
+          <button class="nav-link active nav-red" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Your Projects</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link nav-red" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Your Collaborations</button>
@@ -19,8 +19,10 @@
     <div>
       <div class="tab-content container-header" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-
+        <% if current_user.initiated_projects.empty? %>
+        <p><%= "You currently have not listed any ventures" %></p>
+        <p><%= link_to "List a Venture", new_project_path %></p>
+         <% else %>
           <% current_user.initiated_projects.each do |project| %>
             <div class="dashboard-card">
               <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
@@ -42,13 +44,15 @@
               </div>
             </div>
           <% end %>
+        <% end %>
         </div>
       </div>
     </div>
+
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <% if current_user.projects.empty? %>
         <p><%= "You currently don't collaborate on any other projects" %></p>
-        <p><%= link_to "Browse Projects", projects_path %></p>
+        <p><%= link_to "Browse Ventures", projects_path %></p>
       <% else %>
         <% current_user.projects.each do |project|  %>
           <div class="dashboard-card">
@@ -68,18 +72,24 @@
       </div>
     </div>
     <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-
+      <div class="container">
+      <% if @conversations.empty? %>
+        <p><%= "You currently don't have any new messages or conversations" %></p>
+        <p><%= link_to "Browse Community Volunteers", users_path %> or <%= link_to "Browse Ventures", projects_path %> </p>
+      <% else %>
       <div class="container">
         <div class="notification">
-          <% @conversations.each do |conversation| %>
+            <% @conversations.each do |conversation| %>
             <%= image_tag "#{conversation.other_user(current_user).first_name}.jpg", class: "avatar-large" %>
             <div class="notification-content">
               <p><%= link_to "Chat with #{conversation.other_user(current_user).first_name}", conversation_path(conversation) %></p>
             </div>
-          <% end %>
+            <% end %>
+        </div>
+      <% end %>
       </div>
-
       </div>
     </div>
   </div>
+
 </div>
