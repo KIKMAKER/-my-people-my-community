@@ -9,12 +9,27 @@
         <%= image_tag "support.png", height: "100px" %>
         <p>Collaborator badge </p>
       <% end %>
-      <%= @user.projects.map %>
 
-      <% @user.projects.each do |project| %>
-        <%= project.skills.any? { |skill| @user.skills.include?(skill) } %>
-        er
+      <% if @user.all_rounder? %>
+       <%= image_tag "all_rounder.png", height: "100px" %>
+        <p>All-Rounder badge </p>
       <% end %>
+
+      <% if @user.all_rounder? %>
+       <%= image_tag "all_rounder.png", height: "100px" %>
+        <p>All-Rounder badge </p>
+      <% end %>
+
+      <%= if @user.expert_in == "Web Development" %>
+      <%= image_tag "web_development.png", height: "100px" %>
+        <p>Web Development badge </p>
+        <% end %>
+
+      <%= if @user.expert_in == "Web Development" %>
+      <%= image_tag "wgraphic_design.png", height: "100px" %>
+        <p>Graphic Design badge </p>
+        <% end %>
+
       <p>master</p>
     </div>
   </div>
