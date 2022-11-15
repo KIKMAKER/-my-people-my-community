@@ -1,6 +1,7 @@
 <div class="container chatroom" data-controller="conversation-subscription" data-conversation-subscription-conversation-id-value="<%= @conversation.id %>"
 data-chatroom-subscription-current-user-id-value="<%= current_user.id %>" >
-  <h1>Direct Messages</h1>
+   <h1>Chat with <%= @conversation.other_user(current_user).full_name %></h1>
+
 
   <div class="messages" data-conversation-subscription-target="messages">
     <% @conversation.messages.each do |message| %>
