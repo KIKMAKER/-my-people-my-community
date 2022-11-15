@@ -2,15 +2,16 @@
   overflow: hidden;
   background: #FDF6F9;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  margin: 30px;
-  width: 55vw;
-  height: 50vh;
-  border-radius: 15px;
 }
 
 .card-trip a {
   text-decoration: none;
 
+}
+
+.container {
+  background-color: #eed8cb;
+  padding: 50px;
 }
 
 .card-trip > img {
@@ -21,12 +22,14 @@
 }
 
 .card-trip h2 {
+  padding-bottom: 15px;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-trip h4 {
+
   text-align: left;
   padding-left: 20px;
   font-size: small;
@@ -58,4 +61,10 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.project-index-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
 }
