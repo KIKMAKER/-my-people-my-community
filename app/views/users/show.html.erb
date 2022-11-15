@@ -1,4 +1,43 @@
+<div>
+  <div class="user-show-banner">
+    <h1><%= @user.first_name %>'s Volunteer Profile</h1>
+    <div class="user-show-avatar">
+      <%= image_tag  "David.jpg", class: "avatar-large"%>
+    </div>
+  </div>
+  <div class="message-area">
+    <div class="message-btn">
+    </div>
+  </div>
+  <div class="user-show-content">
+    <div class="user-skills">
+      <h4>Skills</h4>
+      <div class="user-skill">
+      </div>
+    </div>
+    <div class="user-info">
+      <div class="user-about">
+        <h3>About</h3>
+        <div class="user-about-content">
+        </div>
+      </div>
+      <div class="user-projects">
+        <h3>User Projects</h3>
+        <div class="user-project-card">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 <div class="pagesbanner">
+
   <div class="text">
     <h1><%= @user.first_name %>'s Volunteer Profile</h1>
   </div>
@@ -7,7 +46,7 @@
   <h1><%= @user.first_name %></h1>
   <h5><%= @user.location %></h5>
   <p><%= @user.bio %></p>
-  <%# <%= image_tag  "#{@user.first_name}.jpg" %> 
+  <%# <%= image_tag  "#{@user.first_name}.jpg" %>
   <p>Skills:</p>
   <ul>
     <% @user.skills.each do |skill| %>
