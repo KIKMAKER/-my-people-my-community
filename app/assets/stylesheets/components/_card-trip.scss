@@ -74,6 +74,9 @@
 }
 
 .card-trip-infos-skills {
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
+
+  p {
+    font-size: 12px;
+  }
 }
