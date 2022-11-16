@@ -17,13 +17,18 @@
       <% @users.each do |user| %>
         <%= link_to user_path(user) do %>
           <div class="index-user-card">
-            <div class="user-skills">
-              <h4>Skills</h4>
-              <% user.skills.each do |skill| %>
-                <div class="user-skill">
-                  <p><%= skill.name %></p>
-                </div>
-              <% end %>
+            <div class="user-card-left-col">
+              <div class="user-skills">
+                <h4>Skills</h4>
+                <% user.skills.each do |skill| %>
+                  <div class="user-skill">
+                    <p><%= skill.name %></p>
+                  </div>
+                <% end %>
+              </div>
+              <div class="user-badges">
+                <p>badge 1</p>
+              </div>
             </div>
             <div class="index-user-infos">
               <div class="index-user-name">
