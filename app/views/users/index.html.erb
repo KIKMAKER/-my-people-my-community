@@ -34,7 +34,6 @@
     <div class="index-users-cards mt-4">
       <% @users.each do |user| %>
         <%= link_to user_path(user) do %>
-<<<<<<< HEAD
           <div class="index-user-card">
             <div class="user-skills">
               <h4>Skills</h4>
@@ -46,16 +45,6 @@
             </div>
             <div class="index-user-infos">
               <div class="index-user-name">
-=======
-          <div class="card-user">
-            <div class="d-flex">
-              <div class="mr-auto p-2 user-details">
-
-
-                <%= image_tag  "profile_placeholder.png", class:"avatar-bordered" %>
-
-
->>>>>>> 9e0ee04552c2fa3c48a5348ba2ae5cba0490d8ea
                 <h3><%= user.first_name %></h3>
               </div>
               <div class="index-user-photo">
