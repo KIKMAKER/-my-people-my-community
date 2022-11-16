@@ -60,9 +60,11 @@ josh = User.create(
   location: "Claremont",
   linkedin_url: "linkedin.com/in/joshuapotgieter"
 )
+
 josh_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668532315/avatar1_mi0qxs.png")
 josh.photo.attach(io: josh_photo, filename: "avatar1.png", content_type: "image/png")
 josh.save
+
 
 menno = User.create(
   first_name: "Menno",
@@ -80,7 +82,7 @@ menno = User.create(
 )
 
 menno_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528614/avatar2_zgmknq.png")
-menno.photo.attach(io: menno_photo, filename: "avatar2.png", content_type: "image/png")
+menno.photo.attach(io: menno_photo, filename: "menno.png", content_type: "image/png")
 menno.save
 
 kiki = User.create(
@@ -98,9 +100,11 @@ kiki = User.create(
   linkedin_url: "linkedin.com/in/kikikennedy"
 )
 
+
 kiki_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528622/avatar3_ll8ssn.png")
 kiki.photo.attach(io: kiki_photo, filename: "kiki.png", content_type: "image/png")
 kiki.save
+
 
 gabriella = User.create(
   first_name: "Gabriella",
@@ -116,6 +120,7 @@ gabriella = User.create(
   location: "Camps Bay",
   linkedin_url: "linkedin.com/in/gabriellaabdolaziz"
 )
+
 
 gabriella_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528631/avatar4_ml1lb9.png")
 gabriella.photo.attach(io: gabriella_photo, filename: "gabriella.png", content_type: "image/png")
@@ -135,9 +140,11 @@ liam = User.create(
   linkedin_url: "linkedin.com/in/liam"
 )
 
+
 liam_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528639/avatar5_udswuf.png")
 liam.photo.attach(io: liam_photo, filename: "liam.png", content_type: "image/png")
 liam.save
+
 
 jo_ann = User.create(
   first_name: "Jo Ann",
@@ -150,9 +157,11 @@ jo_ann = User.create(
   linkedin_url: "linkedin.com/in/jo"
 )
 
+
 jo_ann_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
 jo_ann.photo.attach(io: jo_ann_photo, filename: "jo_ann.png", content_type: "image/png")
 jo_ann.save
+
 
 pierre = User.create(
   first_name: "Pierre",
@@ -165,9 +174,11 @@ pierre = User.create(
   linkedin_url: "linkedin.com/in/pierre"
 )
 
+
 pierre_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
 pierre.photo.attach(io: pierre_photo, filename: "pierre.png", content_type: "image/png")
 pierre.save
+
 
 gloria = User.create(
   first_name: "Gloria",
@@ -182,9 +193,28 @@ gloria = User.create(
   linkedin_url: "linkedin.com/in/pierre"
 )
 
+
 gloria_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
 gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "image/png")
 gloria.save
+
+
+cheri = User.create(
+  first_name: "Cheri",
+  last_name: "Black",
+  username: "Blacki",
+  email: "cheri@people.com",
+  password: "password",
+  bio: "Life is better with a bit of flair. Find me changing the world from the
+  comfort of my couch.",
+  location: "Muizenberg",
+  linkedin_url: "linkedin.com/in/cheriblack"
+)
+
+# cheri_photo = URI.open("")
+# cheri.photo.attach(io: cheri_photo, filename: "gloria.png", content_type: "image/png")
+# cheri.save
+
 
 puts "#{User.count} users created"
 
@@ -199,10 +229,10 @@ menno.user_skills.create(skill: business)
 menno.user_skills.create(skill: web_development)
 
 kiki.user_skills.create(skill: compost)
+kiki.user_skills.create(skill: web_development)
 
 gabriella.user_skills.create(skill: photography)
 gabriella.user_skills.create(skill: web_development)
-
 gabriella.user_skills.create(skill: compost)
 
 liam.user_skills.create(skill: graphic_design)
@@ -229,9 +259,11 @@ garden = Project.create(
   end_date: DateTime.now + 1.months
 )
 
+
 garden_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580565/markus-spiske-Yy-dHQP-Ax0-unsplash_ftjq8v.jpg")
 garden.photo.attach(io: garden_photo, filename: "garden.jpg", content_type: "image/jpg")
 garden.save
+
 
 foodtruck = Project.create(
   user: pierre,
@@ -246,9 +278,12 @@ foodtruck = Project.create(
   end_date: DateTime.now + 1.months
 )
 
+
 foodtruck_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580645/stefan-sommarsjo-ysambitxV8M-unsplash_wax7da.jpg")
 foodtruck.photo.attach(io: foodtruck_photo, filename: "foodtruck.jpg", content_type: "image/jpg")
 foodtruck.save
+
+
 
 bikini = Project.create(
   user: gloria,
@@ -264,9 +299,29 @@ bikini = Project.create(
   end_date: DateTime.now + 1.year
 )
 
+
 bikini_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580511/hermes-rivera-baRdxMkxv4M-unsplash_bdrrl0.jpg")
 bikini.photo.attach(io: bikini_photo, filename: "bikini.jpg", content_type: "image/jpg")
 bikini.save
+
+
+tutorly = Project.create(
+  user: cheri,
+  title: "TutorlyABC",
+  description: "Teaching young people how to read is one of the most important
+  jobs in society. It also happens to be Cheri's passion. What isn't her passion
+  is web and graphic design. TutorlyABC teaches shy children to read from the
+  comfort of their own home. All it needs is a wonderful web app and some
+  graphic design to get this small business off it's feet.",
+  location: "Muizenberg",
+  start_date: DateTime.now + 3.weeks,
+  end_date: DateTime.now + 1.year
+)
+
+# tutorly_photo = URI.open("")
+# tutorly.photo.attach(io: tutorly_photo, filename: "bikini.png", content_type: "image/png")
+# tutorly.save
+
 
 puts "#{Project.count} projects created"
 
@@ -300,6 +355,14 @@ bikini.project_skills.create(
   ]
 )
 
+tutorly.project_skills.create(
+  [
+    { skill: accounting },
+    { skill: graphic_design },
+    { skill: web_development },
+  ]
+)
+
 puts "#{ProjectSkill.count} project_skills assigned to projects"
 
 puts "Assigning project_categories to projects"
@@ -326,6 +389,12 @@ bikini.project_categories.create(
   ]
 )
 
+bikini.project_categories.create(
+  [
+    { category: education },
+  ]
+)
+
 puts "#{ProjectCategory.count} user_skills assigned to users"
 
 puts "Assigning users as project_members"
@@ -348,7 +417,15 @@ foodtruck.project_members.create(
 bikini.project_members.create(
   [
     { user: gabriella },
-    { user: josh }
+    { user: josh },
+    { user: menno }
+  ]
+)
+
+tutorly.project_members.create(
+  [
+    { user: liam },
+    { user: kiki }
   ]
 )
 

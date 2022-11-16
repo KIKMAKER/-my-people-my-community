@@ -10,16 +10,26 @@
     }
   }
 }
-.banner-heading {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
+  .banner-heading {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+.banner-heading h1 {
+  color: black;
+
 }
+.d-flex  {
+  display:flex;
+  justify-content: left;
 
 .project-body {
   display:flex;
   justify-content: left;
   margin: 50px;
 
+}
 }
