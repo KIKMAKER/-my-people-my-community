@@ -7,7 +7,7 @@ class Project < ApplicationRecord
   has_many :users, through: :project_members
   has_many :project_skills
   has_many :skills, through: :project_skills
-  has_many_attached :photos
+  has_one_attached :photo
 
 
   validates :title, presence: true
