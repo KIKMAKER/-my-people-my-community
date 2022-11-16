@@ -60,9 +60,9 @@ josh = User.create(
   location: "Claremont",
   linkedin_url: "linkedin.com/in/joshuapotgieter"
 )
-josh_photo = URI.open("")
-josh.photo.attach(io: josh_photo, filename: "josh.png", content_type: "image/png")
-josh.save
+joshua_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528608/avatar1_kyepvu.png")
+joshua.photo.attach(io: joshua_photo, filename: "avatar1.png", content_type: "image/png")
+joshua.save
 
 menno = User.create(
   first_name: "Menno",
@@ -79,8 +79,8 @@ menno = User.create(
   linkedin_url: "linkedin.com/in/ryanbrouwer"
 )
 
-menno_photo = URI.open("")
-menno.photo.attach(io: menno_photo, filename: "menno.png", content_type: "image/png")
+menno_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528614/avatar2_zgmknq.png")
+menno.photo.attach(io: menno_photo, filename: "avatar2.png", content_type: "image/png")
 menno.save
 
 kiki = User.create(

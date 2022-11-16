@@ -1,6 +1,6 @@
 <div class="container">
   <div class="justify-content-center">
-    <div class = "mt-4">
+    <div class = "title">
       <h1>Community Volunteers</h1>
     </div>
     <div class = "p-4">
@@ -13,30 +13,40 @@
         <%= submit_tag "Search", class: "search-button" %>
       <% end %>
     </div>
-    <div class="cards-container">
+
+
+    <div class="index-users-cards mt-4">
       <% @users.each do |user| %>
         <%= link_to user_path(user) do %>
+
+          <div class="index-user-card">
+            <div class="user-skills">
+              <h4>Skills</h4>
+              <% user.skills.each do |skill| %>
+                <div class="user-skill">
+                  <p><%= skill.name %></p>
+                </div>
+              <% end %>
+            </div>
+            <div class="index-user-infos">
+              <div class="index-user-name">
+
           <div class="card-user">
             <div class="d-flex">
               <div class="mr-auto p-2 user-details">
                 <%= image_tag  "profile_placeholder.png", class:"avatar-bordered" %>
+
+
                 <h3><%= user.first_name %></h3>
               </div>
-              <div class="p-2">
-                <p><strong>Skills:</strong></p>
-                <div>
-                  <% user.skills.each do |skill| %>
-                    <p><%= skill.name %></p>
-                  <% end %>
-                  <div>
-                    <h5><i class="mt-5 fa-solid fa-location-pin"></i> <%= user.location %></h5>
-                  </div>
-                </div>
+              <div class="index-user-photo">
+                <%= image_tag "avatar1.png", class: "avatar-bordered" %>
+              </div>
+              <div class="index-user-location">
+                <h5><%= user.location %></h5>
               </div>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
-  </div>
-</div>
