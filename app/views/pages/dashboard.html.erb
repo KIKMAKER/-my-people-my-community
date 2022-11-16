@@ -57,6 +57,7 @@
         <% current_user.projects.each do |project|  %>
           <div class="dashboard-card">
             <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+
               <h4><%= link_to project.title, project_path(project) %></h4>
               <div class="card-content">
                 <div class="card-content-items">
@@ -81,6 +82,7 @@
         <div class="notification">
             <% @conversations.each do |conversation| %>
             <%= image_tag "#{conversation.other_user(current_user).first_name}.jpg", class: "avatar-large" %>
+
             <div class="notification-content">
               <p><%= link_to "Chat with #{conversation.other_user(current_user).first_name}", conversation_path(conversation) %></p>
             </div>

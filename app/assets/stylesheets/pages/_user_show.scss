@@ -15,6 +15,10 @@
 }
 
 .user-show-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
   .user-skills {
     width: 250px;
     padding: 10px;
@@ -28,4 +32,9 @@
       color: white;
     }
   }
+}
+
+.borders {
+  width: 95%;
+  margin: auto;
 }
