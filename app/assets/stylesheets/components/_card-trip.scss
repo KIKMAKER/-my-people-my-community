@@ -4,6 +4,7 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 8px;
   border: 2px solid;
+  height: 50vh;
 }
 
 .card-trip a {
@@ -25,6 +26,7 @@
 
 .card-trip h2 {
   padding-bottom: 15px;
+  padding-left: 15px;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -62,11 +64,16 @@
   position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 60px;
 }
 
 .project-index-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 60px;
+}
+
+.card-trip-infos-skills {
+  display: flex;
+  flex-direction: row;
 }
