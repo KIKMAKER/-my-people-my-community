@@ -1,5 +1,5 @@
 <div class="container mt-4">
-<div class="banner-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+<div class="banner-page" id="banner">
   <div class="banner-heading">
     <h1><%= @project.title %></h1>
     <% if current_user.can_apply_to_project?(@project) %>
