@@ -65,7 +65,6 @@ josh_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v166853
 josh.photo.attach(io: josh_photo, filename: "avatar1.png", content_type: "image/png")
 josh.save
 
-
 menno = User.create(
   first_name: "Menno",
   last_name: "Brouwer",
@@ -283,8 +282,6 @@ foodtruck_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1
 foodtruck.photo.attach(io: foodtruck_photo, filename: "foodtruck.jpg", content_type: "image/jpg")
 foodtruck.save
 
-
-
 bikini = Project.create(
   user: gloria,
   title: "Mama Bikini",
@@ -299,11 +296,9 @@ bikini = Project.create(
   end_date: DateTime.now + 1.year
 )
 
-
 bikini_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580511/hermes-rivera-baRdxMkxv4M-unsplash_bdrrl0.jpg")
 bikini.photo.attach(io: bikini_photo, filename: "bikini.jpg", content_type: "image/jpg")
 bikini.save
-
 
 # tutorly = Project.create(
 #   user: cheri,
@@ -321,7 +316,6 @@ bikini.save
 # tutorly_photo = URI.open("")
 # tutorly.photo.attach(io: tutorly_photo, filename: "bikini.png", content_type: "image/png")
 # tutorly.save
-
 
 puts "#{Project.count} projects created"
 
