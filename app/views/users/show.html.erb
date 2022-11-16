@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="message-area">
-    <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p>
+    <strong> <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p></strong>
     <%= link_to "Message", root_path, class: "message-btn" %>
   </div>
   <div class="user-show-content">
@@ -18,7 +18,7 @@
         </div>
       <% end %>
         <div class="badges">
-          <h4> Badges </h4>
+
       <% if @user.supporter? %>
         <%= image_tag "support.png", height: "45px" %>
         <p> Collaborator badge </p>
@@ -58,7 +58,7 @@
             <div class="user-project-card">
               <% if current_user.projects.empty? %>
               <p><%= "You currently don't collaborate on any projects" %></p>
-              <p><%= link_to "Browse Ventures", projects_path %></p>
+               <p><%= link_to "Browse Ventures", projects_path, class: "button" %></p>
               <% else%>
                 <h4><%= @user.first_name %> volunteers on:</h4>
                 <ul>

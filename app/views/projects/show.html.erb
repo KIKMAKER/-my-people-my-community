@@ -82,12 +82,12 @@
    <div class="container">
     <div class="d-flex background">
       <div class="backround small">
-        <h4>Categories</h4>
+        <h4>Categories:</h4>
         <% @project.categories.each do |category| %>
           <p><%= category.name %></p>
         <% end %>
-      
-        <h4>Skills needed</h4>
+      <br>
+        <h4>Skills needed:</h4>
         <% @project.skills.each do |skill| %>
           <p><%= skill.name %></p>
         <% end %>
