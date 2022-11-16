@@ -45,11 +45,14 @@
 
 .skills-display {
   flex-grow: 1;
-  margin-top: 38px;
+  margin-top: 20px;
 }
 
-.index-user-card a {
+.remove-hover {
   text-decoration: none;
+  &:hover {
+    color: #934683 !important;
+  }
 }
 
 .user-skills {

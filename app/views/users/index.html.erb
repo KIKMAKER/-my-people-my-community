@@ -18,7 +18,7 @@
 
     <div class="index-users-cards mt-4">
       <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
+        <%= link_to user_path(user), class: "remove-hover" do %>
           <div class="index-user-card">
             <div class="index-user-infos">
               <div class="index-user-photo">
@@ -46,12 +46,13 @@
                   <% end %>
                 </div>
 
-              <div class="index-user-photo">
-                <%# <%= cl_image_tag user.photo.key, class: "avatar-bordered" %> %>
+                <div class="index-user-photo">
+                  <%# <%= cl_image_tag user.photo.key, class: "avatar-bordered" %>
 
-              </div>
-              <div class="index-user-location">
-                <h6><i class="fa-solid fa-location-dot mr-2">  </i><%= user.location %></h6>
+                </div>
+                <div class="index-user-location">
+                  <h6><i class="fa-solid fa-location-dot mr-2">  </i><%= user.location %></h6>
+                </div>
               </div>
             </div>
           </div>
