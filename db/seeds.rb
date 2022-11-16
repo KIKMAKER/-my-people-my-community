@@ -199,17 +199,17 @@ gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "ima
 gloria.save
 
 
-cheri = User.create(
-  first_name: "Cheri",
-  last_name: "Black",
-  username: "Blacki",
-  email: "cheri@people.com",
-  password: "password",
-  bio: "Life is better with a bit of flair. Find me changing the world from the
-  comfort of my couch.",
-  location: "Muizenberg",
-  linkedin_url: "linkedin.com/in/cheriblack"
-)
+# cheri = User.create(
+#   first_name: "Cheri",
+#   last_name: "Black",
+#   username: "Blacki",
+#   email: "cheri@people.com",
+#   password: "password",
+#   bio: "Life is better with a bit of flair. Find me changing the world from the
+#   comfort of my couch.",
+#   location: "Muizenberg",
+#   linkedin_url: "linkedin.com/in/cheriblack"
+# )
 
 # cheri_photo = URI.open("")
 # cheri.photo.attach(io: cheri_photo, filename: "gloria.png", content_type: "image/png")
@@ -305,18 +305,18 @@ bikini.photo.attach(io: bikini_photo, filename: "bikini.jpg", content_type: "ima
 bikini.save
 
 
-tutorly = Project.create(
-  user: cheri,
-  title: "TutorlyABC",
-  description: "Teaching young people how to read is one of the most important
-  jobs in society. It also happens to be Cheri's passion. What isn't her passion
-  is web and graphic design. TutorlyABC teaches shy children to read from the
-  comfort of their own home. All it needs is a wonderful web app and some
-  graphic design to get this small business off it's feet.",
-  location: "Muizenberg",
-  start_date: DateTime.now + 3.weeks,
-  end_date: DateTime.now + 1.year
-)
+# tutorly = Project.create(
+#   user: cheri,
+#   title: "TutorlyABC",
+#   description: "Teaching young people how to read is one of the most important
+#   jobs in society. It also happens to be Cheri's passion. What isn't her passion
+#   is web and graphic design. TutorlyABC teaches shy children to read from the
+#   comfort of their own home. All it needs is a wonderful web app and some
+#   graphic design to get this small business off it's feet.",
+#   location: "Muizenberg",
+#   start_date: DateTime.now + 3.weeks,
+#   end_date: DateTime.now + 1.year
+# )
 
 # tutorly_photo = URI.open("")
 # tutorly.photo.attach(io: tutorly_photo, filename: "bikini.png", content_type: "image/png")
@@ -355,13 +355,13 @@ bikini.project_skills.create(
   ]
 )
 
-tutorly.project_skills.create(
-  [
-    { skill: accounting },
-    { skill: graphic_design },
-    { skill: web_development },
-  ]
-)
+# tutorly.project_skills.create(
+#   [
+#     { skill: accounting },
+#     { skill: graphic_design },
+#     { skill: web_development },
+#   ]
+# )
 
 puts "#{ProjectSkill.count} project_skills assigned to projects"
 
@@ -422,12 +422,12 @@ bikini.project_members.create(
   ]
 )
 
-tutorly.project_members.create(
-  [
-    { user: liam },
-    { user: kiki }
-  ]
-)
+# tutorly.project_members.create(
+#   [
+#     { user: liam },
+#     { user: kiki }
+#   ]
+# )
 
 puts "#{ProjectMember.count} project_members assigned to projects"
 
