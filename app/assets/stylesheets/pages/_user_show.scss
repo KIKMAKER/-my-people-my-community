@@ -1,7 +1,9 @@
 
 .users.show {
+  section {
+    background-color: #eed8cb;
+  }
   .container {
-    margin: 0;
     border-radius: 0;
   }
 }
@@ -58,6 +60,7 @@
   }
 
   .user-skills {
+    text-align: center;
     position: relative;
     width: 25%;
     padding: 20px;
@@ -68,11 +71,15 @@
     flex-direction: column;
     gap: 15px;
     border: 2px solid black;
+
     .user-skill {
-      // background-color: #FE962F;
+      background-color: #FE962F;
       color: black;
       font-size: 15px;
       font-weight: bold;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
     }
 
   }

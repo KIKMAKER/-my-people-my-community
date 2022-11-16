@@ -1,7 +1,7 @@
 .button {
 border-radius: 8px;
 color: black;
-border: 1px solid #CAD2E8;
+border: 1px solid #E12E1B;
 padding: 12px 24px;
 text-align: center;
 text-decoration: none;
@@ -9,6 +9,7 @@ display: inline-block;
 margin: 10px;
 opacity: 0.6;
 font-weight: bold;
+background-color: #E12E1B;
 }
 
 #status {
@@ -68,4 +69,18 @@ font-weight: bold;
   margin: 10px;
   opacity: 0.6;
   font-weight: bold;
+  }
+
+  .button-skewed {
+    border-radius: 4px;
+    color: black;
+    border: 1px solid #E12E1B;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px;
+    font-weight: bold;
+    background-color: #E12E1B;
+    transform: skew(347deg);
   }

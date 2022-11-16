@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
-  margin-top: 40px;
+  margin-bottom: -40px;
 }
 
 .bg-color {
@@ -15,11 +15,12 @@
 }
 
 .banner-img-together {
-  background-image: url("building.jpeg");
+  background-image: url("banner.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 400px;
-  width: 40vw;
+  width: 400px;
+  transform: skew(351deg);
 }
 
 .banner h1 {
@@ -42,20 +43,24 @@
   margin-top: 12px;
 }
 
-.user-show-banner {
-  background-color: #e0f8f4;
-  height: 300px;
-  width: 100%;
+.message-button-wrapper {
   display: flex;
-  position: relative;
-  justify-content: center;
   align-items: flex-end;
+}
 
+.user-show-banner {
+  display: flex;
+  justify-content: space-between;
+}
+.user-show-banner-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-weight: 600;
+  }
   .user-show-avatar {
-    position: absolute;
-    bottom: -50px;
-    left: 50px;
-    .avatar-large {
+      .avatar-large {
       height: 100px;
       width: 100px;
     }

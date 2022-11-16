@@ -12,10 +12,6 @@
 }
 
 .projects.show {
-  .container {
-    margin: 0;
-    border-radius: 0;
-  }
   .navbar-lewagon {
     border-bottom: none;
   }
@@ -57,7 +53,7 @@
 }
 .d-flex {
   display: flex;
-  justify-content: left;
+  // justify-content: left;
   .project-body {
     display: flex;
     justify-content: left;

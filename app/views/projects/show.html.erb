@@ -91,41 +91,34 @@
       </div>
       <%# end tab %>
     </div>
-  <% else %>
-    <div class="container">
-      <h2 class="text-center">Learn more about <%= @project.title %></h2>
-      <div class="d-flex background">
-        <div class="backround small">
-          <h4>Categories</h4>
-          <% @project.categories.each do |category| %>
-            <p><%= category.name %></p>
+  </div>
+<% else %>
+  <div class="container">
+    <h2 class="text-center">Learn more about <%= @project.title %></h2>
+    <div class="d-flex background">
+      <div class="backround small">
+        <h4>Categories</h4>
+        <% @project.categories.each do |category| %>
+          <p><%= category.name %></p>
+        <% end %>
+        <h4>Skills needed</h4>
+        <% @project.skills.each do |skill| %>
+          <p><%= skill.name %></p>
+        <% end %>
+      </div>
+      <div class="background big">
+        <h3><%= @project.title %>'s story</h3>
+        <p><%= @project.description %></p>
+        <h4>Project stats</h4>
+        <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
+        <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
+        <% @project.project_members.each do |member| %>
+          <% if member.user.photo.attached? %>
+            <%= cl_image_tag member.user.photo.key, class: "project-show-avatar" %>
           <% end %>
-          <h4>Skills needed</h4>
-          <% @project.skills.each do |skill| %>
-            <p><%= skill.name %></p>
-          <% end %>
-        </div>
-        <div class="background big">
-          <h3><%= @project.title %>'s story</h3>
-          <p><%= @project.description %></p>
-          <h4>Project stats</h4>
-          <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
-          <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
-          <% @project.project_members.each do |member| %>
-            <% if member.user.photo.attached? %>
-              <%= cl_image_tag member.user.photo.key, class: "project-show-avatar" %>
-            <% end %>
-            <%= member.user.full_name %>
-          <% end %>
-        </div>
+          <%= member.user.full_name %>
+        <% end %>
       </div>
     </div>
-  <% end %>
-  <%# For Refactoring later:
-def project_owner?(user)
-    user == @project.user
-  end
-
-  def project_member?(user)
-    user.projects.include?(@project)
-  end %>
+  </div>
+<% end %>
