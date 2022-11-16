@@ -1,10 +1,30 @@
-.form-container {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
+.projects.new {
+  h2 {
+    font-size: 35px;
+  }
+  .container {
+    background: transparent;
+  }
 
-  p {
-    max-width: 70%;
+  .form-container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    p {
+      max-width: 70%;
+    }
+  }
+
+  form {
+    .form-label,
+    .col-form-label {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .btn {
+      opacity: 1;
+    }
   }
 }

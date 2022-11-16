@@ -30,32 +30,7 @@
     <%= link_to "Message", root_path, class: "message-btn" %>
   </div>
   <div class="user-show-content">
-    <div class="user-skills">
-      <h4>Skills</h4>
-        <% @user.skills.each do |skill| %>
-        <div class="user-skill">
-          <%= skill.name %>
-        </div>
-      <% end %>
-        <div class="badges">
-          <h4> Badges </h4>
-      <% if @user.supporter? %>
-        <%= image_tag "support.png", height: "45px" %>
-        <p> Collaborator badge </p>
-      <% end %>
-      <% if @user.all_rounder? %>
-        <%= image_tag "all_rounder.png", height: "45px" %>
-        <p> All-Rounder badge </p>
-      <% end %>
-      <% if @user.expert_in == "Web Development" %>
-        <%= image_tag "web_development.png", height: "45px" %>
-        <p> Web Development badge </p>
-      <% end %>
-      <% if @user.expert_in == "Graphic Design" %>
-        <%= image_tag "graphic_design.png", height: "45px" %>
-        <p> Graphic Design badge </p>
-      <% end %>
-    </div>
+
     </div>
     <div class="user-info">
       <div class="user-about">

@@ -1,36 +1,37 @@
-<div>
-  <div class="project-index">
-  <h3></h3>
+<div class="project-index">
+  <div class="container mt-4">
+    <h3 class="text-center">Find your project</h3>
     <div class = "search-area mt-5">
       <%= form_with url: projects_path, method: :get, class: "d-flex justify-content-center" do %>
         <%= text_field_tag :query,
-            params[:query],
-            class: "button-input",
-            placeholder: "Find a project by it's name, location or social category"
-          %>
+              params[:query],
+              class: "button-input",
+              placeholder: "Find a project by it's name, location or social category"
+            %>
         <%= submit_tag "Search", class: "search-button" %>
       <% end %>
     </div>
   </div>
-                <%# cards section %>
-
-  <div class="project-index-cards container mt-4">
-    <% @projects.each do |project| %>
-      <%= link_to project_path(project) do %>
-        <div class="card-trip">
-          <%= cl_image_tag project.photo.key%>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= project.title %></h2>
+  <%# cards section %>
+  <div class="container">
+    <h3 class="text-center">Browse all projects</h3>
+    <div class="project-index-cards mt-4">
+      <% @projects.each do |project| %>
+        <%= link_to project_path(project) do %>
+          <div class="card-trip">
+            <%= cl_image_tag project.photo.key%>
+            <div class="card-trip-infos">
               <div>
-                <p><%= project.description.truncate(130) %></p>
-
+                <h2><%= project.title %></h2>
+                <div>
+                  <p><%= project.description.truncate(130) %></p>
+                </div>
               </div>
+              <%# <%= cl_image_tag project.user.photo.key, class: "card-trip-user avatar-bordered"%> 
             </div>
-           <%= cl_image_tag project.user.photo.key, class: "card-trip-user avatar-bordered"%>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
