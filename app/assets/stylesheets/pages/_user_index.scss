@@ -2,7 +2,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
-  padding: 80px;
+  padding: 20px 70px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.user-badges {
+
 }
 
 .title {
@@ -10,22 +18,34 @@
   display: flex;
   justify-content: center;
 }
+
 .index-user-card {
-  height: 300px;
+  height: 260px;
   display: flex;
   justify-content: space-between;
-  padding: 35px 50px;
-  overflow: hidden;
+  padding: 10px;
   background-color: beige;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+.index-user-name {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  // color: white;
+}
+
 .index-user-card .user-card-left-col {
-  width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 70%;
+  position: relative;
+}
+
+.skills-display {
+  flex-grow: 1;
+  margin-top: 38px;
 }
 
 .index-user-card a {
@@ -33,19 +53,83 @@
 }
 
 .user-skills {
-  width: 70%;
+  flex-grow: 1;
+  display: block;
+
+  h4 {
+  text-align: center;
+  }
 }
 
-.user-skill {
-  // background-color: rgb(75, 136, 75);
-  font-family: 'Crimson Text', serif;
+.skills-first {
+  margin-top: 18px;
+  margin-left: 30px;
+  background-color: whitesmoke;
+  padding: 5px 20px;
+  border-radius: 4px;
+  transform: skew(10deg);
+  width: auto;
+  margin-right: 130px;
+
+  p {
+    transform: skew(-10deg);
+    margin-bottom: 0px;
+    width: auto;
+  }
+}
+
+.skills-second {
+  margin-top: 24px;
+  margin-left: 130px;
+  background-color: white;
+  padding: 5px 20px;
+  border-radius: 4px;
+  transform: skew(10deg);
+  margin-right: 30px;
+
+
+  p {
+    transform: skew(-10deg);
+    margin-bottom: 0px;
+  }
+}
+
+.skills-third {
+  margin-top: 28px;
+  margin-left: 70px;
+  background-color: antiquewhite;
+  padding: 5px 20px;
+  border-radius: 4px;
+  transform: skew(10deg);
+  margin-right: 110px;
+
+  p {
+    transform: skew(-10deg);
+    margin-bottom: 0px;
+  }
 }
 
 .index-user-infos {
   padding: 10px;
-  width: 10%;
+  width: 28%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+
+  h3 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+}
+
+.index-user-location {
+  position: absolute;
+  right: 12px;
+  bottom: 0px;
+  font-size: 18px;
+
+  h6 {
+    margin-left: 5px;
+  }
 }
