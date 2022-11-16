@@ -1,30 +1,35 @@
-
-.card-image {
+.dashboard-cards {
+  margin-top: 10px;
+}
+.dashboard-card {
+  border: 2px solid black;
   text-align: center;
-  margin-top: 35px;
   width: 100%;
-  background-color: #F6C9E9;
-  border: 2px solid;
-  height: 30vh;
-  background-size: cover;
-  background-position: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  border-radius: 8px;
+  align-items: stretch;
+  height: 40%;
+  margin-top: 10px;
+}
 
-  a {
-    color: white;
-    align-items: center;
-  }
+.card-image {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  h4 {
-    color: white;
-    align-items: center;
-  }
+.card-image#banner {
+  background-image: url('https://res.cloudinary.com/divqv7xyh/image/upload/v1668586358/08276735f27856e43306bc6419052ff880c0f9d1-1500x1138_ottzf5.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
 }
 
 .card-content {
-  border: 2px solid;
   display: flex;
   flex-direction: column;
   padding-top: 20px;
@@ -44,8 +49,8 @@
 
   p {
     padding-top: 12px;
-    font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
+    padding-left: 8px;
   }
 
 }

@@ -27,6 +27,7 @@
               <div class="index-user-name">
                 <h3><%= user.first_name %></h3>
               </div>
+
               <div class="user-badges">
                 <%= image_tag("support", height: "22px") %>
               </div>
@@ -44,6 +45,10 @@
                     <div class="skills-third"><p><%= user.skills.third.name %></p></div>
                   <% end %>
                 </div>
+
+              <div class="index-user-photo">
+                <%# <%= cl_image_tag user.photo.key, class: "avatar-bordered" %> %>
+
               </div>
               <div class="index-user-location">
                 <h6><i class="fa-solid fa-location-dot mr-2">  </i><%= user.location %></h6>

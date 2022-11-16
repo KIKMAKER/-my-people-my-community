@@ -1,7 +1,7 @@
 .form {
   background: white;
   padding: 10px 50px;
-  margin-top: 50px;
+  margin-top: 10px;
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   width: 80%;
@@ -18,6 +18,7 @@
   .btn {
     margin-left: 35%;
     width: 30%;
+    min-width: fit-content;
     margin-bottom: 20px;
     border-radius: 12px;
     color: black;
@@ -37,4 +38,19 @@
 
 .post {
   display: flex
+}
+
+
+.form#project-form {
+  background-color: #F9CB6D;
+  padding-top: 20px;
+
+  .form-label {
+   font-size: 18px;
+   font-weight: bold;
+
+  }
+  .btn {
+    background-color: #f1f0ea;
+  }
 }

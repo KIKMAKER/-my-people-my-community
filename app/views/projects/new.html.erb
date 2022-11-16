@@ -1,7 +1,8 @@
 <div class="container">
-  <div class="d-flex justify-content-center pt-3 pb-5">
-    <div class="form">
-      <h2>Create a new Project:</h2>
+  <div class="form-container">
+    <h2>Create a new Project:</h2>
+    <p>Take a moment to share details of your personal venture. This information will help potential collaborators learn about your project.</p>
+    <div class="form" id='project-form'>
       <%= simple_form_for @project do |f| %>
         <%= f.input :title %>
         <%= f.input :description, :label => "Describe the aim of this Project and some of the needed skills" %>
