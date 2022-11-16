@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <div class="justify-content-center">
     <div class = "title">
-      <h1>Community Volunteers</h1>
+      <h1>CONNECT WITH PROFESSIONALS</h1>
     </div>
     <div class = "p-4">
       <%= form_with url: users_path, method: :get, class: "d-flex justify-content-center" do %>
@@ -13,9 +13,7 @@
         <%= submit_tag "Search", class: "search-button" %>
       <% end %>
     </div>
-
-<%# cards %>
-
+    <%# cards %>
     <div class="index-users-cards mt-4">
       <% @users.each do |user| %>
         <%= link_to user_path(user), class: "remove-hover" do %>
@@ -27,7 +25,6 @@
               <div class="index-user-name">
                 <h3><%= user.first_name %></h3>
               </div>
-
               <div class="user-badges">
                 <%= image_tag("support", height: "22px") %>
               </div>
@@ -36,19 +33,23 @@
               <div class="user-skills">
                 <div class="skills-display">
                   <% if user.skills.first %>
-                    <div class="skills-first"><p><%= user.skills.first.name %></p></div>
+                    <div class="skills-first">
+                      <p><%= user.skills.first.name %></p>
+                    </div>
                   <% end %>
                   <% if user.skills.second %>
-                    <div class="skills-second"><p><%= user.skills.second.name %></p></div>
+                    <div class="skills-second">
+                      <p><%= user.skills.second.name %></p>
+                    </div>
                   <% end %>
                   <% if user.skills.third %>
-                    <div class="skills-third"><p><%= user.skills.third.name %></p></div>
+                    <div class="skills-third">
+                      <p><%= user.skills.third.name %></p>
+                    </div>
                   <% end %>
                 </div>
-
                 <div class="index-user-photo">
                   <%# <%= cl_image_tag user.photo.key, class: "avatar-bordered" %>
-
                 </div>
                 <div class="index-user-location">
                   <h6><i class="fa-solid fa-location-dot mr-2">  </i><%= user.location %></h6>

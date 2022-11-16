@@ -1,5 +1,6 @@
 <div>
   <div class="project-index">
+  <h3></h3>
     <div class = "search-area mt-5">
       <%= form_with url: projects_path, method: :get, class: "d-flex justify-content-center" do %>
         <%= text_field_tag :query,
@@ -23,7 +24,7 @@
               <h2><%= project.title %></h2>
               <div>
                 <p><%= project.description.truncate(130) %></p>
-             
+
               </div>
             </div>
            <%= cl_image_tag project.user.photo.key, class: "card-trip-user avatar-bordered"%>

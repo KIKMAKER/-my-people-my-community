@@ -31,19 +31,19 @@
 
         <div class="d-flex background">
           <div class="backround small">
-            <p>Categories:</p>
+            <h4>Categories</h4>
             <% @project.categories.each do |category| %>
               <p><%= category.name %></p>
             <% end %>
-            <p>Skills needed:</p>
+            <h4>Skills needed</h4>
             <% @project.skills.each do |skill| %>
               <p><%= skill.name %></p>
             <% end %>
           </div>
           <div class="background big">
-            <h5>Learn more about <%= @project.title %></h5>
+            <h3>Learn more about <%= @project.title %></h3>
             <p><%= @project.description %></p>
-            <h5>Project stats:</h5>
+            <h4>Project stats</h4>
             <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
             <p>The project has <%= pluralize(@project.project_members.count, "collaborators") %>.</p>
           </div>
@@ -55,7 +55,7 @@
     <div class="tab-pane fade <%= params[:show_posts].present? ? 'show active': '' %>" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
       <div class="container">
         <div class="form">
-          <h2>Create a new Post:</h2>
+          <h2>Create a new Post</h2>
           <%= simple_form_for [@project, @post] do |f| %>
             <%= f.input :content, :label => "Share an update with your team members" %>
             <%= f.button :submit, class: "button" %>
@@ -82,11 +82,12 @@
    <div class="container">
     <div class="d-flex background">
       <div class="backround small">
-        <h5>Categories:</h5>
+        <h4>Categories</h4>
         <% @project.categories.each do |category| %>
           <p><%= category.name %></p>
         <% end %>
-        <p>Skills needed:</p>
+      
+        <h4>Skills needed</h4>
         <% @project.skills.each do |skill| %>
           <p><%= skill.name %></p>
         <% end %>
@@ -94,9 +95,9 @@
         <p>Architecture</p>
       </div>
       <div class="background big">
-        <h5>Learn more about <%= @project.title %></h5>
+        <h3>Learn more about <%= @project.title %></h3>
         <p><%= @project.description %></p>
-        <h5>Project stats:</h5>
+        <h4>Project stats</h4>
         <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
         <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
         <% @project.project_members.each do |member| %>

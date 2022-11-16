@@ -1,15 +1,24 @@
-.background .big{
+.background .big {
+  width: 75%;
   opacity: 0.8;
   border: 4px;
   border: 2px solid black;
+  border-radius: 8px;
   margin: 8px 8px;
-  padding: 10px;
+  padding: 20px;
+  background-color:#F3F1DE;
+  color: black;
+  font-weight: bold;
 }
 
-.background .small{
+.background .small {
   opacity: 0.8;
   border: 2px solid black;
   margin: 8px 8px;
-  padding: 10px;
-  width: 40vw;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #F3F1DE;
+  width: 25%;
+  color: black;
+  font-weight: bold;
 }
