@@ -1,26 +1,37 @@
+.
 
 .card-image {
   text-align: center;
   margin-top: 35px;
   width: 100%;
   background-color: #F6C9E9;
-  border: 2px solid;
+  border: 2px solid black;
   height: 30vh;
   background-size: cover;
   background-position: center;
   align-items: center;
   display: flex;
   justify-content: center;
+  border-radius: 8px;
+  color: black;
 
   a {
     color: white;
     align-items: center;
+    text-decoration: none;
+
   }
 
   h4 {
     color: white;
     align-items: center;
   }
+}
+
+.card-image#banner {
+  background-image: url('https://res.cloudinary.com/divqv7xyh/image/upload/v1668586358/08276735f27856e43306bc6419052ff880c0f9d1-1500x1138_ottzf5.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .card-content {

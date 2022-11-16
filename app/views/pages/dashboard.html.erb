@@ -52,9 +52,9 @@
               <p><%= link_to "Browse Ventures", projects_path %></p>
             <% else %>
               <% current_user.projects.each do |project|  %>
-                <div class="dashboard-card">
+                <div class="dashboard-cards">
                   <%= link_to project_path(project) do %>
-                    <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+                    <div class="card-image" id="banner">
                       <h4><%= project.title %></h4>
                     </div>
                     <div class="card-content">
