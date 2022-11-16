@@ -60,9 +60,11 @@ josh = User.create(
   location: "Claremont",
   linkedin_url: "linkedin.com/in/joshuapotgieter"
 )
-joshua_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528608/avatar1_kyepvu.png")
-joshua.photo.attach(io: joshua_photo, filename: "avatar1.png", content_type: "image/png")
-joshua.save
+
+# josh_photo = URI.open("")
+# josh.photo.attach(io: josh_photo, filename: "josh.png", content_type: "image/png")
+# josh.save
+
 
 menno = User.create(
   first_name: "Menno",
@@ -79,9 +81,9 @@ menno = User.create(
   linkedin_url: "linkedin.com/in/ryanbrouwer"
 )
 
-menno_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528614/avatar2_zgmknq.png")
-menno.photo.attach(io: menno_photo, filename: "avatar2.png", content_type: "image/png")
-menno.save
+# menno_photo = URI.open("")
+# menno.photo.attach(io: menno_photo, filename: "menno.png", content_type: "image/png")
+# menno.save
 
 kiki = User.create(
   first_name: "Kiki",
@@ -98,9 +100,9 @@ kiki = User.create(
   linkedin_url: "linkedin.com/in/kikikennedy"
 )
 
-kiki_photo = URI.open("")
-kiki.photo.attach(io: kiki_photo, filename: "kiki.png", content_type: "image/png")
-kiki.save
+# kiki_photo = URI.open("")
+# kiki.photo.attach(io: kiki_photo, filename: "kiki.png", content_type: "image/png")
+# kiki.save
 
 gabriella = User.create(
   first_name: "Gabriella",
@@ -117,9 +119,9 @@ gabriella = User.create(
   linkedin_url: "linkedin.com/in/gabriellaabdolaziz"
 )
 
-gabriella_photo = URI.open("")
-gabriella.photo.attach(io: gabriella_photo, filename: "gabriella.png", content_type: "image/png")
-gabriella.save
+# gabriella_photo = URI.open("")
+# gabriella.photo.attach(io: gabriella_photo, filename: "gabriella.png", content_type: "image/png")
+# gabriella.save
 
 liam = User.create(
   first_name: "Liam",
@@ -135,9 +137,9 @@ liam = User.create(
   linkedin_url: "linkedin.com/in/liam"
 )
 
-liam_photo = URI.open("")
-liam.photo.attach(io: liam_photo, filename: "liam.png", content_type: "image/png")
-liam.save
+# liam_photo = URI.open("")
+# liam.photo.attach(io: liam_photo, filename: "liam.png", content_type: "image/png")
+# liam.save
 
 jo_ann = User.create(
   first_name: "Jo Ann",
@@ -150,9 +152,9 @@ jo_ann = User.create(
   linkedin_url: "linkedin.com/in/jo"
 )
 
-jo_ann_photo = URI.open("")
-jo_ann.photo.attach(io: jo_ann_photo, filename: "jo_ann.png", content_type: "image/png")
-jo_ann.save
+# jo_ann_photo = URI.open("")
+# jo_ann.photo.attach(io: jo_ann_photo, filename: "jo_ann.png", content_type: "image/png")
+# jo_ann.save
 
 pierre = User.create(
   first_name: "Pierre",
@@ -165,9 +167,9 @@ pierre = User.create(
   linkedin_url: "linkedin.com/in/pierre"
 )
 
-pierre_photo = URI.open("")
-pierre.photo.attach(io: pierre_photo, filename: "pierre.png", content_type: "image/png")
-pierre.save
+# pierre_photo = URI.open("")
+# pierre.photo.attach(io: pierre_photo, filename: "pierre.png", content_type: "image/png")
+# pierre.save
 
 gloria = User.create(
   first_name: "Gloria",
@@ -182,9 +184,9 @@ gloria = User.create(
   linkedin_url: "linkedin.com/in/pierre"
 )
 
-gloria_photo = URI.open("")
-gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "image/png")
-gloria.save
+# gloria_photo = URI.open("")
+# gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "image/png")
+# gloria.save
 
 cheri = User.create(
   first_name: "Cheri",
@@ -198,9 +200,9 @@ cheri = User.create(
   linkedin_url: "linkedin.com/in/cheriblack"
 )
 
-cheri_photo = URI.open("")
-cheri.photo.attach(io: cheri_photo, filename: "gloria.png", content_type: "image/png")
-cheri.save
+# cheri_photo = URI.open("")
+# cheri.photo.attach(io: cheri_photo, filename: "gloria.png", content_type: "image/png")
+# cheri.save
 
 puts "#{User.count} users created"
 
@@ -245,9 +247,9 @@ garden = Project.create(
   end_date: DateTime.now + 1.months
 )
 
-garden_photo = URI.open("")
-garden.photo.attach(io: garden_photo, filename: "garden.png", content_type: "image/png")
-garden.save
+# garden_photo = URI.open("")
+# garden.photo.attach(io: garden_photo, filename: "garden.png", content_type: "image/png")
+# garden.save
 
 foodtruck = Project.create(
   user: pierre,
@@ -262,9 +264,9 @@ foodtruck = Project.create(
   end_date: DateTime.now + 1.months
 )
 
-foodtruck_photo = URI.open("")
-foodtruck.photo.attach(io: foodtruck_photo, filename: "foodtruck.png", content_type: "image/png")
-foodtruck.save
+# foodtruck_photo = URI.open("")
+# foodtruck.photo.attach(io: foodtruck_photo, filename: "foodtruck.png", content_type: "image/png")
+# foodtruck.save
 
 bikini = Project.create(
   user: gloria,
@@ -280,9 +282,9 @@ bikini = Project.create(
   end_date: DateTime.now + 1.year
 )
 
-bikini_photo = URI.open("")
-bikini.photo.attach(io: bikini_photo, filename: "bikini.png", content_type: "image/png")
-bikini.save
+# bikini_photo = URI.open("")
+# bikini.photo.attach(io: bikini_photo, filename: "bikini.png", content_type: "image/png")
+# bikini.save
 
 tutorly = Project.create(
   user: cheri,
@@ -297,9 +299,9 @@ tutorly = Project.create(
   end_date: DateTime.now + 1.year
 )
 
-tutorly_photo = URI.open("")
-tutorly.photo.attach(io: tutorly_photo, filename: "bikini.png", content_type: "image/png")
-tutorly.save
+# tutorly_photo = URI.open("")
+# tutorly.photo.attach(io: tutorly_photo, filename: "bikini.png", content_type: "image/png")
+# tutorly.save
 
 puts "#{Project.count} projects created"
 
