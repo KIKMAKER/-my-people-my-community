@@ -42,16 +42,18 @@
         <h3>Bio</h3>
         <div class="user-about-content">
           <div class="bio-icons">
-              <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p>
             <div class=bio-text>
               <p><%= @user.bio %></p>
             </div>
               <div class="social-icons">
-                <a href=<%=  @user.linkedin_url %>> </a> <%= icon('fa-brands', 'linkedin')%> <%= icon('fa-brands', 'instagram') %>
+                 <%= icon('fa-brands', 'instagram') %>
+                 <%= link_to @user.linkedin_url do %>
+                 <%= icon('fa-brands', 'linkedin')%>
+                 <% end %>
               </div>
           </div>
       </div>
-          <div class="user-projects">
+          <div class="user-projects mt-2">
             <h4>User Projects</h4>
             <div class="user-project-card">
               <% if current_user.projects.empty? %>
