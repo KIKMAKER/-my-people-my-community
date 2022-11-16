@@ -6,6 +6,7 @@
     </div>
   </div>
   <div class="message-area">
+    <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p>
     <%= link_to "Message", root_path, class: "message-btn" %>
   </div>
   <div class="user-show-content">
@@ -41,8 +42,8 @@
         <h3>Bio</h3>
         <div class="user-about-content">
           <div class="bio-icons">
-            <div class=bio-text>
               <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p>
+            <div class=bio-text>
               <p><%= @user.bio %></p>
             </div>
               <div class="social-icons">
