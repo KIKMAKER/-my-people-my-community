@@ -1,28 +1,38 @@
 .card-user {
   overflow: hidden;
-  background: #EDEAD8;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 20px;
-  width: 55vw;
-  border-radius: 15px;
-  padding: 15px;
+  background: #FDF6F9;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .card-user a {
   text-decoration: none;
+
 }
 
-.card-user h5 {
+.container {
+  background-color: #eed8cb;
+  padding: 50px;
+}
+
+.card-user > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  align-items: center;
+}
+
+.card-user h2 {
+  padding-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-user h4 {
+
   text-align: left;
   padding-left: 20px;
-  font-size: medium;
-}
-
-.card-user h3 {
-  text-align: left;
-  // padding-left: 20px;
-  font-size: medium;
-  margin-top: 8px;
+  font-size: small;
 }
 
 .fa-location-dot h5 {
@@ -30,30 +40,179 @@
 }
 
 .card-user p {
-  font-size: 20px;
-  opacity: .5;
+  font-size: 12px;
+  opacity: .7;
   margin: 0;
   text-align: left;
   padding-left: 20px;
 }
 
-.user-details {
-  min-width: 30%;
+
+.card-user .card-user-infos {
+  padding: 16px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-user-infos .card-user-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+
+.card-user {
+  overflow: hidden;
+  background: #FDF6F9;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.card-trip a {
+  text-decoration: none;
+
+}
+
+.container {
+  background-color: #eed8cb;
+  padding: 50px;
+}
+
+.card-user > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
   align-items: center;
+}
+
+.card-user h2 {
+  padding-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-user h4 {
+
+  text-align: left;
+  padding-left: 20px;
+  font-size: small;
+}
+
+.fa-location-dot h5 {
+  text-decoration: dashed;
+}
+
+.card-user p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+
+.card-user .card-user-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-user-infos .card-user-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }
 
 .cards-container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  justify-items: center;
-  justify-items: center;
-  align-items: center;
-
-  a {
-    align-items: center;
-    width: 55vw;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
 }
+
+.mr-auto h3{
+margin-left: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .card-user {
+//   overflow: hidden;
+//   background: #EDEAD8;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   // margin: 20px;
+//   border-radius: 15px;
+//   padding: 15px;
+
+// }
+
+// .card-user a {
+//   text-decoration: none;
+// }
+
+// .card-user h5 {
+//   text-align: left;
+//   padding-left: 20px;
+//   font-size: medium;
+// }
+
+// .card-user h3 {
+//   text-align: left;
+//   // padding-left: 20px;
+//   font-size: medium;
+//   margin-top: 8px;
+// }
+
+// .fa-location-dot h5 {
+//   text-decoration: dashed;
+// }
+
+// .card-user p {
+//   font-size: 20px;
+//   opacity: .5;
+//   margin: 0;
+//   text-align: left;
+//   padding-left: 20px;
+// }
+
+// .user-details {
+//   min-width: 30%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .cards-container {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 0;
+//   justify-items: center;
+//   justify-items: center;
+//   align-items: center;
+
+//   a {
+//      align-items: center;
+//     // width: 55vw;
+//   }
+// }
+
+// .cards-container {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   grid-gap: 60px;
+// }

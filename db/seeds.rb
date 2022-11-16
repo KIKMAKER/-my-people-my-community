@@ -60,6 +60,8 @@ josh = User.create(
   location: "Claremont",
   linkedin_url: "linkedin.com/in/joshuapotgieter"
 )
+
+
 # josh_photo = URI.open("")
 # josh.photo.attach(io: josh_photo, filename: "josh.png", content_type: "image/png")
 # josh.save
