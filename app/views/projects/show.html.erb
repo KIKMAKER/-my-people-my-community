@@ -1,14 +1,14 @@
-<div class="container mt-4">
-<div class="banner-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+<div class="banner-page" id="banner">
   <div class="banner-heading">
     <h1><%= @project.title %></h1>
+    <p class="text-center"><i class="fa-solid fa-location-dot mx-2"></i><%= @project.location %></p>
     <% if current_user.can_apply_to_project?(@project) %>
-        <%= simple_form_for [@project, @project_member] do |f| %>
-          <%= f.submit 'Apply', class: "button"%>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+      <%= simple_form_for [@project, @project_member] do |f| %>
+        <%= f.submit 'Apply', class: "button"%>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 </div>
 
 <%# Carosel %>
@@ -38,94 +38,90 @@
     </ul>
   <% end %>
   <div class="tab-content" id="pills-tabContent">
-  <div class= "project-body">
-    <%# project details %>
-
-    <div class="tab-pane fade <%= params[:show_posts].present? ? '': 'show active' %>" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab">
-      <div class="container">
-
-        <div class="d-flex background">
-          <div class="backround small">
-            <p>Categories:</p>
-            <% @project.categories.each do |category| %>
-              <p><%= category.name %></p>
-            <% end %>
-            <p>Skills needed:</p>
-            <% @project.skills.each do |skill| %>
-              <p><%= skill.name %></p>
-            <% end %>
-          </div>
-          <div class="background big">
-            <h5>Learn more about <%= @project.title %></h5>
-            <p><%= @project.description %></p>
-            <h5>Project stats:</h5>
-            <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
-            <p>The project has <%= pluralize(@project.project_members.count, "collaborators") %>.</p>
-          </div>
-        </div>
-      </div>
+    <div class= "project-body">
       <%# project details %>
-    </div>
-    <%# posts %>
-    <div class="tab-pane fade <%= params[:show_posts].present? ? 'show active': '' %>" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
-      <div class="container">
-        <div class="form">
-          <h2>Create a new Post:</h2>
-          <%= simple_form_for [@project, @post] do |f| %>
-            <%= f.input :content, :label => "Share an update with your team members" %>
-            <%= f.button :submit, class: "button" %>
-          <% end %>
-        </div>
-        <div class="project-posts">
-          <% @posts.each do |post| %>
-            <div class="notification">
-              <%# replace image %>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-              <div class="notification-content">
-                <p><strong><%= post.user.full_name %></strong></p>
-                <p><%= post.content %></p>
-              </div>
+      <div class="tab-pane fade <%= params[:show_posts].present? ? '': 'show active' %>" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab">
+        <div class="container">
+          <div class="d-flex background">
+            <div class="backround small">
+              <h4>Categories</h4>
+              <% @project.categories.each do |category| %>
+                <p><%= category.name %></p>
+              <% end %>
+              <h4>Skills needed</h4>
+              <% @project.skills.each do |skill| %>
+                <p><%= skill.name %></p>
+              <% end %>
             </div>
-          <%end %>
+            <div class="background big">
+              <h3>Learn more about <%= @project.title %></h3>
+              <p><%= @project.description %></p>
+              <h4>Project stats</h4>
+              <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
+              <p>The project has <%= pluralize(@project.project_members.count, "collaborators") %>.</p>
+            </div>
+          </div>
         </div>
+        <%# project details %>
       </div>
       <%# posts %>
-    </div>
-    <%# end tab %>
-  </div>
-<% else %>
-   <div class="container">
-    <div class="d-flex background">
-      <div class="backround small">
-        <h5>Categories:</h5>
-        <% @project.categories.each do |category| %>
-          <p><%= category.name %></p>
-        <% end %>
-        <p>Skills needed:</p>
-        <% @project.skills.each do |skill| %>
-          <p><%= skill.name %></p>
-        <% end %>
-        <p>Project Management</p>
-        <p>Architecture</p>
+      <div class="tab-pane fade <%= params[:show_posts].present? ? 'show active': '' %>" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
+        <div class="container">
+          <div class="form">
+            <h2>Create a new Post</h2>
+            <%= simple_form_for [@project, @post] do |f| %>
+              <%= f.input :content, :label => "Share an update with your team members" %>
+              <%= f.button :submit, class: "button" %>
+            <% end %>
+          </div>
+          <div class="project-posts">
+            <% @posts.each do |post| %>
+              <div class="notification">
+                <%# replace image %>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                <div class="notification-content">
+                  <p><strong><%= post.user.full_name %></strong></p>
+                  <p><%= post.content %></p>
+                </div>
+              </div>
+            <%end %>
+          </div>
+        </div>
+        <%# posts %>
       </div>
-      <div class="background big">
-        <h5>Learn more about <%= @project.title %></h5>
-        <p><%= @project.description %></p>
-        <h5>Project stats:</h5>
-        <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
-        <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
-        <% @project.project_members.each do |member| %>
-        <p><%= member.user.first_name %></p>
-        <% end %>
-        <%=  %>
+      <%# end tab %>
+    </div>
+  <% else %>
+    <div class="container">
+      <h2 class="text-center">Learn more about <%= @project.title %></h2>
+      <div class="d-flex background">
+        <div class="backround small">
+          <h4>Categories</h4>
+          <% @project.categories.each do |category| %>
+            <p><%= category.name %></p>
+          <% end %>
+          <h4>Skills needed</h4>
+          <% @project.skills.each do |skill| %>
+            <p><%= skill.name %></p>
+          <% end %>
+        </div>
+        <div class="background big">
+          <h3><%= @project.title %>'s story</h3>
+          <p><%= @project.description %></p>
+          <h4>Project stats</h4>
+          <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
+          <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
+          <% @project.project_members.each do |member| %>
+            <% if member.user.photo.attached? %>
+              <%= cl_image_tag member.user.photo.key, class: "project-show-avatar" %>
+            <% end %>
+            <%= member.user.full_name %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
-
-</div>
-
-<%# For Refactoring later:
+  <% end %>
+  <%# For Refactoring later:
 def project_owner?(user)
     user == @project.user
   end

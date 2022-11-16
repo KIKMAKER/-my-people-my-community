@@ -65,7 +65,6 @@ josh_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v166853
 josh.photo.attach(io: josh_photo, filename: "avatar1.png", content_type: "image/png")
 josh.save
 
-
 menno = User.create(
   first_name: "Menno",
   last_name: "Brouwer",
@@ -292,7 +291,6 @@ foodtruck_photo2 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v
 foodtruck.photos.attach(io: foodtruck_photo2, filename: "foodtruck.jpg", content_type: "image/jpg")
 foodtruck.save
 
-
 bikini = Project.create(
   user: gloria,
   title: "Mama Bikini",
@@ -307,14 +305,13 @@ bikini = Project.create(
   end_date: DateTime.now + 1.year
 )
 
-
 bikini_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580511/hermes-rivera-baRdxMkxv4M-unsplash_bdrrl0.jpg")
-bikini.photos.attach(io: bikini_photo, filename: "bikini.jpg", content_type: "image/jpg")
+bikini.photo.attach(io: bikini_photo, filename: "bikini.jpg", content_type: "image/jpg")
 bikini_photo1 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580643/stall_aadf7w.webp")
-bikini.photos.attach(io: bikini_photo1, filename: "bikini.jpg", content_type: "image/jpg")
+bikini.photo.attach(io: bikini_photo1, filename: "bikini.jpg", content_type: "image/jpg")
 bikini_photo2 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580642/sebastian-canaves-sTlqVBz87dc-unsplash_ojwqw4.jpg")
-bikini.photos.attach(io: bikini_photo2, filename: "bikini.jpg", content_type: "image/jpg")
-
+bikini.photo.attach(io: bikini_photo2, filename: "bikini.jpg", content_type: "image/jpg")
+bikini.save
 
 # tutorly = Project.create(
 #   user: cheri,
@@ -332,7 +329,6 @@ bikini.photos.attach(io: bikini_photo2, filename: "bikini.jpg", content_type: "i
 # tutorly_photo = URI.open("")
 # tutorly.photo.attach(io: tutorly_photo, filename: "bikini.png", content_type: "image/png")
 # tutorly.save
-
 
 puts "#{Project.count} projects created"
 

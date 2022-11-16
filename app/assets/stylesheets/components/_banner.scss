@@ -2,7 +2,7 @@
   text-align: left;
   align-items: center;
   justify-content: center;
-  gap:40px;
+  gap: 40px;
   margin-top: 40px;
 }
 
@@ -22,7 +22,6 @@
   width: 40vw;
 }
 
-
 .banner h1 {
   color: black;
   font-size: 80px;
@@ -30,7 +29,7 @@
 
 .banner p {
   font-size: 30px;
-  color: #2A1508;
+  color: #2a1508;
 }
 
 .project-banner {
@@ -44,7 +43,7 @@
 }
 
 .user-show-banner {
-  background-color: #E0F8F4;
+  background-color: #e0f8f4;
   height: 300px;
   width: 100%;
   display: flex;
@@ -61,4 +60,10 @@
       width: 100px;
     }
   }
+}
+
+.banner-page#banner {
+  background-image: url("https://res.cloudinary.com/divqv7xyh/image/upload/v1668586519/banner-hands_1_vtfejf.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
