@@ -1,16 +1,16 @@
 <div class="container">
   <div class="form-container">
     <h2>Create a new Project:</h2>
-    <p>Take a moment to share details of your personal venture. This information will help potential collaborators learn about your project.</p>
+    <p class="text-center">Take a moment to share details of your personal venture. This information will help potential collaborators learn about your project.</p>
     <div class="form" id='project-form'>
       <%= simple_form_for @project do |f| %>
-        <%= f.input :title %>
+        <%= f.input :title, required: false %>
         <%= f.input :description, :label => "Describe the aim of this Project and some of the needed skills" %>
         <%= f.association :skills, :label => "Which skills will your project need?", as: :check_boxes, wrapper: :vertical_collection_inline %>
-        <%= f.input :location %>
-        <%= f.association :categories, :label => "Which categories best describes your project", as: :check_boxes, wrapper: :vertical_collection_inline %>
-        <%= f.input :start_date, as: :date, html5: true %>
-        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.input :location, required: false %>
+        <%= f.association :categories, :label => "Which categories best describes your project", as: :check_boxes, wrapper: :vertical_collection_inline, html: { class: "form-label" } %>
+        <%= f.input :start_date, required: false, as: :date, html5: true %>
+        <%= f.input :end_date, required: false, as: :date, html5: true %>
         <%= f.input :photo, as: :file %>
         <%= f.button :submit, class: "btn" %>
       <% end %>

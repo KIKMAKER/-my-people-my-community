@@ -1,5 +1,22 @@
 .home-container {
-  background-color: #EED8CB;
   display: flex;
   justify-content: center;
+}
+
+.pages.home {
+  h1 {
+    font-weight: 600;
+  }
+  .button {
+    padding: 11px 19px;
+    font-weight: 600;
+    font-size: 30px;
+    background: #0f6381;
+    color: white;
+    &:hover {
+      opacity: 1;
+      background: #1b627cf2;
+      color: white;
+    }
+  }
 }

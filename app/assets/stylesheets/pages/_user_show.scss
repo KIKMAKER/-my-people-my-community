@@ -1,3 +1,13 @@
+
+.users.show {
+  section {
+    background-color: #eed8cb;
+  }
+  .container {
+    border-radius: 0;
+  }
+}
+
 .message-area {
   height: 100px;
   margin-left: 175px;
@@ -61,6 +71,7 @@
     flex-direction: column;
     gap: 15px;
     border: 2px solid black;
+
     .user-skill {
       background-color: #FE962F;
       color: black;
