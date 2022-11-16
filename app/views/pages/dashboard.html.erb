@@ -51,7 +51,7 @@
 
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <% if current_user.projects.empty? %>
-        <p><%= "You currently don't collaborate on any other projects" %></p>
+        <p><%= "You currently don't collaborate on any projects" %></p>
         <p><%= link_to "Browse Ventures", projects_path %></p>
       <% else %>
         <% current_user.projects.each do |project|  %>

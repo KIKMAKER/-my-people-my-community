@@ -1,26 +1,8 @@
-<div class="borders">
+<div class="container mt-4">
   <div class="user-show-banner">
     <h1><%= @user.first_name %>'s Profile</h1>
     <div class="user-show-avatar">
       <%= image_tag "profile_placeholder.png", class: "avatar-large"%>
-    </div>
-    <div>
-      <% if @user.supporter? %>
-        <%= image_tag "support.png", height: "100px" %>
-        <p>Collaborator badge </p>
-      <% end %>
-      <% if @user.all_rounder? %>
-        <%= image_tag "all_rounder.png", height: "100px" %>
-        <p>All-Rounder badge </p>
-      <% end %>
-      <% if @user.expert_in == "Web Development" %>
-        <%= image_tag "web_development.png", height: "100px" %>
-        <p>Web Development badge </p>
-      <% end %>
-      <% if @user.expert_in == "Web Development" %>
-        <%= image_tag "graphic_design.png", height: "100px" %>
-        <p>Graphic Design badge </p>
-      <% end %>
     </div>
   </div>
   <div class="message-area">
@@ -29,27 +11,51 @@
   <div class="user-show-content">
     <div class="user-skills">
       <h4>Skills</h4>
-      <% @user.skills.each do |skill| %>
+        <% @user.skills.each do |skill| %>
         <div class="user-skill">
           <%= skill.name %>
         </div>
       <% end %>
+        <div class="badges">
+          <h4> Badges </h4>
+      <% if @user.supporter? %>
+        <%= image_tag "support.png", height: "45px" %>
+        <p> Collaborator badge </p>
+      <% end %>
+      <% if @user.all_rounder? %>
+        <%= image_tag "all_rounder.png", height: "45px" %>
+        <p> All-Rounder badge </p>
+      <% end %>
+      <% if @user.expert_in == "Web Development" %>
+        <%= image_tag "web_development.png", height: "45px" %>
+        <p> Web Development badge </p>
+      <% end %>
+      <% if @user.expert_in == "Graphic Design" %>
+        <%= image_tag "graphic_design.png", height: "45px" %>
+        <p> Graphic Design badge </p>
+      <% end %>
+    </div>
     </div>
     <div class="user-info">
       <div class="user-about">
-        <h3>About</h3>
+        <h3>Bio</h3>
         <div class="user-about-content">
-          <div>
-            <a href=<%=  @user.linkedin_url %>>LinkedIn</a>
-            </div>
-              <h5><%= @user.location %></h5>
+          <div class="bio-icons">
+            <div class=bio-text>
+              <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p>
               <p><%= @user.bio %></p>
             </div>
+              <div class="social-icons">
+                <a href=<%=  @user.linkedin_url %>> </a> <%= icon('fa-brands', 'linkedin')%> <%= icon('fa-brands', 'instagram') %>
+              </div>
           </div>
+      </div>
           <div class="user-projects">
-            <h3>User Projects</h3>
+            <h4>User Projects</h4>
             <div class="user-project-card">
               <% if current_user.projects.empty? %>
+              <p><%= "You currently don't collaborate on any projects" %></p>
+              <p><%= link_to "Browse Ventures", projects_path %></p>
               <% else%>
                 <h4><%= @user.first_name %> volunteers on:</h4>
                 <ul>
@@ -67,4 +73,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
