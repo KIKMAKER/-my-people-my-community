@@ -16,7 +16,7 @@
     <%# cards %>
     <div class="index-users-cards mt-4">
       <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
+        <%= link_to user_path(user), class: "remove-hover" do %>
           <div class="index-user-card">
             <div class="index-user-infos">
               <div class="index-user-photo">
