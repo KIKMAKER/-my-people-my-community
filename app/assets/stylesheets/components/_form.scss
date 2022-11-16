@@ -1,5 +1,5 @@
 .form {
-  background: white;
+  background: #EED8CB;
   padding: 10px 50px;
   margin-top: 10px;
   border-radius: 8px;
@@ -30,10 +30,47 @@
     font-weight: bold;
   }
 
-.btn:hover {
-  opacity: 1;
-  background-color:  #f1f0ea;
-}
+  .btn:hover {
+    opacity: 1;
+    background-color:  #f1f0ea;
+  }
+  .skill-pill {
+    position: absolute;
+    transform: scale(0);
+  }
+
+  .skill-pill + label {
+    cursor: pointer;
+    background-color: #3A8B82;
+    border: 1px solid white;
+    padding: 4px 8px;
+    border-radius: 15px;
+    color: white;
+    font-weight: light;
+    opacity: 0.7;
+  }
+  .skill-pill:checked + label {
+    opacity: 1;
+  }
+
+  .category-pill {
+    position: absolute;
+    transform: scale(0);
+  }
+
+  .category-pill + label {
+    cursor: pointer;
+    background-color: #3A8B82;
+    border: 1px solid white;
+    padding: 4px 8px;
+    border-radius: 15px;
+    color: white;
+    font-weight: light;
+    opacity: 0.8;
+  }
+  .category-pill:checked + label {
+    opacity: 1;
+  }
 }
 
 .post {
@@ -42,7 +79,7 @@
 
 
 .form#project-form {
-  background-color: #F9CB6D;
+  background-color: #EED8CB;
   padding-top: 20px;
 
   .form-label {

@@ -10,7 +10,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @projects = Project.all
+    
+  end
 
   def edit; end
 

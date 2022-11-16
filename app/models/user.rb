@@ -17,7 +17,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :username, uniqueness: { message: 'User name already taken!' }
+  # validates :username, uniqueness: { message: 'User name already taken!' }
   validates :bio, length: { in: 1..10000 }
   validates :location, presence: true
   validates :first_name, presence: true
