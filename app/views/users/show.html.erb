@@ -9,28 +9,18 @@
         <%= image_tag "support.png", height: "100px" %>
         <p>Collaborator badge </p>
       <% end %>
-
       <% if @user.all_rounder? %>
-       <%= image_tag "all_rounder.png", height: "100px" %>
+        <%= image_tag "all_rounder.png", height: "100px" %>
         <p>All-Rounder badge </p>
       <% end %>
-
-      <% if @user.all_rounder? %>
-       <%= image_tag "all_rounder.png", height: "100px" %>
-        <p>All-Rounder badge </p>
-      <% end %>
-
-      <%= if @user.expert_in == "Web Development" %>
-      <%= image_tag "web_development.png", height: "100px" %>
+      <% if @user.expert_in == "Web Development" %>
+        <%= image_tag "web_development.png", height: "100px" %>
         <p>Web Development badge </p>
-        <% end %>
-
-      <%= if @user.expert_in == "Web Development" %>
-      <%= image_tag "wgraphic_design.png", height: "100px" %>
+      <% end %>
+      <% if @user.expert_in == "Web Development" %>
+        <%= image_tag "graphic_design.png", height: "100px" %>
         <p>Graphic Design badge </p>
-        <% end %>
-
-      <p>master</p>
+      <% end %>
     </div>
   </div>
   <div class="message-area">
@@ -77,3 +67,4 @@
       </div>
     </div>
   </div>
+</div>
