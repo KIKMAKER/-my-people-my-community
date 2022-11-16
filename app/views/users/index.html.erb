@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container mt-4">
   <div class="justify-content-center">
     <div class = "title">
-      <h1>Community Volunteers</h1>
+      <h1>CONNECT WITH PROFESSIONALS</h1>
     </div>
     <div class = "p-4">
       <%= form_with url: users_path, method: :get, class: "d-flex justify-content-center" do %>
@@ -13,27 +13,47 @@
         <%= submit_tag "Search", class: "search-button" %>
       <% end %>
     </div>
+    <%# cards %>
     <div class="index-users-cards mt-4">
       <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
+        <%= link_to user_path(user), class: "remove-hover" do %>
           <div class="index-user-card">
-            <div class="user-skills">
-              <h4>Skills</h4>
-              <% user.skills.each do |skill| %>
-                <div class="user-skill">
-                  <p><%= skill.name %></p>
-                </div>
-              <% end %>
-            </div>
             <div class="index-user-infos">
+              <div class="index-user-photo">
+                <%= cl_image_tag user.photo.key, class: "avatar-bordered-index" %>
+              </div>
               <div class="index-user-name">
                 <h3><%= user.first_name %></h3>
               </div>
-              <div class="index-user-photo">
-                <%# <%= cl_image_tag user.photo.key, class: "avatar-bordered" %> %>
+              <div class="user-badges">
+                <%= image_tag("support", height: "22px") %>
               </div>
-              <div class="index-user-location">
-                <h5><%= user.location %></h5>
+            </div>
+            <div class="user-card-left-col">
+              <div class="user-skills">
+                <div class="skills-display">
+                  <% if user.skills.first %>
+                    <div class="skills-first">
+                      <p><%= user.skills.first.name %></p>
+                    </div>
+                  <% end %>
+                  <% if user.skills.second %>
+                    <div class="skills-second">
+                      <p><%= user.skills.second.name %></p>
+                    </div>
+                  <% end %>
+                  <% if user.skills.third %>
+                    <div class="skills-third">
+                      <p><%= user.skills.third.name %></p>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="index-user-photo">
+                  <%# <%= cl_image_tag user.photo.key, class: "avatar-bordered" %>
+                </div>
+                <div class="index-user-location">
+                  <h6><i class="fa-solid fa-location-dot mr-2">  </i><%= user.location %></h6>
+                </div>
               </div>
             </div>
           </div>
