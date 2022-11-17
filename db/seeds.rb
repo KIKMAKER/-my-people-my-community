@@ -434,7 +434,7 @@ foodtruck.save
 
 puts "#{foodtruck.photos.count} photos added to garden."
 
-garden = Project.create(
+garden_project = Project.create(
   user: jo_ann,
   title: "Urban Garden",
   description: "Jo Ann is an apartment owner and member of the body corporate of
@@ -453,15 +453,15 @@ garden = Project.create(
 
 puts "Assigning images to garden project"
 
-garden_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580565/markus-spiske-Yy-dHQP-Ax0-unsplash_ftjq8v.jpg")
-garden.photos.attach(io: garden_photo, filename: "garden.jpg", content_type: "image/jpg")
-garden_photo1 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580584/prateek-gautam-uhWB6BWWz1Q-unsplash_x9fbt7.jpg")
-garden.photos.attach(io: garden_photo1, filename: "garden.jpg", content_type: "image/jpg")
-garden_photo2 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580525/markus-spiske-4PG6wLlVag4-unsplash_sysrpm.jpg")
-garden.photos.attach(io: garden_photo2, filename: "garden.jpg", content_type: "image/jpg")
-garden.save
+garden_project_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580565/markus-spiske-Yy-dHQP-Ax0-unsplash_ftjq8v.jpg")
+garden_project.photos.attach(io: garden_project_photo, filename: "garden_project.jpg", content_type: "image/jpg")
+garden_project_photo1 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580584/prateek-gautam-uhWB6BWWz1Q-unsplash_x9fbt7.jpg")
+garden_project.photos.attach(io: garden_project_photo1, filename: "garden_project.jpg", content_type: "image/jpg")
+garden_project_photo2 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580525/markus-spiske-4PG6wLlVag4-unsplash_sysrpm.jpg")
+garden_project.photos.attach(io: garden_project_photo2, filename: "garden_project.jpg", content_type: "image/jpg")
+garden_project.save
 
-puts "#{garden.photos.count} photos added to garden."
+puts "#{garden_project.photos.count} photos added to garden."
 
 bikini = Project.create(
   user: gloria,
@@ -546,7 +546,7 @@ puts "#{Project.count} projects created"
 
 puts "Assigning skills to projects"
 
-garden.project_skills.create(
+garden_project.project_skills.create(
   [
     { skill: business },
     { skill: garden }
@@ -598,7 +598,7 @@ puts "#{ProjectSkill.count} project_skills assigned to projects"
 
 puts "Assigning project_categories to projects"
 
-garden.project_categories.create(
+garden_project.project_categories.create(
   [
     { category: entrepreneurship },
     { category: community_development },
@@ -643,7 +643,7 @@ puts "#{ProjectCategory.count} user_skills assigned to users"
 
 puts "Assigning users as project_members"
 
-garden.project_members.create(
+garden_project.project_members.create(
   [
     { user: josh },
     { user: jo },
