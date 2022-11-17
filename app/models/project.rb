@@ -16,7 +16,7 @@ class Project < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
-  enum status: %i[pending accepted declined]
+  enum status: %i[PENDING ACCEPTED DECLINED]
 
   include PgSearch::Model
   pg_search_scope :global_search,

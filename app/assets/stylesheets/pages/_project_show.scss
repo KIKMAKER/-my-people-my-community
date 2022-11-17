@@ -68,26 +68,21 @@
 }
 
 .splide {
-
-.splide__track {
-
-  border-radius: 5px;
-
-  .splide__list {
-
-    border-radius: 5px;
-  }
-
-  .splide__slide {
-
+  .splide__track {
     border-radius: 5px;
 
-    img {
-
+    .splide__list {
       border-radius: 5px;
     }
+
+    .splide__slide {
+      border-radius: 5px;
+
+      img {
+        border-radius: 5px;
+      }
+    }
   }
-}
 }
 
 .carosel-container {
@@ -96,3 +91,4 @@
   margin-left: 200px;
   margin-right: 100px;
 }
+

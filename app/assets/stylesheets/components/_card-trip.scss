@@ -5,7 +5,7 @@
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 8px;
   border: 2px solid;
-  height: 330px;
+  height: 500px;
   border: none;
 }
 
@@ -28,7 +28,7 @@
 .card-trip h2 {
   padding-bottom: 15px;
   padding-left: 15px;
-  font-size: 16px;
+  font-size: 27px;
   font-weight: bold;
   margin: 0;
 }
@@ -44,11 +44,12 @@
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 18px;
   opacity: 0.7;
   margin: 0;
   text-align: left;
   padding-left: 20px;
+  margin-bottom: 25px;
 }
 
 .card-trip .card-trip-infos {
@@ -57,13 +58,35 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  list-style: none;
+
 
   h2,
   p {
     color: black;
   }
-}
 
+}
+.skill-pill {
+  background-color: #3A8B82;
+  border: 1px solid white;
+  padding: 4px 8px;
+  border-radius: 15px;
+
+  font-weight: light;
+  opacity: 0.6;
+  max-width: fit-content;
+  display: inline-block;
+  vertical-align: middle;
+
+  p {
+    color: white !important;
+    padding-left: 14px !important;
+    padding-right: 14px;
+    margin: 0 !important;
+
+  }
+}
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 16px;
@@ -78,10 +101,19 @@
     justify-content: center;
     min-height: fit-content;
     margin-bottom: 25px;
-    
+
     h3 {
       font-size: 45px;
     }
+  }
+
+  h1 {
+    font-size: 45px;
+    color: #D86632;
+  }
+
+  h5 {
+    font-size: 30px;
   }
 }
 
