@@ -8,9 +8,9 @@ module ApplicationHelper
         concat link_to "Decline", project_member_path(project_member, {project_member: {status: :declined}}), data: { turbo_method: :patch }, class: "btn-decline"
       end
     elsif project_member.accepted?
-      link_to "Decline Application", project_member_path(project_member, {project_member: {status: :declined}}), data: { turbo_method: :patch }, class: "btn-decline"
+      link_to "Decline", project_member_path(project_member, {project_member: {status: :declined}}), data: { turbo_method: :patch }, class: "btn-decline"
     else
-      link_to "Accept Application", project_member_path(project_member, {project_member: {status: :accepted}}), data: { turbo_method: :patch }, class: "btn-accept"
+      link_to "Accept", project_member_path(project_member, {project_member: {status: :accepted}}), data: { turbo_method: :patch }, class: "btn-accept"
     end
   end
 end

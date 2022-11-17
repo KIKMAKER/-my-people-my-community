@@ -1,8 +1,20 @@
-
 .users.show {
   .container {
     margin: auto;
     border-radius: 8px;
+
+  }
+
+  h4 {
+    font-size: 1.9rem;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 2.75rem;
+  }
+  p {
+    font-size: 22px;
+    font-weight: 400;
   }
 }
 
@@ -19,7 +31,7 @@
   }
 
   .message-btn {
-    background-color: #FE962F;
+    background-color: #fe962f;
     border-radius: 10px;
     padding: 10px 20px;
     height: 46px;
@@ -40,20 +52,23 @@
 
   .user-info {
     border: 2px solid black;
-    padding: 30px;
+    padding: 35px;
     border-radius: 8px;
-    background-color: #F3F1DE;
+    background-color: #f3f1de;
     width: 75%;
   }
 
   .badges {
-    position: absolute;
-    bottom: 0;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     p {
       font-size: 10px;
+    }
+  }
+
+  .badge {
+    p {
+      color: black;
+      font-size: 20px;
     }
   }
 
@@ -63,7 +78,7 @@
     padding: 20px;
     min-height: 250px;
     border-radius: 8px;
-    background-color: #F3F1DE;
+    background-color: #f3f1de;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -74,11 +89,100 @@
       font-size: 15px;
       font-weight: bold;
     }
-
   }
 }
 
 .bio-text {
   text-align: justify;
   text-justify: inter-word;
+}
+
+// Chris
+
+.user-show-top {
+  display: flex;
+  h1 {
+    font-size: 70px;
+  }
+
+  img {
+    height: auto;
+    width: 15vw;
+  }
+}
+
+.user-show-profile {
+  display: flex;
+}
+
+.user-show-middle {
+  display: flex;
+  gap: 50px;
+}
+
+.user-show-middle-skills {
+  width: 25vw;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f3f1de;
+  color: black;
+  font-weight: 400;
+}
+
+.user-show-middle-bio {
+  background-color: #f3f1de;
+  border-radius: 8px;
+  width: 60vw;
+}
+
+.user-show-projects-index {
+  margin-top: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.user-show-projects-index-card {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  h4 {
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 30px;
+    text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+}
+
+.user-skills {
+  margin-top: 5px;
+  padding: 35px;
+}
+
+.skill {
+  border: 1px solid white;
+  border-radius: 15px;
+  color: white;
+  font-weight: light;
+  padding: 7px 16px;
+  font-size: 22px;
+  border-radius: 25px;
+  margin: 3px 0;
+  background-color: #3a8b82;
+}
+.social-icons {
+  font-size: 40px;
 }
