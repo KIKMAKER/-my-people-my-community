@@ -1,7 +1,8 @@
 <div class="container mt-4">
-  <div class="justify-content-center">
-    <div class = "title">
+  <div class="user-index justify-content-center">
+    <div class = "header-container">
       <h1>CONNECT WITH PROFESSIONALS</h1>
+      <h5>Team up, resource your venture, grow your network.</h5>
     </div>
     <div class = "p-4">
       <%= form_with url: users_path, method: :get, class: "d-flex justify-content-center" do %>
@@ -26,7 +27,31 @@
                 <h3><%= user.first_name %></h3>
               </div>
               <div class="user-badges">
-                <%= image_tag("support", height: "22px") %>
+                <div class="user-badge">
+                  <% if user.supporter? %>
+                    <%= image_tag("support.png", height: "33px", width: "33px") %>
+
+                  <% end %>
+                </div>
+                <div class="user-badge">
+                  <% if user.all_rounder? %>
+                    <%= image_tag("all_rounder.png", height: "33px", width: "33px") %>
+
+                  <% end %>
+                </div>
+                <div class="user-badge">
+                  <% if user.expert_in == "Web Development" %>
+                    <%= image_tag("web_development.png", height: "33px", width: "33px") %>
+
+                  <% end %>
+                </div>
+                <div class="user-badge">
+                  <% if user.expert_in == "Graphic Design" %>
+                    <%= image_tag("graphic_design.png", height: "33px", width: "33px") %>
+                    
+                  <% end %>
+                  <%# <%= image_tag("support", height: "22px") %>
+                </div>
               </div>
             </div>
             <div class="user-card-left-col">
@@ -52,7 +77,8 @@
                   <%# <%= cl_image_tag user.photo.key, class: "avatar-bordered" %>
                 </div>
                 <div class="index-user-location">
-                  <h6><i class="fa-solid fa-location-dot mr-5">  </i><%= user.location %></h6>
+                  <h6><i class="fa-solid fa-location-dot mr-5">  </i></h6>
+                  <h6><%= user.location %></h6>
                 </div>
               </div>
             </div>

@@ -114,13 +114,15 @@
 
   h5 {
     font-size: 30px;
+    margin-top: 30px;
   }
 }
 
 .project-index-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 26px;
+  grid-gap: 36px;
+  padding: 5px 80px;
 }
 
 .card-trip-infos-skills {

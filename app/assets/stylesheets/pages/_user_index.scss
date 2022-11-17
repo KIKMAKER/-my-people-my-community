@@ -1,3 +1,29 @@
+.user-index {
+  .header-container {
+    background-color: #EED8CB;
+    display: flex;
+    justify-content: center;
+    min-height: fit-content;
+    margin-bottom: 25px;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-size: 45px;
+    }
+  }
+
+  h1 {
+    font-size: 45px;
+    color: #D86632;
+  }
+
+  h5 {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+}
+
 .index-users-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -10,21 +36,38 @@
 }
 
 .user-badges {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  .user-badge {
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+    p {
+      font-size: 11px !important;
+      color: black !important;
 
-
+    }
+  }
 }
 
 .title {
   color: #d86616;
   display: flex;
   justify-content: center;
+
+  h5 {
+    color: black;
+    font-size: 30px;
+  }
 }
 
 .index-user-card {
   height: 260px;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
+  padding-left: 30px;
   background-color: beige;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -136,9 +179,10 @@
   right: 12px;
   bottom: 0px;
   font-size: 18px;
+  display: flex;
+  flex-direction: row;
 
   h6 {
-    margin-left: 5px;
-    // fjghfiufgiu
+    margin-left: 6px;
   }
 }
