@@ -408,34 +408,6 @@ puts "#{UserSkill.count} user_skills assigned to users"
 
 puts "Creating projects"
 
-garden = Project.create(
-  user: jo_ann,
-  title: "Urban Garden/Community Space",
-  description: "Jo Ann is an apartment owner and member of the body corporate of
-  Studio 57 Apartments in Woodstock, Cape Town. It is a small apartment block
-  which has a large, open, communal area on its rooftop that gets plenty of sun.
-  She would like to turn this space into a green area with a vegetable garden
-  for the tenants. She has been given the go ahead by the other members of the
-  body corporate and tenants to implement this idea. She has collected donations
-  from some tenants in the building and now needs help from someone with knowledge
-  and experience in urban landscape design as well as gardening which
-  will then be sustained by the tenants and a hired gardener.",
-  location: "Woodstock",
-  start_date: DateTime.now,
-  end_date: DateTime.now + 1.months
-)
-
-puts "Assigning images to garden project"
-
-garden_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580565/markus-spiske-Yy-dHQP-Ax0-unsplash_ftjq8v.jpg")
-garden.photos.attach(io: garden_photo, filename: "garden.jpg", content_type: "image/jpg")
-garden_photo1 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580584/prateek-gautam-uhWB6BWWz1Q-unsplash_x9fbt7.jpg")
-garden.photos.attach(io: garden_photo1, filename: "garden.jpg", content_type: "image/jpg")
-garden_photo2 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580525/markus-spiske-4PG6wLlVag4-unsplash_sysrpm.jpg")
-garden.photos.attach(io: garden_photo2, filename: "garden.jpg", content_type: "image/jpg")
-garden.save
-
-puts "#{garden.photos.count} photos added to garden."
 
 foodtruck = Project.create(
   user: pierre,
@@ -461,6 +433,35 @@ foodtruck.photos.attach(io: foodtruck_photo2, filename: "foodtruck.jpg", content
 foodtruck.save
 
 puts "#{foodtruck.photos.count} photos added to garden."
+
+garden = Project.create(
+  user: jo_ann,
+  title: "Urban Garden",
+  description: "Jo Ann is an apartment owner and member of the body corporate of
+  Studio 57 Apartments in Woodstock, Cape Town. It is a small apartment block
+  which has a large, open, communal area on its rooftop that gets plenty of sun.
+  She would like to turn this space into a green area with a vegetable garden
+  for the tenants. She has been given the go ahead by the other members of the
+  body corporate and tenants to implement this idea. She has collected donations
+  from some tenants in the building and now needs help from someone with knowledge
+  and experience in urban landscape design as well as gardening which
+  will then be sustained by the tenants and a hired gardener.",
+  location: "Woodstock",
+  start_date: DateTime.now,
+  end_date: DateTime.now + 1.months
+)
+
+puts "Assigning images to garden project"
+
+garden_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580565/markus-spiske-Yy-dHQP-Ax0-unsplash_ftjq8v.jpg")
+garden.photos.attach(io: garden_photo, filename: "garden.jpg", content_type: "image/jpg")
+garden_photo1 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580584/prateek-gautam-uhWB6BWWz1Q-unsplash_x9fbt7.jpg")
+garden.photos.attach(io: garden_photo1, filename: "garden.jpg", content_type: "image/jpg")
+garden_photo2 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580525/markus-spiske-4PG6wLlVag4-unsplash_sysrpm.jpg")
+garden.photos.attach(io: garden_photo2, filename: "garden.jpg", content_type: "image/jpg")
+garden.save
+
+puts "#{garden.photos.count} photos added to garden."
 
 bikini = Project.create(
   user: gloria,
@@ -547,7 +548,8 @@ puts "Assigning skills to projects"
 
 garden.project_skills.create(
   [
-    { skill: business }
+    { skill: business },
+    { skill: garden }
   ]
 )
 
@@ -555,7 +557,6 @@ foodtruck.project_skills.create(
   [
     { skill: business },
     { skill: photography },
-    { skill: project_management },
     { skill: graphic_design },
     { skill: web_development }
   ]
@@ -587,7 +588,9 @@ shine.project_skills.create(
 
 cheese.project_skills.create(
   [
-    { skill: graphic_design }
+    { skill: graphic_design },
+    { skill: project_management },
+    { skill: business }
   ]
 )
 
