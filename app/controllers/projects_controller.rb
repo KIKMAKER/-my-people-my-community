@@ -34,6 +34,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def post_room
+    @project = Project.find(params[:project_id])
+    @project_member = ProjectMember.new
+    @posts = Post.where(project_id: params[:project_id])
+    @post = Post.new
+  end
+
   private
 
   def project_params
