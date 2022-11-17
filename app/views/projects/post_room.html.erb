@@ -1,0 +1,71 @@
+<% if current_user.member_or_owner_of_project?(@project) %>
+  
+<% else %>
+  <div class="container mt-4 show-main-container">
+    <div class="project-show-leftcol">
+      <div class="show-image-carousel">
+        <div class ="carosel-container">
+          <div class="splide" role="group" aria-label="Splide Basic HTML Example" data-controller="slider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <% @project.photos.each do |photo| %>
+                  <li class="splide__slide"><%= cl_image_tag photo.key, height: 500, width: 600, crop: :fill %></li>
+                <%end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="show-skills">
+        <h4>Categories</h4>
+          <div class="tags">
+            <% @project.categories.each do |category| %>
+              <div class="tag category">
+                <span><%= category.name %></span>
+              </div>
+            <% end %>
+          </div>
+        <h4>Skills needed</h4>
+          <div class="tags">
+            <% @project.skills.each do |skill| %>
+              <div class="tag skill">
+                <span><%= skill.name %></span>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+
+    <div class="project-show-rightcol">
+      <div class="project-info">
+        <h3><%= @project.title %></h3>
+        <p><%= @project.description %></p>
+      </div>
+
+      <div class="user-info">
+<div >
+          <h3>NewsFeed</h3>
+
+           <div class="project-posts">
+          <% @posts.each do |post| %>
+            <div class="post-room-message">
+              <%# replace image %>
+              <%= cl_image_tag post.user.photo.key, class: "avatar-bordered", width: "55px" %>
+
+              <div class="notification-content">
+                <h5><%= post.user.full_name %></h3>
+                <p><%= post.content %></p>
+              </div>
+            </div>
+          <%end %>
+        </div class="project-message-new">
+          <%= simple_form_for [@project, @post] do |f| %>
+            <%= f.input :content, :label => "Share an update with your team members" %>
+            <%= f.button :submit, class: "button" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

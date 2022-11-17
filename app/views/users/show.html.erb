@@ -10,19 +10,13 @@
           <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p>
         </strong>
       </div>
-      <div class="message-button-wrapper">
-        <% if @conversation.persisted? %>
-          <%= link_to "message #{@user.first_name}", conversation_path(@conversation), class: "button" %>
-        <% else %>
-          <%= link_to "message #{@user.first_name}", user_conversations_path(@user), data: {turbo_method: :post}, class: "button" %>
-        <% end %>
-      </div>
+
     </div>
     <div class="user-show-content">
       <div class="user-skills">
         <h4>Skills</h4>
         <% @user.skills.each do |skill| %>
-          <div class="user-skill">
+          <div class="user-skill skill-pill">
             <%= skill.name %>
           </div>
         <% end %>
@@ -63,19 +57,38 @@
             </div>
           </div>
         </div>
+        <div class="message-button-wrapper">
+        <% if @conversation.persisted? %>
+          <%= link_to "message #{@user.first_name}", conversation_path(@conversation), class: "button" %>
+        <% else %>
+          <%= link_to "message #{@user.first_name}", user_conversations_path(@user), data: {turbo_method: :post}, class: "button" %>
+        <% end %>
+      </div>
         <% if @user.initiated_projects.empty? %>
           <div class="user-projects mt-2">
-            <h4>User Projects</h4>
+            <h4>Initiated Projects:</h4>
             <div class="user-project-card">
               <p><%= "#{@user.first_name} hasn't initiated any projects yet." %></p>
               <p><%= link_to "Find a venture", projects_path, class: "button" %></p>
             <% else%>
-              <h4><%= @user.first_name %> started:</h4>
-              <ul>
-                <% @user.initiated_projects.each do |project| %>
-                  <li><%= link_to project.title, project_path(project) %></li>
-                <% end %>
-              </ul>
+                <%= @user.first_name %> started:
+                <div class="user-show-cards mt-5">
+                  <% @user.initiated_projects.each do |project| %>
+                    <%= link_to project_path(project) do %>
+                      <div class="card-trip project-show">
+                        <%= cl_image_tag project.photos[0].key%>
+                        <div class="card-trip-infos">
+                          <div>
+                            <h2><%= project.title %></h2>
+                            <div>
+                              <p><%= project.description.truncate(80) %></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
             <% end %>
           </div>
         </div>

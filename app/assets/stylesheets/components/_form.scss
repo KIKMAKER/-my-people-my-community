@@ -7,15 +7,14 @@
 
 
 .form {
-  background: #EED8CB;
+  background: #eed8cb;
   padding: 10px 50px;
   margin-top: 10px;
   border-radius: 8px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   width: 80%;
   align-self: center;
   border: 2px solid;
-
 
   h2 {
     font-size: 25px;
@@ -31,7 +30,7 @@
     margin-bottom: 20px;
     border-radius: 12px;
     color: black;
-    border: 1px solid #CAD2E8;
+    border: 1px solid #cad2e8;
     padding: 12px 24px;
     text-align: center;
     text-decoration: none;
@@ -42,7 +41,7 @@
 
   .btn:hover {
     opacity: 1;
-    background-color:  #f1f0ea;
+    background-color: #f1f0ea;
   }
   .skill-pill {
     position: absolute;
@@ -51,7 +50,7 @@
 
   .skill-pill + label {
     cursor: pointer;
-    background-color: #3A8B82;
+    background-color: #3a8b82;
     border: 1px solid white;
     padding: 4px 8px;
     border-radius: 15px;
@@ -70,7 +69,7 @@
 
   .category-pill + label {
     cursor: pointer;
-    background-color: #3A8B82;
+    background-color: #3a8b82;
     border: 1px solid white;
     padding: 4px 8px;
     border-radius: 15px;
@@ -84,21 +83,24 @@
 }
 
 .post {
-  display: flex
+  display: flex;
 }
 
-
 .form#project-form {
-  background-color: #EED8CB;
+  background-color: #eed8cb;
   padding-top: 20px;
 
   .form-label {
-   font-size: 18px;
-   font-weight: bold;
-
+    font-size: 18px;
+    font-weight: bold;
   }
   // .btn .form{
   //   background-color: #cfcbee8c;
   //   width: 100%;
   // }
+}
+
+textarea {
+  color: white !important;
+  font-size: 14px !important;
 }

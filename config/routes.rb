@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :projects, except: :destroy do
+    get "post_room", to: "projects#post_room"
     resources :project_members, only: :create
     resources :posts, only: :create
   end

@@ -1,3 +1,22 @@
-.post-form {
-  
+.project-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: scroll;
+
+  .post_content {
+    margin-top: 16px;
+  }
+}
+
+.post-room-message {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #ffffff70;
+  padding: 8px;
+  img {
+    margin-right: 8px;
+  }
 }
