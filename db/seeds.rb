@@ -140,69 +140,6 @@ liam.photo.attach(io: liam_photo, filename: "liam.png", content_type: "image/png
 liam.save
 
 
-jo_ann = User.create(
-  first_name: "Jo Ann",
-  last_name: "Hill",
-  username: "random",
-  email: "joann@people.com",
-  password: "password",
-  bio: "I love to work in the garden and make spaces beutiful.",
-  location: "Woodstock",
-  linkedin_url: "linkedin.com/in/jo"
-)
-
-jo_ann_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
-jo_ann.photo.attach(io: jo_ann_photo, filename: "jo_ann.png", content_type: "image/png")
-jo_ann.save
-
-pierre = User.create(
-  first_name: "Pierre",
-  last_name: "Kabamba",
-  username: "random",
-  email: "pierre@people.com",
-  password: "password",
-  bio: "Food is my passion!",
-  location: "Salt River",
-  linkedin_url: "linkedin.com/in/pierre"
-)
-
-pierre_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
-pierre.photo.attach(io: pierre_photo, filename: "pierre.png", content_type: "image/png")
-pierre.save
-
-gloria = User.create(
-  first_name: "Gloria",
-  last_name: "Madi",
-  username: "random",
-  email: "gloria@people.com",
-  password: "password",
-  bio: "71 year old entrepreneur who sells beautiful crocheted bikini's on Camps
-  Bay beach during the summer seasons in Cape Town.I have worked hard to make
-  my bikini business, and now it's time to enjoy a little.",
-  location: "Salt River",
-  linkedin_url: "linkedin.com/in/pierre"
-)
-
-gloria_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
-gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "image/png")
-gloria.save
-
-cheri = User.create(
-  first_name: "Cheri",
-  last_name: "Black",q
-  username: "random",
-  email: "cheri@people.com",
-  password: "password",
-  bio: "Life is better with a bit of flair. Find me changing the world from the
-  comfort of my couch.",
-  location: "Muizenberg",
-  linkedin_url: "linkedin.com/in/cheriblack"
-)
-
-cheri_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
-cheri.photo.attach(io: cheri_photo, filename: "cheri.png", content_type: "image/png")
-cheri.save
-
 caro = User.create(
   first_name: "Caro",
   last_name: "Wamono",
@@ -248,9 +185,11 @@ joe = User.create(
   location: "Kent",
   linkedin_url: "linkedin.com/in/joe"
 )
+
 joe_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
 joe.photo.attach(io: joe_photo, filename: "joe.png", content_type: "image/png")
 joe.save
+
 dom = User.create(
   first_name: "Dom",
   last_name: "Walsh",
@@ -264,9 +203,11 @@ dom = User.create(
   location: "barcelona",
   linkedin_url: "linkedin.com/in/dom"
 )
+
 dom_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
 dom.photo.attach(io: dom_photo, filename: "dom.png", content_type: "image/png")
 dom.save
+
 tracy = User.create(
   first_name: "Tracy",
   last_name: "Sikenjana",
@@ -282,6 +223,7 @@ tracy = User.create(
 tracy_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
 tracy.photo.attach(io: tracy_photo, filename: "tracy.png", content_type: "image/png")
 tracy.save
+
 jo = User.create(
   first_name: "Jonathan",
   last_name: "Dreyer",
@@ -349,6 +291,69 @@ roux = User.create(
 roux_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
 roux.photo.attach(io: roux_photo, filename: "roux.png", content_type: "image/png")
 roux.save
+
+jo_ann = User.create(
+  first_name: "Jo Ann",
+  last_name: "Hill",
+  username: "random",
+  email: "joann@people.com",
+  password: "password",
+  bio: "I love to work in the garden and make spaces beutiful.",
+  location: "Woodstock",
+  linkedin_url: "linkedin.com/in/jo"
+)
+
+jo_ann_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+jo_ann.photo.attach(io: jo_ann_photo, filename: "jo_ann.png", content_type: "image/png")
+jo_ann.save
+
+pierre = User.create(
+  first_name: "Pierre",
+  last_name: "Kabamba",
+  username: "random",
+  email: "pierre@people.com",
+  password: "password",
+  bio: "Food is my passion!",
+  location: "Salt River",
+  linkedin_url: "linkedin.com/in/pierre"
+)
+
+pierre_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
+pierre.photo.attach(io: pierre_photo, filename: "pierre.png", content_type: "image/png")
+pierre.save
+
+gloria = User.create(
+  first_name: "Gloria",
+  last_name: "Madi",
+  username: "random",
+  email: "gloria@people.com",
+  password: "password",
+  bio: "71 year old entrepreneur who sells beautiful crocheted bikini's on Camps
+  Bay beach during the summer seasons in Cape Town.I have worked hard to make
+  my bikini business, and now it's time to enjoy a little.",
+  location: "Salt River",
+  linkedin_url: "linkedin.com/in/pierre"
+)
+
+gloria_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
+gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "image/png")
+gloria.save
+
+cheri = User.create(
+  first_name: "Cheri",
+  last_name: "Black",q
+  username: "random",
+  email: "cheri@people.com",
+  password: "password",
+  bio: "Life is better with a bit of flair. Find me changing the world from the
+  comfort of my couch.",
+  location: "Muizenberg",
+  linkedin_url: "linkedin.com/in/cheriblack"
+)
+
+cheri_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+cheri.photo.attach(io: cheri_photo, filename: "cheri.png", content_type: "image/png")
+cheri.save
 
 puts "#{User.count} users created"
 
@@ -421,6 +426,7 @@ garden = Project.create(
   end_date: DateTime.now + 1.months
 )
 
+
 puts "Assigning images to garden project"
 
 garden_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580565/markus-spiske-Yy-dHQP-Ax0-unsplash_ftjq8v.jpg")
@@ -432,6 +438,7 @@ garden.photos.attach(io: garden_photo2, filename: "garden.jpg", content_type: "i
 garden.save
 
 puts "#{garden.photos.count} photos added to garden."
+
 
 
 foodtruck = Project.create(
@@ -448,6 +455,7 @@ foodtruck = Project.create(
 )
 
 puts "Assigning images to foodtruck project"
+
 
 foodtruck_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580645/stefan-sommarsjo-ysambitxV8M-unsplash_wax7da.jpg")
 foodtruck.photos.attach(io: foodtruck_photo, filename: "foodtruck.jpg", content_type: "image/jpg")
