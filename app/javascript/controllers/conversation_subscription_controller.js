@@ -3,9 +3,7 @@ import { createConsumer } from "@rails/actioncable";
 
 // Connects to data-controller="conversation-subscription"
 export default class extends Controller {
-  static values = {
-    conversationId: Number, currentUserId: Number
-  };
+  static values = { conversationId: Number, currentUserId: Number };
   static targets = ["messages"];
 
   connect() {
@@ -16,17 +14,19 @@ export default class extends Controller {
           this.#insertMessageAndScrollDown(data);
         },
       }
-    );
-  }
+    )
+  };
   resetForm(event) {
     event.target.reset();
-  }
+  };
 
   #insertMessageAndScrollDown(data) {
-    this.messagesTarget.insertAdjacentHTML("beforeend", data);
-    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight);
     const currentUserIsSender = this.currentUserIdValue === data.sender_id;
     const messageElement = this.#buildMessageElement(currentUserIsSender, data.message);
+    
+    this.messagesTarget.insertAdjacentHTML("beforeend", data);
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight);
+
     this.messagesTarget.insertAdjacentHTML("beforeend", messageElement);
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight);
   };
