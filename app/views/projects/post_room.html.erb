@@ -53,11 +53,12 @@
           <%end %>
         </div class="project-message-new">
         <%= simple_form_for [@project, @post] do |f| %>
-          <%= f.input :content, :label => "Share an update with your team members" %>
-          <%= f.button :submit, class: "button" %>
+          <%= f.input :content, required: false, label: "Share an update with your team members", input_html: { class: "mt-1" }  %>
+          <div class="d-flex justify-content-between">
+            <%= f.button :submit, class: "button" %>
+            <%= link_to "Project Info", project_path(@project), class: "button" %>
+          </div>
         <% end %>
-
-        <%= link_to "Project Info", project_path(@project), class: "button" %>
       </div>
     </div>
   </div>

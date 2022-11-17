@@ -1,3 +1,13 @@
+// .form-input {
+//   border: 2px solid;
+// }
+
+.sessions.new {
+  .form {
+    width: 100%;
+  }
+}
+
 .form {
   background: #eed8cb;
   padding: 10px 50px;
@@ -6,6 +16,7 @@
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   width: 80%;
   align-self: center;
+  border: 2px solid;
 
   h2 {
     font-size: 25px;
@@ -15,8 +26,7 @@
     text-align: center;
   }
   .btn {
-    margin-left: 35%;
-    width: 30%;
+    width: 100%;
     min-width: fit-content;
     margin-bottom: 20px;
     border-radius: 12px;
@@ -27,12 +37,9 @@
     text-decoration: none;
     opacity: 0.6;
     font-weight: bold;
+    background-color: #cfcbee4d;
   }
 
-  .btn:hover {
-    opacity: 1;
-    background-color: #f1f0ea;
-  }
   .skill-pill {
     position: absolute;
     transform: scale(0);
@@ -59,7 +66,7 @@
 
   .category-pill + label {
     cursor: pointer;
-    background-color: #3a8b82;
+    background-color: #4a7aa9;
     border: 1px solid white;
     padding: 4px 8px;
     border-radius: 15px;
@@ -84,12 +91,23 @@
     font-size: 18px;
     font-weight: bold;
   }
-  .btn {
-    background-color: #f1f0ea;
-  }
+  // .btn .form{
+  //   background-color: #cfcbee8c;
+  //   width: 100%;
+  // }
 }
 
 textarea {
   color: white !important;
   font-size: 14px !important;
+}
+
+.projects.new {
+  form {
+    textarea,
+    input {
+      color: white !important;
+      font-size: 22px !important;
+    }
+  }
 }

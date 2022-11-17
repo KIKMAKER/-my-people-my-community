@@ -12,7 +12,9 @@
         <%= f.input :start_date, required: false, as: :date, html5: true %>
         <%= f.input :end_date, required: false, as: :date, html5: true %>
         <%= f.input :photos, as: :file %>
-        <%= f.button :submit, class: "btn" %>
+        <div class="d-flex justify-content-center">
+          <%= f.submit "Create Project", class: "button" %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -123,25 +123,5 @@
         </div>
       </div>
     </div>
-  </section>
-  <% if false %>
-    <div class="container user-show-main-container">
-      <div class="user-show-top">
-        <div class="user-show-profile">
-          <%= cl_image_tag @user.photo.key %>
-          <div class="user-show-profile-info">
-            <h1><%= @user.full_name %></h1>
-            <p><%= @user.location %><%= link_to "Contact", user_conversations_path(@user) %></p>
-          </div>
-        </div>
-      </div>
-      <div class="user-show-middle">
-        <div class="user-show-middle-skills">
-          <h2>Skill</h2>
-        </div>
-        <div class="user-show-middle-bio">
-          <h2>Bio</h2>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  </div>
+</section>
