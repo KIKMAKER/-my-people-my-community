@@ -189,7 +189,7 @@ gloria.save
 
 cheri = User.create(
   first_name: "Cheri",
-  last_name: "Black",q
+  last_name: "Black",
   username: "random",
   email: "cheri@people.com",
   password: "password",
