@@ -1,6 +1,9 @@
  .banner-page {
   background-size: cover;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  
   padding: 150px 0;
   height: 190px;
 }

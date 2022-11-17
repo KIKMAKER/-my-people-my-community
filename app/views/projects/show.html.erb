@@ -1,4 +1,5 @@
 
+
 <% content_for :meta_title, "#{@project.title} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @project.description %>
 <% content_for :meta_image, cl_image_path(@project.photo.path) %>
@@ -15,6 +16,7 @@
 </div>
 
 <%# begin tab %>
+
 <% if current_user.member_or_owner_of_project?(@project) %>
   <% if @project.is_owner?(current_user) || current_user.accepted_member_of_project?(@project) %>
     <ul class="nav nav-pills mb-3 mt-4 justify-content-around" id="pills-tab" role="tablist">
@@ -27,113 +29,204 @@
     </ul>
   <% end %>
   <div class="tab-content" id="pills-tabContent">
-      <%# project details %>
-      <div class="tab-pane fade <%= params[:show_posts].present? ? '': 'show active' %>" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab">
-        <div class="container">
-          <div class="d-flex background">
-            <div class="backround small">
-              <h4>Categories</h4>
-              <% @project.categories.each do |category| %>
-                <p><%= category.name %></p>
-              <% end %>
-              <h4>Skills needed</h4>
-              <% @project.skills.each do |skill| %>
-                <p><%= skill.name %></p>
-              <% end %>
-            </div>
-            <div class="background big">
-             <h3><%= @project.title %>'s story</h3>
-              <p><%= @project.description %></p>
-              <h4>Project stats</h4>
-              <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
-              <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
-              <% @project.project_members.each do |member| %>
-              <% if member.user.photo.attached? %>
-              <%= cl_image_tag member.user.photo.key, class: "project-show-avatar" %>
-              <% end %>
-            <%= member.user.full_name %>
+    <%# project details %>
+    <div class="tab-pane fade <%= params[:show_posts].present? ? '': 'show active' %>" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab">
+      <div class="container">
+        <div>
+          <% if current_user.can_apply_to_project?(@project) %>
+            <%= simple_form_for [@project, @project_member], class: 'mb-4' do |f| %>
+              <%= f.submit 'Apply', class: "button"%>
             <% end %>
+          <% end %>
+        </div>
+        <div class="container mt-4 show-main-container">
+    <div class="project-show-leftcol">
+      <div class="show-image-carousel">
+        <div class ="carosel-container">
+          <div class="splide" role="group" aria-label="Splide Basic HTML Example" data-controller="slider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <% @project.photos.each do |photo| %>
+                  <li class="splide__slide"><%= cl_image_tag photo.key, height: 500, width: 600, crop: :fill %></li>
+                <%end %>
+              </ul>
             </div>
           </div>
         </div>
-        <%# project details %>
       </div>
-      <%# posts %>
-      <div class="tab-pane fade <%= params[:show_posts].present? ? 'show active': '' %>" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
-        <div class="container">
-          <div class="">
-            <h1><%= @project.title %> NewsFeed</h1>
-            <h2>New Posts:</h2>
-            <%= simple_form_for [@project, @post] do |f| %>
-              <%= f.input :content, :label => "Share an update with your team members" %>
-              <%= f.button :submit, class: "button" %>
-            <% end %>
-          </div>
-          <div class="project-posts">
-            <% @posts.each do |post| %>
-              <div class="notification">
-                <%# replace image %>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                <div class="notification-content">
-                  <p><strong><%= post.user.full_name %></strong></p>
-                  <p><%= post.content %></p>
-                </div>
+
+      <div class="show-skills">
+        <h4>Categories</h4>
+          <div class="tags">
+            <% @project.categories.each do |category| %>
+              <div class="tag category">
+                <span><%= category.name %></span>
               </div>
-            <%end %>
+            <% end %>
+          </div>
+        <h4>Skills needed</h4>
+          <div class="tags">
+            <% @project.skills.each do |skill| %>
+              <div class="tag skill">
+                <span><%= skill.name %></span>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+
+    <div class="project-show-rightcol">
+      <div class="project-info">
+        <h3><%= @project.title %></h3>
+        <p><%= @project.description.truncate(300) %></p>
+      </div>
+
+      <div class="user-info">
+        <div class="d-flex">
+          <div class="user-content">
+            <h3>Project Info</h3>
+            <p>location: <i class="fa-solid fa-location-dot mx-2"></i><%= @project.location %></p>
+            <p>This project was initiated by <%= @project.user.first_name %> from <%= @project.user.location %>.</p>
+            <p>"<%= @project.user.bio %>"</p>
+          </div>
+          <div class="user-img">
+            <%= cl_image_tag (@project.user.photo.key), height: "200px" %>
           </div>
         </div>
-        <%# posts %>
-      </div>
-      <%# end tab %>
-    </div>
-    <% else %>
-    <div class="container">
-      <h2 class="text-center">Learn more about <%= @project.title %></h2>
-      <div class="d-flex background">
-        <div class="backround small">
-          <h4>Categories</h4>
-          <% @project.categories.each do |category| %>
-            <p><%= category.name %></p>
-          <% end %>
-          <h4>Skills needed</h4>
-          <% @project.skills.each do |skill| %>
-            <p><%= skill.name %></p>
-          <% end %>
-        </div>
-        <div class="background big">
-          <h3><%= @project.title %>'s story</h3>
-          <p><%= @project.description %></p>
-          <h4>Project stats</h4>
-          <p>This project was initiated by the legendary <%= @project.user.first_name %> from <%= @project.user.location %>. Learn more about her <%= link_to "here", user_path(@project.user) %>.</p>
-          <p>The project has <%= pluralize(@project.project_members.count, "volunteer") %>.</p>
-          <% @project.project_members.each do |member| %>
-            <% if member.user.photo.attached? %>
-              <%= cl_image_tag member.user.photo.key, class: "project-show-avatar" %>
-            <% end %>
-            <%= member.user.full_name %>
-          <% end %>
+        <div class="user-members">
+          <div>
+            <h4>There are <%= pluralize(@project.project_members.count, "collaborator") %> working on this venture.</h4>
+          </div>
+          <div class="p-2">
+            <% @project.project_members.each do |member| %>
+              <div class="d-flex">
+              <% if member.user.photo.attached? %>
+              <div class="member">
+                <%= cl_image_tag member.user.photo.key, class: "project-show-avatar" %>
+              <% end %>
+              <%= link_to user_path(member.user) do %>
+              <%= member.user.first_name %>
+              <% end %>
+              </div>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-<%# Carosel %>
-<div class ="carosel-container">
-  <div class="splide" role="group" aria-label="Splide Basic HTML Example" data-controller="slider">
-    <div class="splide__track">
-		  <ul class="splide__list">
-        <% @project.photos.each do |photo| %>
-          <li class="splide__slide"><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></li>
-          <%end %>
-		  </ul>
     </div>
   </div>
-</div>
-<%# Carosel %>
-  <%# For Refactoring later:
-def project_owner?(user)
-    user == @project.user
-  end
+      <%# project details %>
+    </div>
+    <%# posts %>
+    <div class="tab-pane fade <%= params[:show_posts].present? ? 'show active': '' %>" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
+      <div class="container">
+        <div class="">
+          <h1><%= @project.title %> NewsFeed</h1>
+          <h2>New Posts:</h2>
+          <%= simple_form_for [@project, @post] do |f| %>
+            <%= f.input :content, :label => "Share an update with your team members" %>
+            <%= f.button :submit, class: "button" %>
+          <% end %>
+        </div>
+        <div class="project-posts">
+          <% @posts.each do |post| %>
+            <div class="notification">
+              <%# replace image %>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              <div class="notification-content">
+                <p><strong><%= post.user.full_name %></strong></p>
+                <p><%= post.content %></p>
+              </div>
+            </div>
+          <%end %>
+        </div>
+      </div>
+      <%# posts %>
+    </div>
+    <%# end tab %>
+  </div>
+<% else %>
+  <div class="container mt-4 show-main-container">
+    <div class="project-show-leftcol">
+      <div class="show-image-carousel">
+        <div class ="carosel-container">
+          <div class="splide" role="group" aria-label="Splide Basic HTML Example" data-controller="slider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <% @project.photos.each do |photo| %>
+                  <li class="splide__slide"><%= cl_image_tag photo.key, height: 500, width: 600, crop: :fill %></li>
+                <%end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  def project_member?(user)
-    user.projects.include?(@project)
-  end %>
+      <div class="show-skills">
+        <h4>Categories</h4>
+          <div class="tags">
+            <% @project.categories.each do |category| %>
+              <div class="tag category">
+                <span><%= category.name %></span>
+              </div>
+            <% end %>
+          </div>
+        <h4>Skills needed</h4>
+          <div class="tags">
+            <% @project.skills.each do |skill| %>
+              <div class="tag skill">
+                <span><%= skill.name %></span>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+
+    <div class="project-show-rightcol">
+      <div class="project-info">
+        <h3><%= @project.title %></h3>
+        <p><%= @project.description %></p>
+        <div>
+          <% if current_user.can_apply_to_project?(@project) %>
+            <%= simple_form_for [@project, @project_member], class: 'mb-4' do |f| %>
+              <%= f.submit 'Apply', class: "button"%>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="user-info">
+        <div class="d-flex">
+          <div class="user-content">
+            <h3>Project Info</h3>
+            <p>This project was initiated by <%= @project.user.first_name %> from <%= @project.user.location %>.</p>
+            <p>"<%= @project.user.bio %>"</p>
+          </div>
+          <div class="user-img">
+            <%= cl_image_tag (@project.user.photo.key), height: "200px" %>
+          </div>
+        </div>
+        <div class="user-members">
+          <div>
+            <h4>There are <%= pluralize(@project.project_members.count, "collaborator") %> working on this venture.</h4>
+          </div>
+          <div class="p-2">
+            <% @project.project_members.each do |member| %>
+              <div class="d-flex">
+              <% if member.user.photo.attached? %>
+              <div class="member">
+                <%= cl_image_tag member.user.photo.key, class: "project-show-avatar" %>
+              <% end %>
+              <%= link_to user_path(member.user) do %>
+              <%= member.user.first_name %>
+              <% end %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%# Carosel %>

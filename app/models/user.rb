@@ -57,7 +57,7 @@
 
   def all_rounder?
     skills_on_projects = projects.map { |project| project.skills }.flatten
-    skills_on_projects.count { |skill| skills.include?(skill) }
+    skills_on_projects.count { |skill| skills.include?(skill) } > 1
   end
 
   def expert?
