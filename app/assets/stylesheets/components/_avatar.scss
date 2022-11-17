@@ -4,8 +4,13 @@
   border-radius: 50%;
   object-fit: cover;
 }
-.avatar-large {
+.avatar-xlarge {
   width: 56px;
+  border-radius: 50%;
+}
+
+.avatar-xlarge {
+  width: 100px;
   border-radius: 50%;
 }
 .avatar-bordered {

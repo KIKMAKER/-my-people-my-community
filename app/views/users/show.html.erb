@@ -10,99 +10,138 @@
           <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p>
         </strong>
       </div>
-      <div class="message-button-wrapper">
-        <% if @conversation.persisted? %>
-          <%= link_to "message #{@user.first_name}", conversation_path(@conversation), class: "button" %>
-        <% else %>
-          <%= link_to "message #{@user.first_name}", user_conversations_path(@user), data: {turbo_method: :post}, class: "button" %>
-        <% end %>
-      </div>
-    </div>
-    <div class="user-show-content">
-      <div class="user-skills">
-        <h4>Skills</h4>
-        <% @user.skills.each do |skill| %>
-          <div class="user-skill">
-            <%= skill.name %>
+      <div class="user-show-content">
+        <div class="user-skills">
+          <h4>Skills</h4>
+          <% @user.skills.each do |skill| %>
+            <div class="skill d-flex justify-content-center align-items-center">
+              <span><%= skill.name %></span>
+            </div>
+          <% end %>
+          <div class="d-flex justify-content-center">
+            <% if @conversation.persisted? %>
+              <%= link_to "Message #{@user.first_name}", conversation_path(@conversation), class: "button" %>
+            <% else %>
+              <%= link_to "Message #{@user.first_name}", user_conversations_path(@user), data: {turbo_method: :post}, class: "button" %>
+            <% end %>
           </div>
-        <% end %>
-        <div class="badges">
+          <div class="social-icons d-flex justify-content-center align-items-center">
+            <%= icon('fa-brands', 'instagram') %>
+            <%= link_to @user.linkedin_url, class: 'mx-2' do %>
+              <%= icon('fa-brands', 'linkedin')%>
+            <% end %>
+          </div>
           <h4><%= @user.first_name %>'s Badges</h4>
-          <% if @user.supporter? %>
-            <%= image_tag "support.png", height: "45px" %>
-            <p> Collaborator badge </p>
-          <% end %>
-          <% if @user.all_rounder? %>
-            <%= image_tag "all_rounder.png", height: "45px" %>
-            <p> All-Rounder badge </p>
-          <% end %>
-          <% if @user.expert_in == "Web Development" %>
-            <%= image_tag "web_development.png", height: "45px" %>
-            <p> Web Development badge </p>
-          <% end %>
-          <% if @user.expert_in == "Graphic Design" %>
-            <%= image_tag "graphic_design.png", height: "45px" %>
-            <p> Graphic Design badge </p>
-          <% end %>
-        </div>
-      </div>
-      <div class="user-info">
-        <div class="user-about">
-          <h3>Bio</h3>
-          <div class="user-about-content">
-            <div class="bio-icons">
-              <div class=bio-text>
-                <p><%= @user.bio %></p>
-              </div>
-              <div class="social-icons">
-                <%= icon('fa-brands', 'instagram') %>
-                <%= link_to @user.linkedin_url do %>
-                  <%= icon('fa-brands', 'linkedin')%>
-                <% end %>
-              </div>
+          <div class="badges d-flex flex-wrap justify-content-center">
+            <div class="badge">
+              <% if @user.supporter? %>
+                <%= image_tag "support.png", height: "45px" %>
+                <p>Collaborator</p>
+              <% end %>
+            </div>
+            <div class="badge">
+              <% if @user.all_rounder? %>
+                <%= image_tag "all_rounder.png", height: "45px" %>
+                <p>All-Rounder</p>
+              <% end %>
+            </div>
+            <div class="badge">
+              <% if @user.expert_in == "Web Development" %>
+                <%= image_tag "web_development.png", height: "45px" %>
+                <p>Web Development</p>
+              <% end %>
+            </div>
+            <div class="badge">
+              <% if @user.expert_in == "Graphic Design" %>
+                <%= image_tag "graphic_design.png", height: "45px" %>
+                <p>Graphic Design</p>
+              <% end %>
             </div>
           </div>
         </div>
-        <% if @user.initiated_projects.empty? %>
-          <div class="user-projects mt-2">
-            <h4>User Projects</h4>
-            <div class="user-project-card">
-              <p><%= "#{@user.first_name} hasn't initiated any projects yet." %></p>
-              <p><%= link_to "Find a venture", projects_path, class: "button" %></p>
-            <% else%>
-              <h4><%= @user.first_name %> started:</h4>
-              <ul>
-                <% @user.initiated_projects.each do |project| %>
-                  <li><%= link_to project.title, project_path(project) %></li>
-                <% end %>
-              </ul>
-            <% end %>
+        <div class="user-info d-flex flex-column">
+          <div class="user-about">
+            <h4>About <%= @user.first_name %></h4>
+            <div class="user-about-content">
+              <div class="bio-icons">
+                <div class=bio-text>
+                  <p><%= @user.bio %></p>
+                </div>
+              </div>
+            </div>
           </div>
+          <% if @user.initiated_projects.empty? %>
+            <div class="user-projects mt-2">
+              <h4>Projects</h4>
+              <div class="user-project-card">
+                <p><%= "#{@user.first_name} hasn't initiated any projects yet." %></p>
+              <% else%>
+                <h4><%= @user.first_name %> started:</h4>
+                <ul>
+                  <% @user.initiated_projects.each do |project| %>
+                    <li><%= link_to project.title, project_path(project) %></li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+          <div class="mt-auto">
+            <div class="user-show-projects">
+              <h4><%= @user.first_name %> collaborates on</h4>
+              <div class="user-show-projects-index">
+                <% @user.projects.each do |project| %>
+                  <div class="user-show-projects-index-card">
+                    <h4><%= project.title %></h4>
+                    <%= cl_image_tag project.photos[0].key %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <% if false %>
+              <div class="project-index-cards mt-5">
+                <% @user.projects.each do |project| %>
+                  <%= link_to project_path(project) do %>
+                    <div class="card-trip">
+                      <%= cl_image_tag project.photos[0].key%>
+                      <div class="card-trip-infos">
+                        <div>
+                          <h2><%= project.title %></h2>
+                          <div>
+                            <p><%= project.description.truncate(130) %></p>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <% if current_user == @user %>
+            <%= link_to "Edit profile", edit_user_path(@user), class: "button" %>
+          <% end %>
         </div>
-        <% if current_user == @user %>
-          <%= link_to "Edit profile", edit_user_path(@user), class: "button" %>
-        <% end %>
       </div>
     </div>
-  </div>
-</section>
-<% if false %>
-  <div>
-    <% if @user.supporter? %>
-      <%= image_tag "support.png", height: "40px" %>
-      <p>Collaborator badge </p>
-    <% end %>
-    <% if @user.all_rounder? %>
-      <%= image_tag "all_rounder.png", height: "40px" %>
-      <p>All-Rounder badge </p>
-    <% end %>
-    <% if @user.expert_in == "Web Development" %>
-      <%= image_tag "web_development.png", height: "40px" %>
-      <p>Web Development badge </p>
-    <% end %>
-    <% if @user.expert_in == "Graphic Design" %>
-      <%= image_tag "graphic_design.png", height: "40px" %>
-      <p>Graphic Design badge </p>
-    <% end %>
-  </div>
-<% end %>
+  </section>
+  <% if false %>
+    <div class="container user-show-main-container">
+      <div class="user-show-top">
+        <div class="user-show-profile">
+          <%= cl_image_tag @user.photo.key %>
+          <div class="user-show-profile-info">
+            <h1><%= @user.full_name %></h1>
+            <p><%= @user.location %><%= link_to "Contact", user_conversations_path(@user) %></p>
+          </div>
+        </div>
+      </div>
+      <div class="user-show-middle">
+        <div class="user-show-middle-skills">
+          <h2>Skill</h2>
+        </div>
+        <div class="user-show-middle-bio">
+          <h2>Bio</h2>
+        </div>
+      </div>
+    </div>
+  <% end %>
