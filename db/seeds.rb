@@ -674,8 +674,7 @@ bikini.project_members.create(
 tutorly.project_members.create(
   [
     { user: liam },
-    { user: tracy },
-    { user: kiki }
+    { user: tracy }
   ]
 )
 
@@ -683,7 +682,7 @@ shine.project_members.create(
   [
     { user: gabriella },
     { user: tracy },
-    { user: kiki }
+    { user: kiki, status: "accepted" }
   ]
 )
 
@@ -691,22 +690,34 @@ cheese.project_members.create(
   [
     { user: joe },
     { user: jo },
-    { user: menno }
+    { user: menno },
+    { user: kiki, status: "accepted" }
   ]
 )
 
-puts "#{ProjectMember.count} project_members assigned to projects"
+puts "Creating conversations"
+kiki_tudes_conversation = Conversation.new(invitor: tudes, invitee: kiki)
+kiki_tudes_conversation.save
+kiki_tudes_conversation.messages.new(user: tudes, content: "Hi Kiki")
+kiki_tudes_conversation.save
+kiki_tudes_conversation.messages.new(user: kiki, content: "Hi Tudor")
+kiki_tudes_conversation.save
+kiki_tudes_conversation.messages.new(user: tudes, content: "So excited to have you onboard to help me with Web Development")
+kiki_tudes_conversation.save
+kiki_tudes_conversation.messages.new(user: kiki, content: "I'm so glad, let's get started next week!")
+kiki_tudes_conversation.save
 
-
-puts "baddass seed file executed, congratulations! ...... CRONUTS RULE EVERYTHING!!!"
-
-# meno_josh_conversation = Conversation.create(invitor: menno, invitee: josh)
-# meno_josh_conversation.messages.create(user: menno, content: "Hello Josh")
-
+puts "#{Conversation.count} created"
 # cheese.project_members.create([
 #   { user: josh, status: "declined" },
 #   { user: menno, status: "accepted" }
 #   ])
 
+# meno_josh_conversation = Conversation.create(invitor: menno, invitee: josh)
+# meno_josh_conversation.messages.create(user: menno, content: "Hello Josh")
 
 
+puts "#{ProjectMember.count} project_members assigned to projects"
+
+
+puts "baddass seed file executed, congratulations! ...... CRONUTS RULE EVERYTHING!!!"
