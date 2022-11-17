@@ -1,7 +1,7 @@
 <div class="project-index">
   <div class="container text-center">
-    <h3>FIND A PROJECT</h3>
-    <h5>Grow your skills, your portfolio, and your community with one of these projects.</h5>
+    <h1>FIND A PROJECT</h1>
+    <h5>Apply your skills, grow your portfolio, help your community.</h5>
     <div class = "search-area mt-5">
       <%= form_with url: projects_path, method: :get, class: "d-flex justify-content-center" do %>
         <%= text_field_tag :query,
@@ -13,7 +13,7 @@
       <% end %>
     </div>
     <%# cards section %>
-    <div class="project-index-cards mt-4">
+    <div class="project-index-cards mt-5">
       <% @projects.each do |project| %>
         <%= link_to project_path(project) do %>
           <div class="card-trip">
