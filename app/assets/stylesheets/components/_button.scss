@@ -1,14 +1,19 @@
 .button {
-border-radius: 8px;
-color: black;
-border: 1px solid #CAD2E8;
-padding: 12px 24px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-margin: 10px;
-opacity: 0.6;
-font-weight: bold;
+  border-radius: 8px;
+  color: black;
+  border: 1px solid #CAD2E8;
+  background-color: #b9b8b7;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  opacity: 0.6;
+  font-weight: bold;
+  &:hover {
+    background-color: #a9a9a9;
+    color: black;
+  }
 }
 
 #status {
@@ -26,11 +31,6 @@ font-weight: bold;
 // //
 // $green: green;
 // $red: red;
-
-.button:hover {
-  opacity: 0.6;
-  background-color:  #f1f0ea;
-}
 
 .btn-accept {
   background-color: #9EBC9E;
