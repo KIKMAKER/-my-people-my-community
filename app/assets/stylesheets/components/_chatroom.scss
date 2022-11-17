@@ -29,3 +29,13 @@
     }
   }
 }
+
+.conversations.show {
+  .button {
+    margin-top: 0;
+    height: 100%;
+  }
+  textarea {
+    height: 100%;
+  }
+}

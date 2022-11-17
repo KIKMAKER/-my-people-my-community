@@ -139,7 +139,6 @@ liam_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v166852
 liam.photo.attach(io: liam_photo, filename: "liam.png", content_type: "image/png")
 liam.save
 
-
 caro = User.create(
   first_name: "Caro",
   last_name: "Wamono",
@@ -426,7 +425,6 @@ garden = Project.create(
   end_date: DateTime.now + 1.months
 )
 
-
 puts "Assigning images to garden project"
 
 garden_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580565/markus-spiske-Yy-dHQP-Ax0-unsplash_ftjq8v.jpg")
@@ -438,8 +436,6 @@ garden.photos.attach(io: garden_photo2, filename: "garden.jpg", content_type: "i
 garden.save
 
 puts "#{garden.photos.count} photos added to garden."
-
-
 
 foodtruck = Project.create(
   user: pierre,
@@ -455,7 +451,6 @@ foodtruck = Project.create(
 )
 
 puts "Assigning images to foodtruck project"
-
 
 foodtruck_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580645/stefan-sommarsjo-ysambitxV8M-unsplash_wax7da.jpg")
 foodtruck.photos.attach(io: foodtruck_photo, filename: "foodtruck.jpg", content_type: "image/jpg")

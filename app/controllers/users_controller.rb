@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @projects = Project.all
-    
+    @conversation = Conversation.find_or_initialize_by(invitor: current_user, invitee: @user)
   end
 
   def edit; end

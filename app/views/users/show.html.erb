@@ -11,7 +11,11 @@
         </strong>
       </div>
       <div class="message-button-wrapper">
-        <%= link_to "message #{@user.first_name}", user_conversations_path(@user), class: "button" %>
+        <% if @conversation.persisted? %>
+          <%= link_to "message #{@user.first_name}", conversation_path(@conversation), class: "button" %>
+        <% else %>
+          <%= link_to "message #{@user.first_name}", user_conversations_path(@user), data: {turbo_method: :post}, class: "button" %>
+        <% end %>
       </div>
     </div>
     <div class="user-show-content">
