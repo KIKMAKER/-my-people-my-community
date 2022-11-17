@@ -697,4 +697,14 @@ cheese.project_members.create(
 
 puts "#{ProjectMember.count} project_members assigned to projects"
 
+# meno_josh_conversation = Conversation.create(invitor: menno, invitee: josh)
+# meno_josh_conversation.messages.create(user: menno, content: "Hello Josh")
+
+# cheese.project_members.create([
+#   { user: josh, status: "declined" },
+#   { user: menno, status: "accepted" }
+#   ])
+
+
+
 puts "baddass seed file executed, congratulations!"
