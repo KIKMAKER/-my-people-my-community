@@ -3,7 +3,11 @@
 // }
 
 
-
+.sessions.new {
+  .form {
+    width: 100%;
+  }
+}
 
 
 .form {
@@ -39,10 +43,6 @@
     background-color: #cfcbee4d;
   }
 
-  .btn:hover {
-    opacity: 1;
-    background-color: #f1f0ea;
-  }
   .skill-pill {
     position: absolute;
     transform: scale(0);

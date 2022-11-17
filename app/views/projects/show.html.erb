@@ -1,19 +1,5 @@
 <% content_for :meta_title, "#{@project.title} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @project.description %>
-<% content_for :meta_image, cl_image_path(@project.photo.path) %>
-<div class="banner-page" id="banner">
-  <div class="banner-heading">
-    <h1><%= @project.title %></h1>
-    <p class="text-center"><i class="fa-solid fa-location-dot mx-2"></i><%= @project.location %></p>
-      <% if current_user.can_apply_to_project?(@project) %>
-      <%= simple_form_for [@project, @project_member] do |f| %>
-        <%= f.submit 'Apply', class: "button"%>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-<%# begin tab %>
 
 <div class="container mt-4 show-main-container">
   <div class="project-show-leftcol">
@@ -76,24 +62,21 @@
         <div>
           <h4>There are <%= pluralize(@project.project_members.count, "collaborator") %> working on this venture.</h4>
         </div>
-        <div class="p-2">
+        <div class="d-flex p-2 align-items-center">
           <% @project.project_members.each do |member| %>
-            <div class="d-flex">
+            <div class="member mx-2">
               <% if member.user.photo.attached? %>
-                <div class="member">
-                  <%= cl_image_tag member.user.photo.key, class: "project-show-avatar" %>
-                <% end %>
-                <%= link_to user_path(member.user) do %>
-                  <%= member.user.first_name %>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+                <%= cl_image_tag member.user.photo.key, class: "project-show-avatar" %>
+              <% end %>
+              <%= link_to user_path(member.user) do %>
+                <%= member.user.first_name %>
+              <% end %>
+            </div>
+          <% end %>
+          <% if current_user.member_or_owner_of_project?(@project) %>
+            <%= link_to "POSTS", project_post_room_path(@project), class: "button" %>
+          <% end %>
         </div>
-        <% if current_user.member_or_owner_of_project?(@project) %>
-  <%= link_to "POSTS", project_post_room_path(@project), style: "button" %>
-  <% end %>
-
       </div>
     </div>
   </div>
