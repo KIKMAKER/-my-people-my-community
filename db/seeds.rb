@@ -45,7 +45,7 @@ puts "Creating users"
 josh = User.create(
   first_name: "Joshua",
   last_name: "Potgieter",
-  username: "josh gardens",
+  username: "random",
   email: "joshua@people.com",
   password: "password",
   bio: "After completing my studies in horticulture at the University of
@@ -59,8 +59,8 @@ josh = User.create(
   linkedin_url: "linkedin.com/in/joshuapotgieter"
 )
 
-josh_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668532315/avatar1_mi0qxs.png")
-josh.photo.attach(io: josh_photo, filename: "avatar1.png", content_type: "image/png")
+josh_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{josh.username}'")
+josh.photo.attach(io: josh_photo, filename: "avatar1.jpeg", content_type: "image/jpeg")
 josh.save
 
 menno = User.create(
@@ -78,7 +78,7 @@ menno = User.create(
   linkedin_url: "linkedin.com/in/ryanbrouwer"
 )
 
-menno_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528614/avatar2_zgmknq.png")
+menno_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{menno.username}")
 menno.photo.attach(io: menno_photo, filename: "menno.png", content_type: "image/png")
 menno.save
 
@@ -97,8 +97,8 @@ kiki = User.create(
   linkedin_url: "linkedin.com/in/kikikennedy"
 )
 
-kiki_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528622/avatar3_ll8ssn.png")
-kiki.photo.attach(io: kiki_photo, filename: "kiki.png", content_type: "image/png")
+kiki_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{kiki.username}")
+kiki.photo.attach(io: kiki_photo, filename: "kiki.jpeg", content_type: "image/jpeg")
 kiki.save
 
 gabriella = User.create(
@@ -116,8 +116,8 @@ gabriella = User.create(
   linkedin_url: "linkedin.com/in/gabriellaabdolaziz"
 )
 
-gabriella_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528631/avatar4_ml1lb9.png")
-gabriella.photo.attach(io: gabriella_photo, filename: "gabriella.png", content_type: "image/png")
+gabriella_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{gabriella.username}")
+gabriella.photo.attach(io: gabriella_photo, filename: "gabriella.jpeg", content_type: "image/jpeg")
 gabriella.save
 
 liam = User.create(
@@ -135,7 +135,7 @@ liam = User.create(
 )
 
 
-liam_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528639/avatar5_udswuf.png")
+liam_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{liam.username}")
 liam.photo.attach(io: liam_photo, filename: "liam.png", content_type: "image/png")
 liam.save
 
@@ -152,8 +152,8 @@ caro = User.create(
   linkedin_url: "linkedin.com/in/caro"
 )
 
-caro_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
-caro.photo.attach(io: caro_photo, filename: "caro.png", content_type: "image/png")
+caro_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{caro.username}")
+caro.photo.attach(io: caro_photo, filename: "caro.jpeg", content_type: "image/jpeg")
 caro.save
 
 chris = User.create(
@@ -167,7 +167,7 @@ chris = User.create(
   linkedin_url: "linkedin.com/in/chris"
 )
 
-chris_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+chris_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{chris.username}")
 chris.photo.attach(io: chris_photo, filename: "chris.png", content_type: "image/png")
 chris.save
 
@@ -185,7 +185,7 @@ joe = User.create(
   linkedin_url: "linkedin.com/in/joe"
 )
 
-joe_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+joe_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{joe.username}")
 joe.photo.attach(io: joe_photo, filename: "joe.png", content_type: "image/png")
 joe.save
 
@@ -203,7 +203,7 @@ dom = User.create(
   linkedin_url: "linkedin.com/in/dom"
 )
 
-dom_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+dom_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{dom.username}")
 dom.photo.attach(io: dom_photo, filename: "dom.png", content_type: "image/png")
 dom.save
 
@@ -219,7 +219,7 @@ tracy = User.create(
   linkedin_url: "linkedin.com/in/tracy"
 )
 
-tracy_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+tracy_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{tracy.username}")
 tracy.photo.attach(io: tracy_photo, filename: "tracy.png", content_type: "image/png")
 tracy.save
 
@@ -238,7 +238,7 @@ jo = User.create(
   linkedin_url: "linkedin.com/in/jod"
 )
 
-jo_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+jo_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{jo.username}")
 jo.photo.attach(io: jo_photo, filename: "jo.png", content_type: "image/png")
 jo.save
 
@@ -255,7 +255,7 @@ tudes = User.create(
   linkedin_url: "linkedin.com/in/tudor"
 )
 
-tudes_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+tudes_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{tudes.username}")
 tudes.photo.attach(io: tudes_photo, filename: "tudes.png", content_type: "image/png")
 tudes.save
 
@@ -271,7 +271,7 @@ nico = User.create(
   linkedin_url: "linkedin.com/in/nico"
 )
 
-nico_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+nico_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{nico.username}")
 nico.photo.attach(io: nico_photo, filename: "nico.png", content_type: "image/png")
 nico.save
 
@@ -287,7 +287,7 @@ roux = User.create(
   linkedin_url: "linkedin.com/in/roux"
 )
 
-roux_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+roux_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{roux.username}")
 roux.photo.attach(io: roux_photo, filename: "roux.png", content_type: "image/png")
 roux.save
 
@@ -302,7 +302,7 @@ jo_ann = User.create(
   linkedin_url: "linkedin.com/in/jo"
 )
 
-jo_ann_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+jo_ann_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{jo_ann.username}")
 jo_ann.photo.attach(io: jo_ann_photo, filename: "jo_ann.png", content_type: "image/png")
 jo_ann.save
 
@@ -317,7 +317,7 @@ pierre = User.create(
   linkedin_url: "linkedin.com/in/pierre"
 )
 
-pierre_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
+pierre_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{pierre.username}")
 pierre.photo.attach(io: pierre_photo, filename: "pierre.png", content_type: "image/png")
 pierre.save
 
@@ -334,7 +334,7 @@ gloria = User.create(
   linkedin_url: "linkedin.com/in/pierre"
 )
 
-gloria_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
+gloria_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{gloria.username}")
 gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "image/png")
 gloria.save
 
@@ -350,7 +350,7 @@ cheri = User.create(
   linkedin_url: "linkedin.com/in/cheriblack"
 )
 
-cheri_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+cheri_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{cheri.username}")
 cheri.photo.attach(io: cheri_photo, filename: "cheri.png", content_type: "image/png")
 cheri.save
 
@@ -548,8 +548,8 @@ puts "Assigning skills to projects"
 
 garden.project_skills.create(
   [
-    { skill: business },
-    { skill: garden }
+    { skill: business }
+    # { skill: garden }
   ]
 )
 
@@ -697,4 +697,4 @@ cheese.project_members.create(
 
 puts "#{ProjectMember.count} project_members assigned to projects"
 
-puts "baddass seed file executed, congratulations!"
+puts "baddass seed file executed, congratulations! ...... CRONUTS RULE EVERYTHING!!!"
