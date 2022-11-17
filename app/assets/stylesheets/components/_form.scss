@@ -1,3 +1,11 @@
+// .form-input {
+//   border: 2px solid;
+// }
+
+
+
+
+
 .form {
   background: #eed8cb;
   padding: 10px 50px;
@@ -6,6 +14,7 @@
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   width: 80%;
   align-self: center;
+  border: 2px solid;
 
   h2 {
     font-size: 25px;
@@ -15,8 +24,8 @@
     text-align: center;
   }
   .btn {
-    margin-left: 35%;
-    width: 30%;
+
+    width: 100%;
     min-width: fit-content;
     margin-bottom: 20px;
     border-radius: 12px;
@@ -27,6 +36,7 @@
     text-decoration: none;
     opacity: 0.6;
     font-weight: bold;
+    background-color: #cfcbee4d;
   }
 
   .btn:hover {
@@ -84,9 +94,10 @@
     font-size: 18px;
     font-weight: bold;
   }
-  .btn {
-    background-color: #f1f0ea;
-  }
+  // .btn .form{
+  //   background-color: #cfcbee8c;
+  //   width: 100%;
+  // }
 }
 
 textarea {

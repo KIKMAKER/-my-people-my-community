@@ -9,6 +9,13 @@
   border: none;
 }
 
+.card-trip.project-show {
+  height: 340px;
+  h2 {
+    font-size: 20px;
+  }
+}
+
 .card-trip a {
   text-decoration: none;
 }
@@ -128,4 +135,11 @@
 .card-trip-infos-skills {
   display: flex;
   flex-direction: row;
+}
+
+.user-show-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  padding: 5px 20px;
 }

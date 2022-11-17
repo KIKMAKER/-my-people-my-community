@@ -1,3 +1,19 @@
+<% content_for :meta_title, "#{@project.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @project.description %>
+<% content_for :meta_image, cl_image_path(@project.photo.path) %>
+<div class="banner-page" id="banner">
+  <div class="banner-heading">
+    <h1><%= @project.title %></h1>
+    <p class="text-center"><i class="fa-solid fa-location-dot mx-2"></i><%= @project.location %></p>
+      <% if current_user.can_apply_to_project?(@project) %>
+      <%= simple_form_for [@project, @project_member] do |f| %>
+        <%= f.submit 'Apply', class: "button"%>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%# begin tab %>
 
 <div class="container mt-4 show-main-container">
   <div class="project-show-leftcol">
@@ -81,5 +97,6 @@
       </div>
     </div>
   </div>
+
 </div>
 <%# Carosel %>
