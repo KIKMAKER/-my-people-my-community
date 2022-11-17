@@ -55,8 +55,8 @@
               </div>
             </div>
             <div class="user-card-left-col">
-              <div class="user-skills">
-                <div class="skills-display">
+              <%# <div class="user-skills"> %>
+                <%# <div class="skills-display"> %>
                   <% if user.skills.first %>
                     <div class="skills-first">
                       <p><%= user.skills.first.name %></p>
@@ -72,7 +72,7 @@
                       <p><%= user.skills.third.name %></p>
                     </div>
                   <% end %>
-                </div>
+                <%# </div> %>
                 <div class="index-user-photo">
                   <%# <%= cl_image_tag user.photo.key, class: "avatar-bordered" %>
                 </div>
@@ -80,7 +80,7 @@
                   <h6><i class="fa-solid fa-location-dot mr-5">  </i></h6>
                   <h6><%= user.location %></h6>
                 </div>
-              </div>
+              <%# </div> %>
             </div>
           </div>
         <% end %>
