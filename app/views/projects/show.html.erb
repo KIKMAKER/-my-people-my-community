@@ -10,6 +10,21 @@
   <% end %>
 </div>
 </div>
+
+<%# Carosel %>
+<div class="container">
+  <div class="splide" role="group" aria-label="Splide Basic HTML Example" data-controller="slider">
+    <div class="splide__track">
+		  <ul class="splide__list">
+        <% @project.photos.each do |photo| %>
+        <li class="splide__slide"><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></li>
+        <%end %>
+		  </ul>
+    </div>
+  </div>
+</div>
+<%# Carosel %>
+
 <%# begin tab %>
 <% if current_user.member_or_owner_of_project?(@project) %>
   <% if @project.is_owner?(current_user) || current_user.accepted_member_of_project?(@project) %>
