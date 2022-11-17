@@ -24,7 +24,7 @@
 
 .banner h1 {
   color: black;
-  font-size: 80px;
+  font-size: 70px;
 }
 
 .banner p {
@@ -42,19 +42,24 @@
   margin-top: 12px;
 }
 
-.user-show-banner {
-  background-color: #e0f8f4;
-  height: 300px;
-  width: 100%;
+user-show-banner {
   display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: space-between;
+}
+.user-show-banner-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-weight: 600;
+  }
+  .message-button-wrapper {
+    display: flex;
+    align-items: flex-end;
+  }
 
   .user-show-avatar {
-    position: absolute;
-    bottom: -50px;
-    left: 50px;
+  
     .avatar-large {
       height: 100px;
       width: 100px;

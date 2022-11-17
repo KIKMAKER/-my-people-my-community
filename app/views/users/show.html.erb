@@ -1,75 +1,104 @@
-<div class="container mt-4">
-  <div class="user-show-banner">
-    <h1><%= @user.first_name %>'s Profile</h1>
-    <div class="user-show-avatar">
-      <%= image_tag "profile_placeholder.png", class: "avatar-large"%>
-    </div>
-
-    <div>
-      <% if @user.supporter? %>
-        <%= image_tag "support.png", height: "40px" %>
-        <p>Collaborator badge </p>
-      <% end %>
-      <% if @user.all_rounder? %>
-        <%= image_tag "all_rounder.png", height: "40px" %>
-        <p>All-Rounder badge </p>
-      <% end %>
-      <% if @user.expert_in == "Web Development" %>
-        <%= image_tag "web_development.png", height: "40px" %>
-        <p>Web Development badge </p>
-      <% end %>
-      <% if @user.expert_in == "Graphic Design" %>
-        <%= image_tag "graphic_design.png", height: "40px" %>
-        <p>Graphic Design badge </p>
-      <% end %>
-    </div>
-
-  </div>
-  <div class="message-area">
-    <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p>
-    <%= link_to "Message", root_path, class: "message-btn" %>
-  </div>
-  <div class="user-show-content">
-
-    </div>
-    <div class="user-info">
-      <div class="user-about">
-        <h3>Bio</h3>
-        <div class="user-about-content">
-          <div class="bio-icons">
-            <div class=bio-text>
-              <p><%= @user.bio %></p>
-            </div>
-              <div class="social-icons">
-                 <%= icon('fa-brands', 'instagram') %>
-                 <%= link_to @user.linkedin_url do %>
-                 <%= icon('fa-brands', 'linkedin')%>
-                 <% end %>
-              </div>
-          </div>
+<section>
+  <div class="container">
+    <div class="user-show-banner">
+      <div class="user-show-banner-profile">
+        <div class="user-show-avatar">
+          <%= cl_image_tag @user.photo.key, class: "avatar-large"%>
+        </div>
+        <h1><%= @user.first_name %>'s Profile</h1>
+        <strong>
+          <p> <%= icon('fa-solid', 'location-dot')%> <%= @user.location %></p>
+        </strong>
       </div>
-          <div class="user-projects mt-2">
-            <h4>User Projects</h4>
-            <div class="user-project-card">
-              <% if current_user.projects.empty? %>
-              <p><%= "You currently don't collaborate on any projects" %></p>
-              <p><%= link_to "Browse Ventures", projects_path %></p>
-              <% else%>
-                <h4><%= @user.first_name %> volunteers on:</h4>
-                <ul>
-                  <% current_user.projects.each do |project| %>
-                    <li><%= link_to project.title, project_path(project) %></li>
-                  <% end %>
-                </ul>
-              <% end %>
-            </div>
+      <div class="message-button-wrapper">
+        <%= link_to "message #{@user.first_name}", user_conversations_path(@user), class: "button" %>
+      </div>
+    </div>
+    <div class="user-show-content">
+      <div class="user-skills">
+        <h4>Skills</h4>
+        <% @user.skills.each do |skill| %>
+          <div class="user-skill">
+            <%= skill.name %>
           </div>
-          <% if current_user == @user %>
-            <%= link_to "Edit profile", edit_user_path(@user), class: "button" %>
+        <% end %>
+        <div class="badges">
+          <h4><%= @user.first_name %>'s Badges</h4>
+          <% if @user.supporter? %>
+            <%= image_tag "support.png", height: "45px" %>
+            <p> Collaborator badge </p>
+          <% end %>
+          <% if @user.all_rounder? %>
+            <%= image_tag "all_rounder.png", height: "45px" %>
+            <p> All-Rounder badge </p>
+          <% end %>
+          <% if @user.expert_in == "Web Development" %>
+            <%= image_tag "web_development.png", height: "45px" %>
+            <p> Web Development badge </p>
+          <% end %>
+          <% if @user.expert_in == "Graphic Design" %>
+            <%= image_tag "graphic_design.png", height: "45px" %>
+            <p> Graphic Design badge </p>
           <% end %>
         </div>
       </div>
+      <div class="user-info">
+        <div class="user-about">
+          <h3>Bio</h3>
+          <div class="user-about-content">
+            <div class="bio-icons">
+              <div class=bio-text>
+                <p><%= @user.bio %></p>
+              </div>
+              <div class="social-icons">
+                <%= icon('fa-brands', 'instagram') %>
+                <%= link_to @user.linkedin_url do %>
+                  <%= icon('fa-brands', 'linkedin')%>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if @user.initiated_projects.empty? %>
+          <div class="user-projects mt-2">
+            <h4>User Projects</h4>
+            <div class="user-project-card">
+              <p><%= "#{@user.first_name} hasn't initiated any projects yet." %></p>
+              <p><%= link_to "Find a venture", projects_path, class: "button" %></p>
+            <% else%>
+              <h4><%= @user.first_name %> started:</h4>
+              <ul>
+                <% @user.initiated_projects.each do |project| %>
+                  <li><%= link_to project.title, project_path(project) %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
+        </div>
+        <% if current_user == @user %>
+          <%= link_to "Edit profile", edit_user_path(@user), class: "button" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-</div>
+</section>
+<% if false %>
+  <div>
+    <% if @user.supporter? %>
+      <%= image_tag "support.png", height: "40px" %>
+      <p>Collaborator badge </p>
+    <% end %>
+    <% if @user.all_rounder? %>
+      <%= image_tag "all_rounder.png", height: "40px" %>
+      <p>All-Rounder badge </p>
+    <% end %>
+    <% if @user.expert_in == "Web Development" %>
+      <%= image_tag "web_development.png", height: "40px" %>
+      <p>Web Development badge </p>
+    <% end %>
+    <% if @user.expert_in == "Graphic Design" %>
+      <%= image_tag "graphic_design.png", height: "40px" %>
+      <p>Graphic Design badge </p>
+    <% end %>
+  </div>
+<% end %>

@@ -16,16 +16,14 @@ User.destroy_all
 
 puts "Creating skills"
 
-finance = Skill.create(name: "Finance")
 project_management = Skill.create(name: "Project Management")
-accounting = Skill.create(name: "Accounting")
 business = Skill.create(name: "Business Consulting")
 garden = Skill.create(name: "Landscape Design")
-permaculture = Skill.create(name: "Permaculture")
-compost = Skill.create(name: "Composting")
 photography = Skill.create(name: "Photography")
 graphic_design = Skill.create(name: "Graphic Design")
 web_development = Skill.create(name: "Web Development")
+educating = Skill.create(name: "Education")
+marketing = Skill.create(name: "Marketing")
 
 puts "#{Skill.count} skills created"
 
@@ -34,11 +32,11 @@ puts "Creating categories"
 youth = Category.create(name: "Youth")
 community_development = Category.create(name: "Community Development")
 education = Category.create(name: "Education")
-sport = Category.create(name: "Sport")
 entrepreneurship = Category.create(name: "Entrepreneurship")
 sustainability = Category.create(name: "Sustainability")
 food = Category.create(name: "Food")
 art = Category.create(name: "Art and Culture")
+health = Category.create(name: "Health and Wellness")
 
 puts "#{Category.count} categories created"
 
@@ -99,16 +97,14 @@ kiki = User.create(
   linkedin_url: "linkedin.com/in/kikikennedy"
 )
 
-
 kiki_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528622/avatar3_ll8ssn.png")
 kiki.photo.attach(io: kiki_photo, filename: "kiki.png", content_type: "image/png")
 kiki.save
 
-
 gabriella = User.create(
   first_name: "Gabriella",
   last_name: "Abdol Aziz",
-  username: "gabi rein",
+  username: "gabirein",
   email: "gabi@people.com",
   password: "password",
   bio: "I am a small business owner and professional photographer with my
@@ -120,7 +116,6 @@ gabriella = User.create(
   linkedin_url: "linkedin.com/in/gabriellaabdolaziz"
 )
 
-
 gabriella_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528631/avatar4_ml1lb9.png")
 gabriella.photo.attach(io: gabriella_photo, filename: "gabriella.png", content_type: "image/png")
 gabriella.save
@@ -128,7 +123,7 @@ gabriella.save
 liam = User.create(
   first_name: "Liam",
   last_name: "Strickland",
-  username: "stricko",
+  username: "str1ck0",
   email: "liam@people.com",
   password: "password",
   bio: "I received my Bachelor of Design specializing in Marketing and Communication
@@ -145,10 +140,162 @@ liam.photo.attach(io: liam_photo, filename: "liam.png", content_type: "image/png
 liam.save
 
 
+caro = User.create(
+  first_name: "Caro",
+  last_name: "Wamono",
+  username: "carolyne_web",
+  email: "caro@people.com",
+  password: "password",
+  bio: "I have worked as a fashion and commercial model, and movement instructor.
+  My love for technology, the internet, creating blogs and interest in SEO led me to want to learn how to code and more.
+  I plan on starting a tech company in the future.",
+  location: "Newlands",
+  linkedin_url: "linkedin.com/in/caro"
+)
+
+caro_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+caro.photo.attach(io: caro_photo, filename: "caro.png", content_type: "image/png")
+caro.save
+
+chris = User.create(
+  first_name: "Chris",
+  last_name: "Nguyen",
+  username: "ch0rizo",
+  email: "chris@people.com",
+  password: "password",
+  bio: "Loafing around",
+  location: "Stavanger",
+  linkedin_url: "linkedin.com/in/chris"
+)
+
+chris_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+chris.photo.attach(io: chris_photo, filename: "chris.png", content_type: "image/png")
+chris.save
+
+joe = User.create(
+  first_name: "Joe",
+  last_name: "Owens",
+  username: "JowensM",
+  email: "joe@people.com",
+  password: "password",
+  bio: "So I was previously working as a bricklayer for the past 13 years and started taking an interest in computers
+  when covid hit and we were all locked away. I started looking into designing websites and joined a codecademy course
+  but after finishing that i felt like i needed to take my learning to the next level so i started looking into
+  more intensive coding courses then i came across La Wagon and it just seemed like the perfect fit!",
+  location: "Kent",
+  linkedin_url: "linkedin.com/in/joe"
+)
+
+joe_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+joe.photo.attach(io: joe_photo, filename: "joe.png", content_type: "image/png")
+joe.save
+
+dom = User.create(
+  first_name: "Dom",
+  last_name: "Walsh",
+  username: "dommywalsh",
+  email: "dom@people.com",
+  password: "password",
+  bio: "Hey, i'm Dom! I'm 28 years old, from Cape Town, but have been living in Barcelona the last 3 years.
+  Health fanatic, nature lover, armchair philosopher probably best describe me as a human.
+  My background is in holistic health, but this course marks the start of a new chapter! Incredibly stoked to dive into
+  the field of web development, learn new skills, and hopefully form some great friendships in the process.",
+  location: "barcelona",
+  linkedin_url: "linkedin.com/in/dom"
+)
+
+dom_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+dom.photo.attach(io: dom_photo, filename: "dom.png", content_type: "image/png")
+dom.save
+
+tracy = User.create(
+  first_name: "Tracy",
+  last_name: "Sikenjana",
+  username: "tracysik",
+  email: "tracy@people.com",
+  password: "password",
+  bio: "Passionate about facilitating the creative process and connecting people to the skills, knowledge and services that they want or need.
+  Offering a wide variety of creative and innovative expertise in various industries including education, technology, science, art and more.",
+  location: "amsterdam",
+  linkedin_url: "linkedin.com/in/tracy"
+)
+
+tracy_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+tracy.photo.attach(io: tracy_photo, filename: "tracy.png", content_type: "image/png")
+tracy.save
+
+jo = User.create(
+  first_name: "Jonathan",
+  last_name: "Dreyer",
+  username: "JOEDREYER",
+  email: "jo@people.com",
+  password: "password",
+  bio: "Hello! I am South African, born in Cape Town. I love flipping the bird.
+  Been living in Australia (Sydney) for the past 5 years, owned my own removals
+  company. Was an incredible experience however I am now looking to upskill
+  myself and dive into the programming world as I feel it is an important aspect
+  of commerce and business in general. Find me on linkedin!",
+  location: "stellenbosch",
+  linkedin_url: "linkedin.com/in/jod"
+)
+
+jo_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+jo.photo.attach(io: jo_photo, filename: "jo.png", content_type: "image/png")
+jo.save
+
+tudes = User.create(
+  first_name: "Tudor",
+  last_name: "Ojica",
+  username: "tudor887",
+  email: "tudor@people.com",
+  password: "password",
+  bio: "What's up everyone, I'm Tudor! I'm a Romanian Dutch national with a BSc in business administration and hospitality management.
+  I've worked in four countries, embarked on entrepreneurial endeavors like co-founding a tattoo & barber concept shop in Holland and a high-end European food import business in Zimbabwe.
+  I'm always up for some traveling, adventure and meeting open minded folks.",
+  location: "amsterdam",
+  linkedin_url: "linkedin.com/in/tudor"
+)
+
+tudes_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+tudes.photo.attach(io: tudes_photo, filename: "tudes.png", content_type: "image/png")
+tudes.save
+
+nico = User.create(
+  first_name: "Nico",
+  last_name: "Wickmann",
+  username: "nicowkm",
+  email: "nico@people.com",
+  password: "password",
+  bio: "Just finished school in Hamburg, Germany. Now about to join Le Wagon, for the Web-Development course in Cape Town.
+  After the course i'm starting to study in London and planning on working in an Web-Development company (part Time).",
+  location: "london",
+  linkedin_url: "linkedin.com/in/nico"
+)
+
+nico_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+nico.photo.attach(io: nico_photo, filename: "nico.png", content_type: "image/png")
+nico.save
+
+roux = User.create(
+  first_name: "Roux",
+  last_name: "Du Toit",
+  username: "ticklemeexcited",
+  email: "roux@people.com",
+  password: "password",
+  bio: "Automate everything. Love the problem, not the solution. Evidence is providence. Avoid doing harm. Carbon-neutral growth is essential.
+  I want to expand my technical know-how and have oversight of the development teams that I manage.",
+  location: "berlin",
+  linkedin_url: "linkedin.com/in/roux"
+)
+
+roux_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+roux.photo.attach(io: roux_photo, filename: "roux.png", content_type: "image/png")
+roux.save
+
 jo_ann = User.create(
   first_name: "Jo Ann",
   last_name: "Hill",
-  username: "JoH",
+  username: "random",
   email: "joann@people.com",
   password: "password",
   bio: "I love to work in the garden and make spaces beutiful.",
@@ -156,16 +303,14 @@ jo_ann = User.create(
   linkedin_url: "linkedin.com/in/jo"
 )
 
-
 jo_ann_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
 jo_ann.photo.attach(io: jo_ann_photo, filename: "jo_ann.png", content_type: "image/png")
 jo_ann.save
 
-
 pierre = User.create(
   first_name: "Pierre",
   last_name: "Kabamba",
-  username: "PK",
+  username: "random",
   email: "pierre@people.com",
   password: "password",
   bio: "Food is my passion!",
@@ -173,16 +318,14 @@ pierre = User.create(
   linkedin_url: "linkedin.com/in/pierre"
 )
 
-
 pierre_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
 pierre.photo.attach(io: pierre_photo, filename: "pierre.png", content_type: "image/png")
 pierre.save
 
-
 gloria = User.create(
   first_name: "Gloria",
   last_name: "Madi",
-  username: "Glo",
+  username: "random",
   email: "gloria@people.com",
   password: "password",
   bio: "71 year old entrepreneur who sells beautiful crocheted bikini's on Camps
@@ -192,28 +335,25 @@ gloria = User.create(
   linkedin_url: "linkedin.com/in/pierre"
 )
 
-
 gloria_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528660/avatar7_agepgv.png")
 gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "image/png")
 gloria.save
 
+cheri = User.create(
+  first_name: "Cheri",
+  last_name: "Black",q
+  username: "random",
+  email: "cheri@people.com",
+  password: "password",
+  bio: "Life is better with a bit of flair. Find me changing the world from the
+  comfort of my couch.",
+  location: "Muizenberg",
+  linkedin_url: "linkedin.com/in/cheriblack"
+)
 
-# cheri = User.create(
-#   first_name: "Cheri",
-#   last_name: "Black",
-#   username: "Blacki",
-#   email: "cheri@people.com",
-#   password: "password",
-#   bio: "Life is better with a bit of flair. Find me changing the world from the
-#   comfort of my couch.",
-#   location: "Muizenberg",
-#   linkedin_url: "linkedin.com/in/cheriblack"
-# )
-
-# cheri_photo = URI.open("")
-# cheri.photo.attach(io: cheri_photo, filename: "gloria.png", content_type: "image/png")
-# cheri.save
-
+cheri_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668528651/avatar6_lwka2f.png")
+cheri.photo.attach(io: cheri_photo, filename: "cheri.png", content_type: "image/png")
+cheri.save
 
 puts "#{User.count} users created"
 
@@ -221,21 +361,49 @@ puts "Assigning user_skills to users"
 
 josh.user_skills.create(skill: garden)
 josh.user_skills.create(skill: project_management)
-josh.user_skills.create(skill: permaculture)
+josh.user_skills.create(skill: marketing)
 
-menno.user_skills.create(skill: project_management)
 menno.user_skills.create(skill: business)
 menno.user_skills.create(skill: web_development)
 
-kiki.user_skills.create(skill: compost)
 kiki.user_skills.create(skill: web_development)
 
 gabriella.user_skills.create(skill: photography)
 gabriella.user_skills.create(skill: web_development)
-gabriella.user_skills.create(skill: compost)
+gabriella.user_skills.create(skill: business)
 
 liam.user_skills.create(skill: graphic_design)
 liam.user_skills.create(skill: web_development)
+
+caro.user_skills.create(skill: project_management)
+caro.user_skills.create(skill: business)
+caro.user_skills.create(skill: marketing)
+
+chris.user_skills.create(skill: web_development)
+
+joe.user_skills.create(skill: garden)
+joe.user_skills.create(skill: business)
+joe.user_skills.create(skill: web_development)
+
+dom.user_skills.create(skill: business)
+dom.user_skills.create(skill: web_development)
+
+tracy.user_skills.create(skill: educating)
+tracy.user_skills.create(skill: project_management)
+tracy.user_skills.create(skill: web_development)
+
+jo.user_skills.create(skill: garden)
+jo.user_skills.create(skill: business)
+jo.user_skills.create(skill: web_development)
+
+tudes.user_skills.create(skill: business)
+tudes.user_skills.create(skill: project_management)
+tudes.user_skills.create(skill: marketing)
+
+nico.user_skills.create(skill: web_development)
+
+roux.user_skills.create(skill: business)
+roux.user_skills.create(skill: project_management)
 
 puts "#{UserSkill.count} user_skills assigned to users"
 
@@ -258,6 +426,9 @@ garden = Project.create(
   end_date: DateTime.now + 1.months
 )
 
+
+puts "Assigning images to garden project"
+
 garden_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580565/markus-spiske-Yy-dHQP-Ax0-unsplash_ftjq8v.jpg")
 garden.photos.attach(io: garden_photo, filename: "garden.jpg", content_type: "image/jpg")
 garden_photo1 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580584/prateek-gautam-uhWB6BWWz1Q-unsplash_x9fbt7.jpg")
@@ -265,6 +436,8 @@ garden.photos.attach(io: garden_photo1, filename: "garden.jpg", content_type: "i
 garden_photo2 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580525/markus-spiske-4PG6wLlVag4-unsplash_sysrpm.jpg")
 garden.photos.attach(io: garden_photo2, filename: "garden.jpg", content_type: "image/jpg")
 garden.save
+
+puts "#{garden.photos.count} photos added to garden."
 
 
 
@@ -281,6 +454,7 @@ foodtruck = Project.create(
   end_date: DateTime.now + 1.months
 )
 
+puts "Assigning images to foodtruck project"
 
 
 foodtruck_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580645/stefan-sommarsjo-ysambitxV8M-unsplash_wax7da.jpg")
@@ -290,6 +464,8 @@ foodtruck.photos.attach(io: foodtruck_photo1, filename: "foodtruck.jpg", content
 foodtruck_photo2 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580508/dimitri-photography-jMgoWJKnBcw-unsplash_mzymvj.jpg")
 foodtruck.photos.attach(io: foodtruck_photo2, filename: "foodtruck.jpg", content_type: "image/jpg")
 foodtruck.save
+
+puts "#{foodtruck.photos.count} photos added to garden."
 
 bikini = Project.create(
   user: gloria,
@@ -305,30 +481,70 @@ bikini = Project.create(
   end_date: DateTime.now + 1.year
 )
 
+puts "Assigning images to bikini project"
+
 bikini_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580511/hermes-rivera-baRdxMkxv4M-unsplash_bdrrl0.jpg")
-bikini.photo.attach(io: bikini_photo, filename: "bikini.jpg", content_type: "image/jpg")
+bikini.photos.attach(io: bikini_photo, filename: "bikini.jpg", content_type: "image/jpg")
 bikini_photo1 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580643/stall_aadf7w.webp")
-bikini.photo.attach(io: bikini_photo1, filename: "bikini.jpg", content_type: "image/jpg")
+bikini.photos.attach(io: bikini_photo1, filename: "bikini.jpg", content_type: "image/jpg")
 bikini_photo2 = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668580642/sebastian-canaves-sTlqVBz87dc-unsplash_ojwqw4.jpg")
-bikini.photo.attach(io: bikini_photo2, filename: "bikini.jpg", content_type: "image/jpg")
+bikini.photos.attach(io: bikini_photo2, filename: "bikini.jpg", content_type: "image/jpg")
 bikini.save
 
-# tutorly = Project.create(
-#   user: cheri,
-#   title: "TutorlyABC",
-#   description: "Teaching young people how to read is one of the most important
-#   jobs in society. It also happens to be Cheri's passion. What isn't her passion
-#   is web and graphic design. TutorlyABC teaches shy children to read from the
-#   comfort of their own home. All it needs is a wonderful web app and some
-#   graphic design to get this small business off it's feet.",
-#   location: "Muizenberg",
-#   start_date: DateTime.now + 3.weeks,
-#   end_date: DateTime.now + 1.year
-# )
+puts "#{bikini.photos.count} photos added to garden."
 
-# tutorly_photo = URI.open("")
-# tutorly.photo.attach(io: tutorly_photo, filename: "bikini.png", content_type: "image/png")
-# tutorly.save
+tutorly = Project.create(
+  user: cheri,
+  title: "TutorlyABC",
+  description: "Teaching young people how to read is one of the most important
+  jobs in society. It also happens to be Cheri's passion. What isn't her passion
+  is web and graphic design. TutorlyABC teaches shy children to read from the
+  comfort of their own home. All it needs is a wonderful web app and some
+  graphic design to get this small business off it's feet.",
+  location: "Muizenberg",
+  start_date: DateTime.now + 3.weeks,
+  end_date: DateTime.now + 1.year
+)
+puts "Assigning images to tutorly project"
+
+tutorly_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668616939/element5-digital-OyCl7Y4y0Bk-unsplash_enxz9w.jpg")
+tutorly.photos.attach(io: tutorly_photo, filename: "tutorly.jpg", content_type: "image/jpg")
+tutorly.save
+
+puts "#{tutorly.photos.count} photos added to garden."
+
+shine = Project.create(
+  user: caro,
+  title: "Anything that shines",
+  description: "When you combine this simple philosophy with learning to listen
+  to your body and what feels right for you, you can never go wrong. Health and wellness business looking to grow.",
+  location: "newlands",
+  start_date: DateTime.now + 3.weeks,
+  end_date: DateTime.now + 1.year
+)
+puts "Assigning images to shine project"
+
+shine_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668631281/Screenshot_2022-11-16_at_22.39.56_t4zzuq.png")
+shine.photos.attach(io: shine_photo, filename: "shine.png", content_type: "image/jpg")
+shine.save
+
+puts "#{shine.photos.count} photos added to garden."
+
+cheese = Project.create(
+  user: tudes,
+  title: "Help you find cheeses",
+  description: "Importing luxury goods because everyone deserves nice things.",
+  location: "newlands",
+  start_date: DateTime.now + 3.weeks,
+  end_date: DateTime.now + 1.year
+)
+puts "Assigning images to cheese project"
+
+cheese_photo = URI.open("https://res.cloudinary.com/divqv7xyh/image/upload/v1668631629/ibrahim-boran-lz2PI8Nk5SQ-unsplash_ushk9x.jpg")
+cheese.photos.attach(io: cheese_photo, filename: "cheese.jpg", content_type: "image/jpg")
+cheese.save
+
+puts "#{cheese.photos.count} photos added to garden."
 
 puts "#{Project.count} projects created"
 
@@ -336,9 +552,7 @@ puts "Assigning skills to projects"
 
 garden.project_skills.create(
   [
-    { skill: compost },
-    { skill: permaculture },
-    { skill: finance }
+    { skill: business }
   ]
 )
 
@@ -362,13 +576,25 @@ bikini.project_skills.create(
   ]
 )
 
-# tutorly.project_skills.create(
-#   [
-#     { skill: accounting },
-#     { skill: graphic_design },
-#     { skill: web_development },
-#   ]
-# )
+tutorly.project_skills.create(
+  [
+    { skill: graphic_design },
+    { skill: web_development }
+  ]
+)
+
+shine.project_skills.create(
+  [
+    { skill: photography },
+    { skill: graphic_design }
+  ]
+)
+
+cheese.project_skills.create(
+  [
+    { skill: graphic_design }
+  ]
+)
 
 puts "#{ProjectSkill.count} project_skills assigned to projects"
 
@@ -396,9 +622,22 @@ bikini.project_categories.create(
   ]
 )
 
-bikini.project_categories.create(
+tutorly.project_categories.create(
   [
     { category: education },
+    { category: youth }
+  ]
+)
+
+shine.project_categories.create(
+  [
+    { category: health }
+  ]
+)
+
+cheese.project_categories.create(
+  [
+    { category: entrepreneurship }
   ]
 )
 
@@ -409,6 +648,8 @@ puts "Assigning users as project_members"
 garden.project_members.create(
   [
     { user: josh },
+    { user: jo },
+    { user: dom },
     { user: gabriella }
   ]
 )
@@ -417,6 +658,8 @@ foodtruck.project_members.create(
   [
     { user: gabriella },
     { user: menno },
+    { user: nico },
+    { user: roux },
     { user: liam }
   ]
 )
@@ -425,16 +668,34 @@ bikini.project_members.create(
   [
     { user: gabriella },
     { user: josh },
-    { user: menno }
+    { user: chris },
+    { user: caro }
   ]
 )
 
-# tutorly.project_members.create(
-#   [
-#     { user: liam },
-#     { user: kiki }
-#   ]
-# )
+tutorly.project_members.create(
+  [
+    { user: liam },
+    { user: tracy },
+    { user: kiki }
+  ]
+)
+
+shine.project_members.create(
+  [
+    { user: gabriella },
+    { user: tracy },
+    { user: kiki }
+  ]
+)
+
+cheese.project_members.create(
+  [
+    { user: joe },
+    { user: jo },
+    { user: menno }
+  ]
+)
 
 puts "#{ProjectMember.count} project_members assigned to projects"
 
