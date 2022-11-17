@@ -16,8 +16,18 @@
 }
 
 .dashboard-content {
-  background-color: #dae7c4cc;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color:  #f3f1de;;
   padding: 10px;
+
+  .your-projects {
+    .project {
+      .collaborators {
+        
+      }
+    }
+  }
 }
 
 .card-image {
@@ -41,7 +51,7 @@
   // padding-top: px;
   background-color: #FDF3F0;
   // height: 75px;
-  
+
 
   h5 {
     text-align: left;
