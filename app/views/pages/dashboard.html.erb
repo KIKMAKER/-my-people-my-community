@@ -3,90 +3,107 @@
     <div>
       <h1>Welcome to your Dashboard <%= current_user.first_name %></h1>
     </div>
+    <div class="dashboard-content">
     <div>
-      <ul class="nav nav-pills mb-3 mt-4 justify-content-around" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active nav-red" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Your Projects</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link nav-red" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Your Collaborations</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link nav-red" id="pills-messages-tab" data-bs-toggle="pill" data-bs-target="#pills-messages" type="button" role="tab" aria-controls="pills-messages" aria-selected="false">Your Messages</button>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <div class="tab-content container-header" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-          <% if current_user.initiated_projects.empty? %>
-            <p><%= "You currently have not listed any ventures" %></p>
-            <p><%= link_to "List a Venture", new_project_path %></p>
-          <% else %>
-            <% current_user.initiated_projects.each do |project| %>
-              <div class="dashboard-card">
-                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-                  <%# #Projects initiated by the user %>
-                  <h4><%= link_to project.title, project_path(project) %></h4>
-                </div>
-                <div class="card-content">
-                  <div class="content-header">
-                    <h5>Project Volunteers:</h5>
-                  </div>
-                  <% project.project_members.each do |project_member| %>
-                    <div class="card-content-items">
-                      <p><%= project_member.user.first_name %> (<%= project_member.status %>):</p>
-                      <%= status_link(project_member)%>
-                      <%= link_to "Start chat", user_conversations_path(project_member.user), data: {turbo_method: :post}, class:"btn-chat"  %>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-          <% if current_user.projects.empty? %>
-            <p><%= "You currently don't collaborate on any other projects" %></p>
-            <p><%= link_to "Browse Ventures", projects_path %></p>
-          <% else %>
-            <div class="dashboard-cards">
-              <% current_user.projects.each do |project|  %>
+        <ul class="nav nav-pills mb-3 mt-4 justify-content-around" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active nav-red" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Your Projects</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link nav-red" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Your Collaborations</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link nav-red" id="pills-messages-tab" data-bs-toggle="pill" data-bs-target="#pills-messages" type="button" role="tab" aria-controls="pills-messages" aria-selected="false">Your Messages</button>
+          </li>
+        </ul>
+      </div>
+      <div>
+
+
+                                      <%# Your projects %>
+
+        <div class="tab-content container-header" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <% if current_user.initiated_projects.empty? %>
+              <p><%= "You currently have not listed any ventures" %></p>
+              <p><%= link_to "List a Venture", new_project_path %></p>
+            <% else %>
+              <% current_user.initiated_projects.each do |project| %>
                 <div class="dashboard-card">
-                  <%# <%= link_to project_path(project) do %>
-                    <div class="card-image" id="banner">
-                      <h4><%= project.title %></h4>
-                    </div>
-                    <div class="card-content">
-                      <div class="card-content-items">
-                        <p>Status: <%= project.status %></p>
-                        <div class="card-content-description">
-                          <p><%= project.description.truncate(130) %></p>
-                        </div>
-                      </div>
-                    <%# <% end %>
+                  <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+                    <%# #Projects initiated by the user %>
                   </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-        <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-          <% if @conversations.empty? %>
-            <p><%= "You currently don't have any new messages or conversations" %></p>
-            <p><%= link_to "Browse Community Volunteers", users_path %> or <%= link_to "Browse Ventures", projects_path %> </p>
-          <% else %>
-            <div class="notification">
-              <% @conversations.each do |conversation| %>
-                <%= cl_image_tag conversation.other_user(current_user).photo.key, class: "avatar-large" %>
-                <div class="notification-content">
-                  <p><%= link_to "Chat with #{conversation.other_user(current_user).first_name}", conversation_path(conversation) %></p>
+                  <div class="card-content">
+                    <h4><%= link_to project.title, project_path(project) %></h4>
+                    <div class="content-header">
+                      <h5>Project Volunteers:</h5>
+                    </div>
+                    <% project.project_members.each do |project_member| %>
+                      <div class="card-content-items">
+                        <p><%= project_member.user.first_name %> (<%= project_member.status %>):</p>
+                        <%= status_link(project_member)%>
+                        <%= link_to "Start chat", user_conversations_path(project_member.user), data: {turbo_method: :post}, class:"btn-chat"  %>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
               <% end %>
             <% end %>
           </div>
+
+
+                                      <%# Your Collaborations %>
+
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <% if current_user.projects.empty? %>
+              <p><%= "You currently don't collaborate on any other projects" %></p>
+              <p><%= link_to "Browse Ventures", projects_path %></p>
+            <% else %>
+              <div class="dashboard-cards">
+                <% current_user.projects.each do |project|  %>
+                  <div class="dashboard-card">
+                    <%# <%= link_to project_path(project) do %>
+                      <div class="card-image" id="banner">
+                        <h4><%= project.title %></h4>
+                      </div>
+                      <div class="card-content">
+                        <div class="card-content-items-1">
+                          <p class="<%= project.status %>"> MEMBER STATUS:<%= project.status %></p>
+                          <p>CONTACT <%= project.user.first_name.upcase %></p><%= link_to "Start chat", user_conversations_path(project.user), data: {turbo_method: :post}, class:"btn-chat"  %>
+                          <%# <div class="card-content-description"> %>
+                            <%# <p><%= project.description.truncate(130) %>
+                          </div>
+                        </div>
+                      <%# <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+
+                                          <%# messages %>
+
+          <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
+            <% if @conversations.empty? %>
+              <p><%= "You currently don't have any new messages or conversations" %></p>
+              <p><%= link_to "Browse Community Volunteers", users_path %> or <%= link_to "Browse Ventures", projects_path %> </p>
+            <% else %>
+              <div class="notification">
+                <% @conversations.each do |conversation| %>
+                <div class="collaborator">
+                  <%= cl_image_tag conversation.other_user(current_user).photo.key, class: "avatar-large" %>
+                  <div class="notification-content">
+                    <p><%= link_to "Chat with #{conversation.other_user(current_user).first_name}", conversation_path(conversation) %></p>
+                  </div>
+                </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </div>
