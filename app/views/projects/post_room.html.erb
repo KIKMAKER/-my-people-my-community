@@ -44,9 +44,9 @@
           <% @posts.each do |post| %>
             <div class="post-room-message">
               <%# replace image %>
-              <%= cl_image_tag post.user.photo.key, class: "avatar-bordered", width: "55px" %>
+              <%= cl_image_tag post.user.photo.key, class: "avatar", height: "50px" %>
               <div class="notification-content">
-                <h5><%= post.user.full_name %></h3>
+                <h5><%= post.user.full_name %></h5>
                 <p><%= post.content %></p>
               </div>
             </div>
