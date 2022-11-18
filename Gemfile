@@ -33,6 +33,8 @@ gem "cloudinary"
 
 gem "pg_search"
 
+gem "redis"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
