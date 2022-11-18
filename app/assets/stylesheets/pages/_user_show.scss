@@ -1,7 +1,7 @@
 .users.show {
   .container {
-    margin: auto;
     border-radius: 8px;
+    margin-bottom: 100px;
 
   }
 
@@ -11,6 +11,10 @@
   }
   h3 {
     font-size: 2.75rem;
+  }
+
+  h1 {
+    padding: 8px;
   }
   p {
     font-size: 22px;
