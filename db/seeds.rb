@@ -43,23 +43,23 @@ puts "#{Category.count} categories created"
 puts "Creating users"
 
 pedro = User.create(
-  first_name: "pedro",
-  last_name: "Potgieter",
+  first_name: "Pedro",
+  last_name: "Miranda",
   username: "pbragamiranda",
   email: "pedro@people.com",
   password: "password",
   bio: "After completing my studies in horticulture at the University of
   Stellenbosch, I did a 1 year internship at a TERRA+ Landscape Architects, a
   small landscape design firm in Cape Town. We mainly focused on residential
-  properties and now I have started my own business, Joshua Garden Designs.
+  properties and now I have started my own business, Pedro Designs.
   I am looking for a project or business to collaborate with, so that I can
   gain more experience, exposure for my business, as well as to give back/pay
   it forward. I can offer advice/consulting, project management and garden services.",
-  location: "Claremont",
-  linkedin_url: "linkedin.com/in/joshuapotgieter"
+  location: "Berlin",
+  linkedin_url: "linkedin.com/in/pedro"
 )
 
-pedro = URI.open("https://kitt.lewagon.com/placeholder/users/#{pedro.username}'")
+pedro_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{pedro.username}")
 pedro.photo.attach(io: pedro_photo, filename: "pedro.jpeg", content_type: "image/jpeg")
 pedro.save
 
@@ -324,7 +324,7 @@ roel.save
 laura = User.create(
   first_name: "laura",
   last_name: "Madi",
-  username: "laura person",
+  username: "lauraperson",
   email: "laura@people.com",
   password: "password",
   bio: "71 year old entrepreneur who sells beautiful crocheted bikini's on Camps
@@ -341,7 +341,7 @@ laura.save
 sy = User.create(
   first_name: "sy",
   last_name: "Black",
-  username: "sy rashid",
+  username: "syrashid",
   email: "sy@people.com",
   password: "password",
   bio: "Life is better with a bit of flair. Find me changing the world from the
@@ -358,9 +358,9 @@ puts "#{User.count} users created"
 
 puts "Assigning user_skills to users"
 
-josh.user_skills.create(skill: garden)
-josh.user_skills.create(skill: project_management)
-josh.user_skills.create(skill: marketing)
+# pedro.user_skills.create(skill: garden)
+# pedro.user_skills.create(skill: project_management)
+# pedro.user_skills.create(skill: marketing)
 
 menno.user_skills.create(skill: business)
 menno.user_skills.create(skill: web_development)
@@ -410,9 +410,9 @@ puts "Creating projects"
 
 
 foodtruck = Project.create(
-  user: pierre,
+  user: roel,
   title: "PK's Food Truck",
-  description: "Pierre is an immigrant from Congo who works as a junior chef in
+  description: "Roel is an immigrant from Congo who works as a junior chef in
   a fine dining restaurant called the Test Kitchen in Woodstock, Cape Town.
   He has the dream of opening up his own food truck at the Old Biscuit Mill
   selling gourmet burgers. He needs business and legal advice as well as help
@@ -435,9 +435,9 @@ foodtruck.save
 puts "#{foodtruck.photos.count} photos added to garden."
 
 garden_project = Project.create(
-  user: jo_ann,
+  user: cass,
   title: "Urban Garden",
-  description: "Jo Ann is an apartment owner and member of the body corporate of
+  description: "Cass is an apartment owner and member of the body corporate of
   Studio 57 Apartments in Woodstock, Cape Town. It is a small apartment block
   which has a large, open, communal area on its rooftop that gets plenty of sun.
   She would like to turn this space into a green area with a vegetable garden
@@ -464,9 +464,9 @@ garden_project.save
 puts "#{garden_project.photos.count} photos added to garden."
 
 bikini = Project.create(
-  user: gloria,
+  user: laura,
   title: "Mama Bikini",
-  description: "Gloria, aka Mama Bikini, is a 71 year old entrepreneur who sells
+  description: "Laura, aka Mama Bikini, is a 71 year old entrepreneur who sells
   beautiful crocheted bikini's on Camps Bay beach during the summer seasons in Cape Town.
   Her bikini's are doing very well and she often sells out her product daily.
   She spends alot of time travelling from her home in Khayalitsha and would really
@@ -490,10 +490,10 @@ bikini.save
 puts "#{bikini.photos.count} photos added to garden."
 
 tutorly = Project.create(
-  user: cheri,
+  user: sy,
   title: "TutorlyABC",
   description: "Teaching young people how to read is one of the most important
-  jobs in society. It also happens to be Cheri's passion. What isn't her passion
+  jobs in society. It also happens to be Sy's passion. What isn't her passion
   is web and graphic design. TutorlyABC teaches shy children to read from the
   comfort of their own home. All it needs is a wonderful web app and some
   graphic design to get this small business off it's feet.",
@@ -645,8 +645,8 @@ puts "Assigning users as project_members"
 
 garden_project.project_members.create(
   [
-    { user: josh },
-    { user: jo },
+    # { user: pedro },
+    { user: cass },
     { user: dom },
     { user: gabriella }
   ]
@@ -665,7 +665,7 @@ foodtruck.project_members.create(
 bikini.project_members.create(
   [
     { user: gabriella },
-    { user: josh },
+    # { user: pedro },
     { user: chris },
     { user: caro }
   ]
@@ -690,7 +690,7 @@ shine.project_members.create(
 cheese.project_members.create(
   [
     { user: joe },
-    { user: jo },
+    { user: cass },
     { user: menno }
   ]
 )
