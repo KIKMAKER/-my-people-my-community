@@ -42,11 +42,11 @@ puts "#{Category.count} categories created"
 
 puts "Creating users"
 
-josh = User.create(
-  first_name: "Joshua",
+pedro = User.create(
+  first_name: "pedro",
   last_name: "Potgieter",
-  username: "random",
-  email: "joshua@people.com",
+  username: "pbragamiranda",
+  email: "pedro@people.com",
   password: "password",
   bio: "After completing my studies in horticulture at the University of
   Stellenbosch, I did a 1 year internship at a TERRA+ Landscape Architects, a
@@ -59,9 +59,9 @@ josh = User.create(
   linkedin_url: "linkedin.com/in/joshuapotgieter"
 )
 
-josh_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{josh.username}'")
-josh.photo.attach(io: josh_photo, filename: "avatar1.jpeg", content_type: "image/jpeg")
-josh.save
+pedro = URI.open("https://kitt.lewagon.com/placeholder/users/#{pedro.username}'")
+pedro.photo.attach(io: pedro_photo, filename: "pedro.jpeg", content_type: "image/jpeg")
+pedro.save
 
 menno = User.create(
   first_name: "Menno",
@@ -291,41 +291,41 @@ roux_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{roux.usernam
 roux.photo.attach(io: roux_photo, filename: "roux.png", content_type: "image/png")
 roux.save
 
-jo_ann = User.create(
-  first_name: "Jo Ann",
+cass = User.create(
+  first_name: "cass",
   last_name: "Hill",
-  username: "random",
-  email: "joann@people.com",
+  username: "casscalescu",
+  email: "cass@people.com",
   password: "password",
   bio: "I love to work in the garden and make spaces beutiful.",
   location: "Woodstock",
   linkedin_url: "linkedin.com/in/jo"
 )
 
-jo_ann_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{jo_ann.username}")
-jo_ann.photo.attach(io: jo_ann_photo, filename: "jo_ann.png", content_type: "image/png")
-jo_ann.save
+cass_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{cass.username}")
+cass.photo.attach(io: cass_photo, filename: "cass.png", content_type: "image/png")
+cass.save
 
-pierre = User.create(
-  first_name: "Pierre",
+roel = User.create(
+  first_name: "Roel",
   last_name: "Kabamba",
-  username: "random",
-  email: "pierre@people.com",
+  username: "Roel4811",
+  email: "roel@people.com",
   password: "password",
   bio: "Food is my passion!",
   location: "Salt River",
   linkedin_url: "linkedin.com/in/pierre"
 )
 
-pierre_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{pierre.username}")
-pierre.photo.attach(io: pierre_photo, filename: "pierre.png", content_type: "image/png")
-pierre.save
+roel_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{roel.username}")
+roel.photo.attach(io: roel_photo, filename: "roel.png", content_type: "image/png")
+roel.save
 
-gloria = User.create(
-  first_name: "Gloria",
+laura = User.create(
+  first_name: "laura",
   last_name: "Madi",
-  username: "random",
-  email: "gloria@people.com",
+  username: "laura person",
+  email: "laura@people.com",
   password: "password",
   bio: "71 year old entrepreneur who sells beautiful crocheted bikini's on Camps
   Bay beach during the summer seasons in Cape Town.I have worked hard to make
@@ -334,25 +334,25 @@ gloria = User.create(
   linkedin_url: "linkedin.com/in/pierre"
 )
 
-gloria_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{gloria.username}")
-gloria.photo.attach(io: gloria_photo, filename: "gloria.png", content_type: "image/png")
-gloria.save
+laura_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{laura.username}")
+laura.photo.attach(io: laura_photo, filename: "laura.png", content_type: "image/png")
+laura.save
 
-cheri = User.create(
-  first_name: "Cheri",
+sy = User.create(
+  first_name: "sy",
   last_name: "Black",
-  username: "random",
-  email: "cheri@people.com",
+  username: "sy rashid",
+  email: "sy@people.com",
   password: "password",
   bio: "Life is better with a bit of flair. Find me changing the world from the
   comfort of my couch.",
   location: "Muizenberg",
-  linkedin_url: "linkedin.com/in/cheriblack"
+  linkedin_url: "linkedin.com/in/syblack"
 )
 
-cheri_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{cheri.username}")
-cheri.photo.attach(io: cheri_photo, filename: "cheri.png", content_type: "image/png")
-cheri.save
+sy_photo = URI.open("https://kitt.lewagon.com/placeholder/users/#{sy.username}")
+sy.photo.attach(io: sy_photo, filename: "sy.png", content_type: "image/png")
+sy.save
 
 puts "#{User.count} users created"
 
@@ -707,6 +707,3 @@ puts "baddass seed file executed, congratulations! ...... CRONUTS RULE EVERYTHIN
 #   { user: josh, status: "declined" },
 #   { user: menno, status: "accepted" }
 #   ])
-
-
-
