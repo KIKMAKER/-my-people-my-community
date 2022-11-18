@@ -50,7 +50,7 @@ user-show-banner {
 }
 .user-show-banner-profile {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   h1 {
     font-weight: 600;
@@ -61,10 +61,16 @@ user-show-banner {
   }
 
   .user-show-avatar {
+    position: relative;
+    width: 25%;
+    padding: 20px;
 
     .avatar-large {
-      height: 100px;
-      width: 100px;
+      height: 260px;
+      width: 260px;
+      border-radius: 8px;
+  
+
     }
   }
 }
