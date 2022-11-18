@@ -1,18 +1,18 @@
 .search-button {
   margin-left: 10px;
-  border: 1px solid #CAD2E8;
   border-radius: 8px;
-  color: #4F6272;
   padding: 12px 24px;
   text-align: center;
   display: inline-block;
   width: 15vw;
   font-size: large;
-  background-color: #cfcbee4d;
+  color: black;
+  border: 1px solid #CAD2E8;
+  background-color: #b9b8b7;
 }
 
 .search-button:hover {
-  background-color: #F4F1DE;
+  background-color: #a9a9a9;
 }
 
 .button-input {
@@ -21,4 +21,3 @@
   padding: 0 20px;
   background-color: #F4F1DE;
 }
-
