@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
     @project.user = current_user
 
     if @project.save
-      redirect_to projects_path
+      redirect_to @project
     else
       render :new, status: :unprocessable_entity
     end
