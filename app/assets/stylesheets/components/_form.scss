@@ -27,17 +27,17 @@
   }
   .btn {
     width: 100%;
-    min-width: fit-content;
-    margin-bottom: 20px;
-    border-radius: 12px;
+    border-radius: 8px;
     color: black;
-    border: 1px solid #cad2e8;
+    border: 1px solid #CAD2E8;
+    background-color: #b9b8b7;
     padding: 12px 24px;
     text-align: center;
     text-decoration: none;
+    display: inline-block;
+    margin: 10px;
     opacity: 0.6;
     font-weight: bold;
-    background-color: #cfcbee4d;
   }
 
   .skill-pill {
@@ -109,5 +109,12 @@ textarea {
       color: white !important;
       font-size: 22px !important;
     }
+  }
+}
+
+.form-inputs {
+    input {
+      color: white !important;
+      font-size: 22px !important;
   }
 }
