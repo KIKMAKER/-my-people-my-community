@@ -77,10 +77,10 @@
               </div>
             </div>
           </div>
-          <% if @user.initiated_projects.empty? %>
-            <div class="user-projects mt-2">
-              <h4>Projects</h4>
-              <div class="user-project-card">
+          <div class="user-projects mt-2">
+            <h4>Projects</h4>
+            <div class="user-show-projects-index-card">
+              <% if @user.initiated_projects.empty? %>
                 <p><%= "#{@user.first_name} hasn't initiated any projects yet." %></p>
               <% else%>
                 <h4><%= @user.first_name %> started:</h4>
@@ -104,27 +104,7 @@
                 <% end %>
               </div>
             </div>
-            <% if false %>
-              <div class="project-index-cards mt-5">
-                <% @user.projects.each do |project| %>
-                  <%= link_to project_path(project) do %>
-                    <div class="card-trip">
-                      <%= cl_image_tag project.photos[0].key%>
-                      <div class="card-trip-infos">
-                        <div>
-                          <h2><%= project.title %></h2>
-                          <div>
-                            <p><%= project.description.truncate(130) %></p>
-                          <% end %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
           </div>
-
         </div>
       </div>
     </div>
