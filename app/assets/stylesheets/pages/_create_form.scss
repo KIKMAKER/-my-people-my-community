@@ -18,6 +18,10 @@
   }
 
   form {
+    .form-check {
+      padding-left: 10px;
+      margin: 5px 0;
+    }
     .form-label,
     .col-form-label {
       font-size: 20px;
@@ -26,7 +30,5 @@
     .btn {
       opacity: 1;
     }
-
   }
-
 }

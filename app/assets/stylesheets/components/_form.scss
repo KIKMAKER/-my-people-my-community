@@ -2,9 +2,11 @@
 //   border: 2px solid;
 // }
 
-
-
-
+.sessions.new {
+  .form {
+    width: 100%;
+  }
+}
 
 .form {
   background: #eed8cb;
@@ -24,7 +26,6 @@
     text-align: center;
   }
   .btn {
-
     width: 100%;
     min-width: fit-content;
     margin-bottom: 20px;
@@ -39,10 +40,6 @@
     background-color: #cfcbee4d;
   }
 
-  .btn:hover {
-    opacity: 1;
-    background-color: #f1f0ea;
-  }
   .skill-pill {
     position: absolute;
     transform: scale(0);
@@ -69,7 +66,7 @@
 
   .category-pill + label {
     cursor: pointer;
-    background-color: #3a8b82;
+    background-color: #4a7aa9;
     border: 1px solid white;
     padding: 4px 8px;
     border-radius: 15px;
@@ -103,4 +100,14 @@
 textarea {
   color: white !important;
   font-size: 14px !important;
+}
+
+.projects.new {
+  form {
+    textarea,
+    input {
+      color: white !important;
+      font-size: 22px !important;
+    }
+  }
 }

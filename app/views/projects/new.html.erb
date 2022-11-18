@@ -1,8 +1,8 @@
 <div class="container">
   <div class="form-container">
+    <div class="form" id='project-form'>
     <h2>Add Your Project</h2>
     <h5 class="text-center">Resource your team, find your next collaborator, and grow your network.</h5>
-    <div class="form" id='project-form'>
       <%= simple_form_for @project do |f| %>
         <%= f.input :title, required: false%>
         <%= f.input :description, :label => "Describe the aim of this Project and some of the needed skills" %>
@@ -12,7 +12,9 @@
         <%= f.input :start_date, required: false, as: :date, html5: true %>
         <%= f.input :end_date, required: false, as: :date, html5: true %>
         <%= f.input :photos, as: :file %>
-        <%= f.button :submit, class: "btn" %>
+        <div class="d-flex justify-content-center">
+          <%= f.submit "Create Project", class: "button" %>
+        </div>
       <% end %>
     </div>
   </div>

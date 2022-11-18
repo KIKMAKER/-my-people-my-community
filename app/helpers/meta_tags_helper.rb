@@ -1,3 +1,5 @@
+DEFAULT_META = YAML.load_file(Rails.root.join("config/meta.yml"))
+
 module MetaTagsHelper
   def meta_title
     content_for?(:meta_title) ? content_for(:meta_title) : DEFAULT_META["meta_title"]

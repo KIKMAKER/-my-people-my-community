@@ -9,7 +9,7 @@
         <%= text_field_tag :query,
               params[:query],
               class: "button-input",
-              placeholder: "Find a volunteer by their name, location or skill"
+              placeholder: "Find a collaborator by their name, location or skill"
             %>
         <%= submit_tag "Search", class: "search-button" %>
       <% end %>
@@ -48,7 +48,7 @@
                 <div class="user-badge">
                   <% if user.expert_in == "Graphic Design" %>
                     <%= image_tag("graphic_design.png", height: "33px", width: "33px") %>
-                    
+
                   <% end %>
                   <%# <%= image_tag("support", height: "22px") %>
                 </div>

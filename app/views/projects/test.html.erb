@@ -82,3 +82,29 @@
   </div>
 
 
+
+<% if current_user.initiated_projects.empty? %>
+  <p><%= "You currently have not listed any ventures" %></p>
+  <p><%= link_to "List a Venture", new_project_path %></p>
+<% else %>
+  <% current_user.initiated_projects.each do |project| %>
+    <div class="dashboard-card">
+      <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%# #Projects initiated by the user %>
+      </div>
+      <div class="card-content">
+        <h4><%= link_to project.title, project_path(project) %></h4>
+        <div class="content-header">
+          <h5>Project Members:</h5>
+        </div>
+        <% project.project_members.each do |project_member| %>
+          <div class="card-content-items">
+            <p><%= project_member.user.first_name %> (<%= project_member.status %>):</p>
+            <%= status_link(project_member)%>
+            <%= link_to "Start chat", user_conversations_path(project_member.user), data: {turbo_method: :post}, class:"btn-chat"  %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
